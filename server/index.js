@@ -13,7 +13,7 @@ function turnOff (server) {
 module.exports = {
   run () {
     require('./setup').config(app)
-    const server = app.run()
+    const server = app.run().server
     const turnOffServer = turnOff(server)
     process.on('SIGTERM', turnOffServer)
     process.on('SIGINT', turnOffServer)
