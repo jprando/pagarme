@@ -1,4 +1,4 @@
-const app = require('express')()
+const express = require('express')
 
 function turnOff (server) {
   return () => {
@@ -12,6 +12,7 @@ function turnOff (server) {
 
 module.exports = {
   run () {
+    const app = express()
     require('./setup').config(app)
     const server = app.run().server
     const turnOffServer = turnOff(server)
