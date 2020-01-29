@@ -14,7 +14,7 @@ module.exports = {
   run () {
     const app = express()
     require('./setup').config(app)
-    const server = app.run().server
+    const server = app.run()
     const turnOffServer = turnOff(server)
     process.on('SIGTERM', turnOffServer)
     process.on('SIGINT', turnOffServer)
