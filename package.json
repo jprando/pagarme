@@ -4,12 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "pm2 start -n pagarme-backend -i max index.js",
+    "stop": "pm2 stop all && pm2 delete all && pm2 kill",
+    "status": "pm2 logs pagarme-backend",
     "dev": "nodemon index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "helmet": "^3.21.2"
+    "helmet": "^3.21.2",
+    "pm2": "^4.2.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
