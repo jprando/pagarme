@@ -1,10 +1,10 @@
 {
   "name": "pagarme",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",
