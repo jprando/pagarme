@@ -51,6 +51,8 @@ $ nodemon index.js
 
   ...... Shutting down server
   [ OK ] Server off
+
+~/pagarme/> _
 ```
 
 ### Ambiente de Homologação ou Produção
@@ -84,6 +86,8 @@ $ pm2 start -n pagarme-backend -i max index.js
 │ 11 │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 34.3mb   │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
 Done in 4.87s.
+
+~/pagarme/> _
 ```
 
 #### Status
@@ -118,6 +122,8 @@ $ pm2 logs pagarme-backend
 11|pagarme-backend  |   [ 2020-01-30T20:45:51.345Z ] GET / HTTP/1.1 304 - ::1 - 0.166 ms
 
 # utilize CTRL + C para interromper o processo
+
+~/pagarme/> _
 ```
 
 #### Stop
@@ -186,4 +192,6 @@ $ pm2 stop all && pm2 delete all && pm2 kill
 [PM2] [v] All Applications Stopped
 [PM2] [v] PM2 Daemon Stopped
 Done in 4.22s.
+
+~/pagarme/> _
 ```
