@@ -74,14 +74,7 @@ $ pm2 start -n pagarme-backend -i max index.js
 ├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
 │ 0  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.7mb   │
 │ 1  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.5mb   │
-│ 2  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.4mb   │
-│ 3  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.6mb   │
-│ 4  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.7mb   │
-│ 5  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.3mb   │
-│ 6  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.2mb   │
-│ 7  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.4mb   │
-│ 8  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.6mb   │
-│ 9  │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.5mb   │
+...
 │ 10 │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 36.2mb   │
 │ 11 │ pagarme-backend    │ cluster  │ 0    │ online    │ 0%       │ 34.3mb   │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
@@ -135,17 +128,10 @@ Para finalizar os processos que estão servindo a API em modo cluster, utilize o
 yarn run v1.19.1
 $ pm2 stop all && pm2 delete all && pm2 kill
 [PM2] Applying action stopProcessId on app [all]
-(ids: [ 0,1,2,3,4,5,6,7,8,9,10,11 ])
+(ids: [ 0,1,...,10,11 ])
 [PM2] [pagarme-backend](1) ✓
 [PM2] [pagarme-backend](0) ✓
-[PM2] [pagarme-backend](2) ✓
-[PM2] [pagarme-backend](3) ✓
-[PM2] [pagarme-backend](4) ✓
-[PM2] [pagarme-backend](5) ✓
-[PM2] [pagarme-backend](6) ✓
-[PM2] [pagarme-backend](7) ✓
-[PM2] [pagarme-backend](8) ✓
-[PM2] [pagarme-backend](9) ✓
+...
 [PM2] [pagarme-backend](10) ✓
 [PM2] [pagarme-backend](11) ✓
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
@@ -153,29 +139,15 @@ $ pm2 stop all && pm2 delete all && pm2 kill
 ├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
 │ 0  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 │ 1  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 2  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 3  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 4  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 5  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 6  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 7  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 8  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
-│ 9  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
+...
 │ 10 │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 │ 11 │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
 [PM2] Applying action deleteProcessId on app [all]
-(ids: [ 0,1,2,3,4,5,6,7,8,9,10,11 ])
+(ids: [ 0,1,...,10,11 ])
 [PM2] [pagarme-backend](0) ✓
 [PM2] [pagarme-backend](1) ✓
-[PM2] [pagarme-backend](2) ✓
-[PM2] [pagarme-backend](3) ✓
-[PM2] [pagarme-backend](4) ✓
-[PM2] [pagarme-backend](5) ✓
-[PM2] [pagarme-backend](6) ✓
-[PM2] [pagarme-backend](7) ✓
-[PM2] [pagarme-backend](8) ✓
-[PM2] [pagarme-backend](9) ✓
+...
 [PM2] [pagarme-backend](10) ✓
 [PM2] [pagarme-backend](11) ✓
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
