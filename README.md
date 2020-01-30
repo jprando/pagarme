@@ -7,7 +7,9 @@
 
 ## Baixar e preparar o projeto
 
-Para preparar e utilizar este projeto você deverá ter instalado  o [node](https://nodejs.org/en/download/) e o [yarn](https://yarnpkg.com/getting-started/install) no seu ambiente.
+Para preparar e utilizar este projeto, você deverá ter instalado e funcionando corretamente os seguintes programas no seu ambiente
+- [node](https://nodejs.org/en/download/)
+- [yarn](https://yarnpkg.com/getting-started/install)
 
 Para baixar os arquivos do projeto para a sua máquina local utilize os comandos abaixo.
 
