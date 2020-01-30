@@ -88,7 +88,7 @@ Done in 4.87s.
 
 #### Status
 
-No ambiente de homologação e produção, para visualizar os logs de acesso a API do sistema utilize o comando
+No ambiente de homologação e produção, para visualizar os logs de acesso a API utilize o comando
 
 ```sh
 ~/pagarme/> yarn status
