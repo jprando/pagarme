@@ -134,11 +134,8 @@ Para finalizar os processos que estão servindo a API em modo cluster, utilize o
 ~/pagarme/> yarn stop
 yarn run v1.19.1
 $ pm2 stop all && pm2 delete all && pm2 kill
-[PM2] Applying action stopProcessId on app [all](ids: [
-   0,  1, 2, 3, 4,
-   5,  6, 7, 8, 9,
-  10, 11
-])
+[PM2] Applying action stopProcessId on app [all]
+(ids: [ 0,1,2,3,4,5,6,7,8,9,10,11 ])
 [PM2] [pagarme-backend](1) ✓
 [PM2] [pagarme-backend](0) ✓
 [PM2] [pagarme-backend](2) ✓
@@ -167,11 +164,8 @@ $ pm2 stop all && pm2 delete all && pm2 kill
 │ 10 │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 │ 11 │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
-[PM2] Applying action deleteProcessId on app [all](ids: [
-   0,  1, 2, 3, 4,
-   5,  6, 7, 8, 9,
-  10, 11
-])
+[PM2] Applying action deleteProcessId on app [all]
+(ids: [ 0,1,2,3,4,5,6,7,8,9,10,11 ])
 [PM2] [pagarme-backend](0) ✓
 [PM2] [pagarme-backend](1) ✓
 [PM2] [pagarme-backend](2) ✓
