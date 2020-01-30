@@ -105,17 +105,11 @@ $ pm2 logs pagarme-backend
 [TAILING] Tailing last 15 lines for [pagarme-backend] process (change the value with --lines option)
 ~/.pm2/logs/pagarme-backend-error.log last 15 lines:
 ~/.pm2/logs/pagarme-backend-out.log last 15 lines:
-0|pagarme- |   ...... Routes
-0|pagarme- |   ...... Configuration
-  [ OK ] Server running http://localhost:3000
 0|pagarme- |   ...... Middleware
 0|pagarme- |   ...... Routes
 0|pagarme- |   ...... Configuration
   [ OK ] Server running http://localhost:3000
-0|pagarme- |   ...... Middleware
-0|pagarme- |   ...... Routes
-0|pagarme- |   ...... Configuration
-  [ OK ] Server running http://localhost:3000
+...
 0|pagarme- |   ...... Middleware
 0|pagarme- |   ...... Routes
 0|pagarme- |   ...... Configuration
