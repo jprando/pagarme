@@ -149,7 +149,7 @@ $ pm2 stop all && pm2 delete all && pm2 kill
 [PM2] [pagarme-backend](10) ✓
 [PM2] [pagarme-backend](11) ✓
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
-│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+│ id │ name               │ mode     │ rs   │ status    │ cpu      │ memory   │
 ├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
 │ 0  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
 │ 1  │ pagarme-backend    │ cluster  │ 0    │ stopped   │ 0%       │ 0b       │
@@ -179,7 +179,7 @@ $ pm2 stop all && pm2 delete all && pm2 kill
 [PM2] [pagarme-backend](10) ✓
 [PM2] [pagarme-backend](11) ✓
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
-│ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
+│ id │ name               │ mode     │ rs   │ status    │ cpu      │ memory   │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
 [PM2] [v] Modules Stopped
 [PM2][WARN] No process found
