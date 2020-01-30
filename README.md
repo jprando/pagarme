@@ -7,7 +7,15 @@
 
 ## Baixar e preparar o projeto
 
+Para preparar e utilizar este projeto você deverá ter instalado  o [node](https://nodejs.org/en/download/) e o [yarn](https://yarnpkg.com/getting-started/install) no seu ambiente.
+
+Para baixar os arquivos do projeto para a sua máquina local utilize os comandos abaixo.
+
 ```sh
+# ir para a pasta home do usuario
+# ou a pasta que você preferir armazenar os arquivos do projeto
+~/downloads/mystuff> cd
+
 # baixar os arquivos do projeto para a maquina local
 ~/> git clone https://git.jeudi.dev/jeudi/pagarme.git
 
