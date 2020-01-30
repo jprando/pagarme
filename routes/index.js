@@ -1,10 +1,14 @@
-const helmet = require('helmet')
-
 module.exports = {
   config (app) {
-    app.use(helmet()) /// Production Best Practices: Security
+    [
+      './transaction',
+      './payable'
+    ].map(src => require(src)).forEach(route => route.config(app))
+
     app.get('/', (req, res) => {
-      res.status(200).send('Oi! #teste').end()
+      res.status(200).send('Oi! Tudo Bem?').end()
     })
+
+    console.log('  ...... Routes')
   }
 }
