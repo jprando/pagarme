@@ -18,8 +18,14 @@
     "helmet": "^3.21.2",
     "morgan": "^1.9.1",
     "nodemodule": "^0.3.0",
-    "pg-promise": "^10.4.0",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "pm2": "^4.2.3",
+    "sequelize": "^5.21.3",
     "validate.js": "^0.13.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1"
+  }
 }

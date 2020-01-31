@@ -17,6 +17,6 @@ module.exports = {
 
     app.use('/api/v1', router)
 
-    console.log('  ...... Routes')
+    console.log('  [ OK ] Routes')
   }
 }

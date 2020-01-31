@@ -34,6 +34,6 @@ module.exports = {
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
     */
 
-    console.log('  ...... Middleware')
+    console.log('  [ OK ] Middleware')
   }
 }

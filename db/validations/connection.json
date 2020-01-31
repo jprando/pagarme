@@ -1,0 +1,26 @@
+{
+  "PG_HOST": {
+    "type": "string",
+    "presence": { "allowEmpty": false, "message": "^PG_HOST must be informed" }
+  },
+  "PG_PORT": {
+    "presence": { "message": "^PG_PORT must be informed" },
+    "numericality": {
+      "onlyInteger": true,
+      "greaterThan": 0,
+      "lessThanOrEqualTo": 65535,
+      "notValid": "^PG_PORT is not a number",
+      "notInteger": "^PG_PORT must be of type integer",
+      "notGreaterThan": "^PG_PORT must be greater than %{count}",
+      "notLessThanOrEqualTo": "^PG_PORT must be less than or equal to %{count}"
+    }
+  },
+  "PG_USER": {
+    "type": "string",
+    "presence": { "allowEmpty": false, "message": "^PG_USER must be informed" }
+  },
+  "PG_DATABASE": {
+    "type": "string",
+    "presence": { "allowEmpty": false, "message": "^PG_DATABASE must be informed" }
+  }
+}
