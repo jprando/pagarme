@@ -12,7 +12,7 @@ O projeto adota o estilo [standard](https://standardjs.com/) no código fonte im
 ### Pastas
 
 **DB**  
-Utilizar dados de um banco de dados.
+Preparar, gerenciar e utilizar dados de um banco de dados.
 
 **ROUTERS**  
 Configurar os endpoints da API.
