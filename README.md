@@ -68,7 +68,17 @@ Para baixar os arquivos do projeto para a sua máquina local utilize os comandos
 
 ### Preflight
 
-O sistema identifica o ambiente de execução através da variável NODE_ENV e realiza uma validação dos módulos necessários para o funcionamento do sistema, as mensagens de erro são claras e poderão lhe ajudar a resolver alguma situação que possa ocorrer, fique atento as mensagens de erro como essa por exemplo:
+O sistema identifica o ambiente de execução através da variável `NODE_ENV` e realiza uma validação dos módulos necessários para o funcionamento do sistema, as mensagens de erro são claras e poderão lhe ajudar a resolver alguma situação que possa ocorrer, fique atento as mensagens de erro como essa por exemplo:
+
+```sh
+## PREFLIGHT ERROR ##
+NODE_ENV must be informed
+```
+
+```sh
+## PREFLIGHT ERROR ##
+NODE_ENV 'production1' informed, not is valid
+```
 
 ```sh
 ## PREFLIGHT ERROR ##
