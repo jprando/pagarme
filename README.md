@@ -1,7 +1,6 @@
+# Desafio Técnico Pagarme
 
 [![Build Status](https://drone.jeudi.dev/api/badges/jeudi/pagarme/status.svg)](https://drone.jeudi.dev/jeudi/pagarme)
-
-# Desafio Técnico Pagarme
 
 [informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
@@ -65,7 +64,18 @@ Para baixar os arquivos do projeto para a sua máquina local utilize os comandos
 ~/pagarme/> yarn # ou npm install
 ```
 
-## Iniciando o projeto
+## Executando o projeto
+
+### Preflight
+
+O sistema identifica o ambiente de execução através da variável NODE_ENV e realiza uma validação dos módulos necessários para o funcionamento do sistema, as mensagens de erro são claras e poderão lhe ajudar a resolver alguma situação que possa ocorrer, fique atento as mensagens de erro como essa por exemplo:
+
+```sh
+## PREFLIGHT ERROR ##
+pm2 module not found
+use `yarn add pm2` to fix it
+and try again
+```
 
 ### Ambiente de Desenvolvimento
 

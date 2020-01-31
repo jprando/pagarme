@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production pm2 start -n pagarme-backend -i max index.js",
+    "start": "env NODE_ENV=production node index.js && env NODE_ENV=production pm2 start -n pagarme-backend -i max index.js",
     "stop": "pm2 stop all && pm2 delete all && pm2 kill",
     "status": "pm2 logs pagarme-backend",
-    "dev": "NODE_ENV=development nodemon index.js"
+    "dev": "env NODE_ENV=development nodemon index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -17,11 +17,9 @@
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "morgan": "^1.9.1",
+    "nodemodule": "^0.3.0",
     "pg-promise": "^10.4.0",
-    "pm2": "^4.2.3",
     "validate.js": "^0.13.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+  "devDependencies": {}
 }
