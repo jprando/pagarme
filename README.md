@@ -5,6 +5,27 @@
 
 [informacoes do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
+## Informações
+
+O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
+
+### Pastas
+
+**DB**  
+Utilizar dados de um banco de dados.
+
+**ROUTERS**  
+Configurar os endpoints da api.
+
+**SERVER**  
+Configuração e inicialização do servico http.
+
+**SERVICES**  
+Implementação das regras de negocio do sistema.
+
+**TEST**  
+Implementação dos testes unitários.
+
 ## Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
