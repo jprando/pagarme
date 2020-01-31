@@ -1,32 +1,25 @@
-const validate = require('validate.js')
 const Sequelize = require('sequelize')
+const models = require('./models')
+const config = require('./connection.config')
 
-module.exports = () => {
+module.exports = async () => {
   const {
-    PG_HOST = '127.0.0.1',
-    PG_PORT = 5432,
-    PG_USER = 'postgres',
-    PG_PASS = '',
-    PG_DATABASE = 'pagarme'
-  } = process.env
-
-  const constraints = require('./validations/connection.json')
-
-  const erros = validate({
     PG_HOST,
     PG_PORT,
     PG_USER,
     PG_PASS,
+    PG_SCHEMA,
     PG_DATABASE
-  }, constraints, { format: 'flat' })
+  } = config
 
-  if (erros) {
-    console.error(['\r\n  ## DATABASE ERROR ##\r\n  Environment variable\r\n  ', erros.join('\r\n  '), '\r\n'].join(''))
-    process.exit(1)
-  }
-
-  return new Sequelize(PG_DATABASE, PG_USER, PG_PASS, {
+  const db = new Sequelize(PG_DATABASE, PG_USER, PG_PASS, {
+    dialect: 'postgres',
     host: PG_HOST,
-    dialect: 'postgres'
+    port: PG_PORT,
+    schema: PG_SCHEMA
   })
+
+  await models.register({ db, Sequelize })
+
+  return db
 }

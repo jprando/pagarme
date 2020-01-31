@@ -19,8 +19,13 @@
     "type": "string",
     "presence": { "allowEmpty": false, "message": "^PG_USER must be informed" }
   },
+  "PG_SCHEMA": {
+    "type": "string",
+    "presence": { "allowEmpty": false, "message": "^PG_SCHEMA must be informed" }
+  },
   "PG_DATABASE": {
     "type": "string",
     "presence": { "allowEmpty": false, "message": "^PG_DATABASE must be informed" }
   }
+
 }

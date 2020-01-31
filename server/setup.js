@@ -1,11 +1,13 @@
 module.exports = {
-  config: app => {
+  config: async app => {
+    const load = src => require(src)
+    const setConfig = async set => { await set.config(app) };
     [
       './mixins',
       './middleware',
       '../routes',
       './run'
-    ].map(src => require(src)).forEach(set => set.config(app))
+    ].map(load).forEach(setConfig)
 
     /* /// behind proxies
     app.set('trust proxy', function (ip) {
@@ -15,6 +17,6 @@ module.exports = {
     })
     */
 
-    console.log('[ OK ] Configuration')
+    await console.log('[ OK ] Configuration')
   }
 }
