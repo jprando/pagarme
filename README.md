@@ -15,7 +15,7 @@ O projeto adota o estilo [standard](https://standardjs.com/) no código fonte im
 Utilizar dados de um banco de dados.
 
 **ROUTERS**  
-Configurar os endpoints da api.
+Configurar os endpoints da API.
 
 **SERVER**  
 Configuração e inicialização do servico http.
