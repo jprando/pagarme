@@ -5,7 +5,7 @@ const check = require('./check')
 module.exports = () => {
   process.env.NODE_ENV || nodeEnvUndefined()
   const mode = (process.env.NODE_ENV).toLocaleUpperCase()
-  console.log(`  ...... Mode ${mode}`)
+  console.log(`[INFO] Mode ${mode}`)
 
   Object.keys(require('./../../package.json').dependencies)
     .forEach(module => check(module))
@@ -23,5 +23,5 @@ module.exports = () => {
   constraints[process.env.NODE_ENV] || nodeEnvOutRrange()
   constraints[process.env.NODE_ENV]()
 
-  console.log('  [ OK ] Preflight')
+  console.log('[ OK ] Preflight')
 }

@@ -9,7 +9,7 @@ module.exports = {
     app.use(helmet())
 
     /// access log
-    app.use(morgan('  [ :date[iso] ] :method :url HTTP/:http-version :status :res[content-length] :remote-addr - :response-time ms'))
+    app.use(morgan('[ :date[iso] ] :method :url HTTP/:http-version :status :res[content-length] :remote-addr - :response-time ms'))
 
     /// Parse incoming request bodies
     app.use(bodyParser.json())
@@ -34,6 +34,6 @@ module.exports = {
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
     */
 
-    console.log('  [ OK ] Middleware')
+    console.log('[ OK ] Middleware')
   }
 }

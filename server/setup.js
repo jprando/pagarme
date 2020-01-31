@@ -15,6 +15,6 @@ module.exports = {
     })
     */
 
-    console.log('  [ OK ] Configuration')
+    console.log('[ OK ] Configuration')
   }
 }

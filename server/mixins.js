@@ -9,14 +9,15 @@ module.exports = {
     /// for access the data in database
     app.db = connection()
     app.db.authenticate()
-      .then(() => console.log('  [ OK ] Database'))
+      .then(() => console.log('[ OK ] Database'))
+      .then(() => process.env.NODE_ENV === 'development' && app.db.sync())
       .catch(err => {
         if (err) {
-          console.error(['', '## DATABASE ERROR ##', err.message, JSON.stringify(err), ''].join('\r\n  '))
+          console.error(['', '## DATABASE ERROR ##', err.message, JSON.stringify(err), ''].join('\r\n'))
           process.exit(1)
         }
       })
 
-    console.log('  ...... Database')
+    console.log('...... Database')
   }
 }
