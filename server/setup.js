@@ -1,8 +1,9 @@
 module.exports = {
   config: async app => {
     const load = src => require(src)
-    const setConfig = async set => { await set.config(app) };
-    [
+    const setConfig = async set => { await set.config(app) }
+
+    await [
       './mixins',
       './middleware',
       '../routes',

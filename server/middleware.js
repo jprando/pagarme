@@ -2,6 +2,7 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 // const cors = require('cors')
+const services = require('./../services')
 
 module.exports = {
   config: app => {
@@ -33,6 +34,12 @@ module.exports = {
     }
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
     */
+
+    /// Setup Services
+    app.use((req, res, next) => {
+      req.services = services
+      next()
+    })
 
     console.log('[ OK ] Middleware')
   }

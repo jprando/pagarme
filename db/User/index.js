@@ -1,5 +1,5 @@
 module.exports = {
-  register ({ db, Sequelize }) {
+  register: ({ db, Sequelize }) => {
     db.define('user', {
       id: {
         type: Sequelize.INTEGER,

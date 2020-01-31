@@ -1,6 +1,6 @@
 const payableService = require('./../services/cashout')
 
-module.exports = app => ({
+module.exports = {
   config (router) {
     router.get('/payable/customer/:id', (req, res) => {
       const result = payableService.search({ customer: req.params.id, page: 0 })
@@ -21,4 +21,4 @@ module.exports = app => ({
       res.status(statusCode).send(result).end()
     })
   }
-})
+}

@@ -23,7 +23,7 @@ module.exports = {
       }
     } catch (err) {
       if (err) {
-        console.error(['', '## DATABASE ERROR ##', err.message, JSON.stringify(err), ''].join('\r\n'))
+        await console.error(['', '## DATABASE ERROR ##', err.message, JSON.stringify(err), ''].join('\r\n'))
         process.exit(1)
       }
     }

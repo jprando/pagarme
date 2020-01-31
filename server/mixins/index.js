@@ -7,6 +7,6 @@ module.exports = {
     /// for access the data in database
     await require('./db').register(app)
 
-    console.log('[ OK ] Database')
+    await console.log('[ OK ] Database')
   }
 }

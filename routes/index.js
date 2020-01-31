@@ -4,9 +4,9 @@ module.exports = {
   config (app) {
     const router = new express.Router()
     const load = src => require(src)
-    const execConfig = route => route(app).config(router);
+    const execConfig = route => route.config(router);
     [
-      './user',
+      // './user',
       './transaction',
       './payable'
     ].map(load).forEach(execConfig)
