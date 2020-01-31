@@ -1,9 +1,9 @@
 
 [![Build Status](https://drone.jeudi.dev/api/badges/jeudi/pagarme/status.svg)](https://drone.jeudi.dev/jeudi/pagarme)
 
-# Desafio Tecnico Pagarme
+# Desafio Técnico Pagarme
 
-[informacoes do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
+[informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
 ## Informações
 
@@ -18,7 +18,7 @@ Preparar, gerenciar e utilizar dados de um banco de dados.
 Configurar os endpoints da API.
 
 **SERVER**  
-Configuração e inicialização do servico http.
+Configuração e inicialização do serviço http.
 
 **SERVICES**  
 Implementação das regras de negocio do sistema.
@@ -26,12 +26,27 @@ Implementação das regras de negocio do sistema.
 **TEST**  
 Implementação dos testes unitários.
 
+## Banco de Dados
+
+Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/about/) para persistir as informações do sistema
+
+### Preparar o Banco de Dados
+
+Você instalar o banco de dados postgres ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
+
+# Configuração da Conexão
+
+Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
+
+Observando as opções contidas no arquivo `.env`, você tem a opção de utilizar variáveis de ambiente com o mesmo nome e com o valor necessário para iniciar a conexão com o banco de dados postgres.
+
 ## Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
 
 - [node](https://nodejs.org/en/download/)
 - [yarn](https://yarnpkg.com/getting-started/install)
+- [docker](https://docs.docker.com/install/)
 
 Para baixar os arquivos do projeto para a sua máquina local utilize os comandos abaixo.
 
