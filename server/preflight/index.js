@@ -1,3 +1,4 @@
+const os = require('os')
 const nodeEnvUndefined = require('./nodeEnvUndefined')
 const nodeEnvOutRrange = require('./nodeEnvOutRrange')
 const check = require('./check')
@@ -5,7 +6,7 @@ const check = require('./check')
 module.exports = () => {
   process.env.NODE_ENV || nodeEnvUndefined()
   const mode = (process.env.NODE_ENV).toLocaleUpperCase()
-  console.log(`[INFO] Mode ${mode}`)
+  console.log(`${os.EOL}[INFO] Mode ${mode}`)
 
   Object.keys(require('./../../package.json').dependencies)
     .forEach(module => check(module))

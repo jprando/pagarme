@@ -1,11 +1,13 @@
+const os = require('os')
+
 const turnOff = app => {
   return () => {
     const { running: { server }, db } = app
-    console.log('\r...... Shutting down server')
-    server.close(async () => {
-      await db && db.close()
+    console.log('...... Shutting down server')
+    server && server.close(async () => {
+      db && await db.close()
       console.log('[ OK ] Database close')
-      console.log('\r[ OK ] Server off')
+      console.log(`[ OK ] Server off${os.EOL}`)
       process.exit(0)
     })
     setTimeout(async () => {
@@ -17,8 +19,6 @@ const turnOff = app => {
 
 module.exports = {
   config: app => {
-    // const { running: { server } } = app
-    // const turnOffServer = turnOff(server)
     const turnOffServer = turnOff(app)
     process.on('SIGTERM', turnOffServer)
     process.on('SIGINT', turnOffServer)

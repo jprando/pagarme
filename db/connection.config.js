@@ -1,3 +1,4 @@
+const os = require('os')
 const validate = require('validate.js')
 
 const {
@@ -23,7 +24,13 @@ const config = {
 const erros = validate(config, constraints, { format: 'flat' })
 
 if (erros) {
-  console.error(['\r\n  ## DATABASE ERROR ##\r\n  Environment variable\r\n  ', erros.join('\r\n  '), '\r\n'].join(''))
+  console.error([
+    '',
+    '## DATABASE ERROR ##',
+    'Environment variable',
+    ...erros,
+    ''
+  ].join(os.EOL))
   process.exit(1)
 }
 

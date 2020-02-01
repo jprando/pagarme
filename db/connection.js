@@ -1,3 +1,4 @@
+const os = require('os')
 const Sequelize = require('sequelize')
 const models = require('./models')
 const config = require('./connection.config')
@@ -16,7 +17,10 @@ module.exports = async () => {
     dialect: 'postgres',
     host: PG_HOST,
     port: PG_PORT,
-    schema: PG_SCHEMA
+    schema: PG_SCHEMA,
+    benchmark: true,
+    // native: true, /// yarn install pg-native
+    logging: (msg, time, _db) => console.log(`[ DB ] ${_db.type} ${time}ms${os.EOL}${msg}${os.EOL}`)
   })
 
   await models.register({ db, Sequelize })

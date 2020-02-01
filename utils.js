@@ -9,7 +9,11 @@ const checkStatusCode = result =>
 const dataResponse = load => async (req, res) => {
   const result = await load(req, res)
   const statusCode = checkStatusCode(result)
-  res.status(statusCode).send(result).end()
+  if (statusCode === 200) {
+    res.status(statusCode).send(result).end()
+  } else {
+    res.status(statusCode).end()
+  }
 }
 
 const actionForReduce = basePath => ({

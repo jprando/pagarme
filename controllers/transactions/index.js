@@ -1,4 +1,4 @@
-const { actionForReduce } = require('./../utils')
+const { actionForReduce } = require('../../utils')
 
 const action = actionForReduce(__dirname)
 
