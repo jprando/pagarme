@@ -1,9 +1,9 @@
 module.exports = {
   register: async ({ db, Sequelize }) => {
-    const registerModel = model => model.register({ db, Sequelize })
-    const models = await [
+    const registerModel = model => model.register({ db, Sequelize });
+    [
       './User'
     ].map(src => require(src))
-    models.forEach(registerModel)
+      .forEach(registerModel)
   }
 }

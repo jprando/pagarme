@@ -3,13 +3,14 @@ const express = require('express')
 module.exports = {
   config (app) {
     const router = new express.Router()
-    const load = src => require(src)
+    // const load = src => require(src)
     const execConfig = route => route.config(router);
     [
-      // './user',
+      './user',
       './transaction',
       './payable'
-    ].map(load).forEach(execConfig)
+    // ].map(loadModule.base(__dirname)).forEach(execConfig)
+    ].map(src => require(src)).forEach(execConfig)
 
     router.get('/', (req, res) => {
       res.status(200).send('Oi! Tudo Bem?').end()

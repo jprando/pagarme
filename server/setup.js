@@ -1,15 +1,15 @@
-const { loadModule } = require('../utils')
-
 module.exports = {
   config: async app => {
-    const _config = async _module => { await _module.config(app) };
+    const runConfig = async _module => { await _module.config(app) };
     [
       './mixins',
       './middleware',
       '../routes',
       './run'
-    ].map(src => require('path').resolve(__dirname, src)).map(loadModule)
-      .forEach(await _config)
+    ]
+      // .map(loadModule.base(__dirname))
+      .map(src => require(src))
+      .forEach(await runConfig)
 
     /* /// behind proxies
     app.set('trust proxy', function (ip) {
