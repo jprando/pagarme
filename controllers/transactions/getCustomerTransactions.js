@@ -1,6 +1,6 @@
 const { dataResponse } = require('../utils')
 
 module.exports = dataResponse(({
-  services: { transaction },
+  services: { cashin: service },
   params: { id }
-}) => transaction.search({ customer: id, page: 0 }))
+}) => service.search({ customer: id, page: 0 }))

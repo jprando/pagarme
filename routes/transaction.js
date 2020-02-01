@@ -1,13 +1,13 @@
 const {
-  getCustomerTransactionsById,
+  getCustomerTransactions,
   postTransaction,
-  deleteTransactionById
+  deleteTransaction
 } = require('./../controllers/transactions')
 
 module.exports = {
   config (router) {
-    router.get('/transactions/customer/:id', getCustomerTransactionsById)
+    router.get('/transactions/customer/:id', getCustomerTransactions)
     router.post('/transaction', postTransaction)
-    router.delete('/transaction/:id', deleteTransactionById)
+    router.delete('/transaction/:id', deleteTransaction)
   }
 }

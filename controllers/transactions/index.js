@@ -1,9 +1,9 @@
-const { actionForReduceConfigure } = require('./../utils')
+const { actionForReduce } = require('./../utils')
 
-const action = actionForReduceConfigure(__dirname)
+const action = actionForReduce(__dirname)
 
 module.exports = [
-  'getCustomerTransactionsById',
+  'getCustomerTransactions',
   'postTransaction',
-  'deleteTransactionById'
+  'deleteTransaction'
 ].map(action.load).reduce(action.configure, {})

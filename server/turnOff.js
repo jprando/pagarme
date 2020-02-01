@@ -1,15 +1,15 @@
 const turnOff = app => {
-  const { running: { server }, db } = app
   return () => {
-    console.log('\r  ...... Shutting down server')
+    const { running: { server }, db } = app
+    console.log('\r...... Shutting down server')
     server.close(async () => {
-      await db.close()
-      await console.log('  [ OK ] Database close')
-      await console.log('\r  [ OK ] Server off')
+      await db && db.close()
+      console.log('[ OK ] Database close')
+      console.log('\r[ OK ] Server off')
       process.exit(0)
     })
     setTimeout(async () => {
-      await console.error('  Forcefully server shutting down')
+      console.error('Forcefully server shutting down')
       process.exit(1)
     }, 10000)
   }

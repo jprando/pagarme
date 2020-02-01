@@ -1,6 +1,10 @@
 const path = require('path')
 
-const checkStatusCode = result => (result.error && 400) || (result.length && 200) || 404
+const loadModule = src => require(src)
+
+const checkStatusCode = result =>
+  (result && result.error && 400) ||
+  (result && result.length && 200) || 404
 
 const dataResponse = load => async (req, res) => {
   const result = await load(req, res)
@@ -8,14 +12,15 @@ const dataResponse = load => async (req, res) => {
   res.status(statusCode).send(result).end()
 }
 
-const loadModule = src => require(src)
-
-const actionForReduceConfigure = basePath => ({
+const actionForReduce = basePath => ({
   load: src => {
-    return value => {
+    return value => ({ ...value, [src]: loadModule(path.resolve(basePath, src)) })
+    /*
+    {
       value[src] = loadModule(path.resolve(basePath, src))
       return value
     }
+    */
   },
   configure: (accumulator, configureAction) => configureAction(accumulator)
 })
@@ -24,5 +29,5 @@ module.exports = {
   checkStatusCode,
   dataResponse,
   loadModule,
-  actionForReduceConfigure
+  actionForReduce
 }
