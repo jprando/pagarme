@@ -36,7 +36,12 @@ module.exports = {
     */
 
     /// Setup Services
-    app.use((req, res, next) => {
+    app.use((req, _, next) => {
+      Object.keys(services).forEach(key => {
+        services[key] = {
+          ...services[key], db: app.db
+        }
+      })
       req.services = services
       next()
     })

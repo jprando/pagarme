@@ -2,5 +2,5 @@ const { dataResponse } = require('../../utils')
 
 module.exports = dataResponse(({
   services: { user },
-  params: { email, password }
+  body: { email, password }
 }) => user.login(email, password))

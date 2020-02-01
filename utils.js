@@ -8,14 +8,14 @@ loadModule.base = prefix => {
 
 const checkStatusCode = result =>
   (result && result.error && 400) ||
-  (result && result.length && 200) || 404
+  (result && (result.length || Object.keys(result).length) && 200) || 404
   /// vai dar ruim no verb DELETE
 
 const dataResponse = load => async (req, res) => {
   const result = await load(req, res)
   const statusCode = checkStatusCode(result)
   if (statusCode === 200) {
-    res.status(statusCode).send(result).end()
+    res.status(statusCode).json(result).end()
   } else {
     res.status(statusCode).end()
   }
