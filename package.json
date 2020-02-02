@@ -6,7 +6,8 @@
   "scripts": {
     "start": "env NODE_ENV=production node index.js && env NODE_ENV=production pm2 start -n pagarme-backend -i max index.js",
     "stop": "pm2 stop all && pm2 delete all && pm2 kill",
-    "status": "pm2 logs pagarme-backend",
+    "status": "pm2 status pagarme-backend",
+    "logs": "pm2 logs pagarme-backend",
     "dev": "env NODE_ENV=development nodemon index.js",
     "db:sync":"env PG_SYNC=true NODE_ENV=development node index.js",
     "db:clean:sync":"env PG_SYNC=force NODE_ENV=development node index.js"

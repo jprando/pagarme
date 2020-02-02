@@ -1,10 +1,7 @@
 const path = require('path')
 
 const loadModule = (src) => require(path.resolve(this._base, src))
-loadModule.base = prefix => {
-  this._base = prefix
-  return loadModule
-}
+loadModule.base = basePath => src => loadModule(path.resolve(basePath, src))
 
 const checkStatusCode = result =>
   (result && result.error && 400) ||

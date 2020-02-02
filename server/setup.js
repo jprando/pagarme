@@ -1,3 +1,5 @@
+const { loadModule } = require('../utils')
+
 module.exports = {
   config: async app => {
     const runConfig = async _module => { await _module.config(app) };
@@ -7,8 +9,7 @@ module.exports = {
       '../routes',
       './run'
     ]
-      // .map(loadModule.base(__dirname))
-      .map(src => require(src))
+      .map(loadModule.base(__dirname))
       .forEach(await runConfig)
 
     /* /// behind proxies

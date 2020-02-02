@@ -1,4 +1,4 @@
-const os = require('os')
+const { EOL } = require('os')
 
 const turnOff = app => {
   return () => {
@@ -6,8 +6,11 @@ const turnOff = app => {
     console.log('...... Shutting down server')
     server && server.close(async () => {
       db && await db.close()
-      console.log('[ OK ] Database close')
-      console.log(`[ OK ] Server off${os.EOL}`)
+      console.log([
+        '[ OK ] Database close',
+        '[ OK ] Server off',
+        ''
+      ].join(EOL))
       process.exit(0)
     })
     setTimeout(async () => {

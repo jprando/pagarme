@@ -1,4 +1,4 @@
-const os = require('os')
+const { EOL } = require('os')
 const connection = require('../../db/connection')
 
 module.exports = {
@@ -13,12 +13,12 @@ module.exports = {
       if (process.env.PG_SYNC || process.env.NODE_ENV === 'development') {
         console.log(`[ DB ] Schema ${db.options.schema}`)
         console.log(`[ DB ] Database ${db.config.database}`)
-        console.log(`[ DB ] Sync started${os.EOL}`)
+        console.log(`[ DB ] Sync started${EOL}`)
         if (process.env.PG_SYNC === 'force') {
-          console.log(`[ DB ] Clean and Create${os.EOL}`)
+          console.log(`[ DB ] Clean and Create${EOL}`)
         }
         await db.sync({ force: process.env.PG_SYNC === 'force' })
-        console.log(`${os.EOL}[ DB ] Sync finished`)
+        console.log(`${EOL}[ DB ] Sync finished`)
         if (process.env.PG_SYNC) {
           await db.close()
           console.log('[ DB ] Closed')
@@ -32,7 +32,7 @@ module.exports = {
           '## DATABASE ERROR ##',
           err.message,
           ''
-        ].join('\r\n'))
+        ].join(EOL))
         process.exit(1)
       }
     }

@@ -3,7 +3,7 @@ const throwModuleNotFoundError = require('./throwModuleNotFoundError')
 module.exports = moduleName => {
   try {
     require(moduleName)
-    /// console.log(`  [ OK ] module ${moduleName}`)
+    process.env.DEBUG && console.log(`[ OK ] check module ${moduleName}`)
   } catch {
     throwModuleNotFoundError(moduleName)
   }

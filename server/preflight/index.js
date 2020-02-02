@@ -1,20 +1,19 @@
-const os = require('os')
+const { EOL } = require('os')
 const _package = require('./../../package.json')
 const nodeEnvUndefined = require('./nodeEnvUndefined')
-const nodeEnvOutRrange = require('./nodeEnvOutRrange')
+const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')
 
 module.exports = () => {
   process.env.NODE_ENV || nodeEnvUndefined()
   const mode = (process.env.NODE_ENV).toLocaleUpperCase()
-  console.log(`${os.EOL}[INFO] Mode ${mode}`)
+  console.log(`${EOL}[INFO] Mode ${mode}`)
 
-  Object.keys(_package.dependencies)
-    .forEach(module => check(module))
+  Object.keys(_package.dependencies).forEach(module => check(module))
 
   const constraints = {
     production: () => {
-      check('pm2')
+      /// NODE_APP_INSTANCE is defined with initialized by pm2
       if (process.env.NODE_APP_INSTANCE === undefined) {
         process.exit(0)
       }
@@ -22,8 +21,9 @@ module.exports = () => {
     development: () => check('nodemodule')
   }
 
-  constraints[process.env.NODE_ENV] || nodeEnvOutRrange()
-  constraints[process.env.NODE_ENV]()
+  const nodeCheckEnvMode = constraints[process.env.NODE_ENV]
+  nodeCheckEnvMode || nodeEnvOutRange()
+  nodeCheckEnvMode()
 
   console.log('[ OK ] Preflight')
 }
