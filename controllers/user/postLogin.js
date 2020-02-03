@@ -10,6 +10,5 @@ module.exports = dataResponse(async ({
   if (errors) {
     return { error: true, code: 400, errors }
   }
-  const auth = await user.login(email, password)
-  return auth
+  return user.login(email, password)
 })

@@ -13,6 +13,7 @@ const dataResponse = load => async (req, res) => {
     const result = await load(req, res)
     const statusCode = checkStatusCode(result)
     if (statusCode === 200) {
+      delete result.code
       res.status(statusCode).json(result).end()
     } else {
       if (process.env.NODE_ENV === 'production' && result.error) {
