@@ -222,3 +222,18 @@ Done in 4.22s.
 
 ~/pagarme/> _
 ```
+
+# Libs
+
+Principais Libs e Frameworks utilizados no projeto.
+
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme)
+- [cors](https://github.com/expressjs/cors)
+- [dotenv](dotenv)
+- [ExpressJs](http://expressjs.com/)
+- [helmet](https://helmetjs.github.io/)
+- [morgan](https://github.com/expressjs/morgan#readme)
+- [nodemon](https://nodemon.io/)
+- [PM2](https://pm2.keymetrics.io/)
+- [Sequelize](https://sequelize.org/v5/index.html)
+- [Validate.js](https://validatejs.org/#validate-js)
