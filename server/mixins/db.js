@@ -6,9 +6,8 @@ module.exports = {
     try {
       console.log('...... Database')
       app.db = await connection()
-
+      await app.db.authenticate()
       const { db } = app
-      await db.authenticate()
 
       if (process.env.PG_SYNC || process.env.NODE_ENV === 'development') {
         console.log(`[ DB ] Schema ${db.options.schema}`)

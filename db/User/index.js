@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const { generate: passwordGenerate } = require('./../../services/user/password')
 
 module.exports = {
   register: ({ db, Sequelize }) => {
@@ -77,7 +77,7 @@ module.exports = {
     }, {
       hooks: {
         beforeCreate: async (user) => {
-          user.credential = await bcrypt.hash(user.credential, 11)
+          user.credential = await passwordGenerate(user.credential)
         }
       }
     })

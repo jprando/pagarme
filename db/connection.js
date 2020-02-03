@@ -1,4 +1,3 @@
-const os = require('os')
 const Sequelize = require('sequelize')
 const models = require('./models')
 const config = require('./connection.config')
