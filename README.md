@@ -223,7 +223,7 @@ Done in 4.22s.
 ~/pagarme/> _
 ```
 
-# Libs
+# Libs e Frameworks
 
 Principais Libs e Frameworks utilizados no projeto.
 
