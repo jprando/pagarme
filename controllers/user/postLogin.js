@@ -1,6 +1,15 @@
 const { dataResponse } = require('../../utils')
 
-module.exports = dataResponse(({
+module.exports = dataResponse(async ({
+  validate,
   services: { user },
   body: { email, password }
-}) => user.login(email, password))
+}) => {
+  const constraints = require('./postLogin.validation.json')
+  const errors = validate({ email, password }, constraints)
+  if (errors) {
+    return { error: true, code: 400, errors }
+  }
+  const auth = await user.login(email, password)
+  return auth
+})

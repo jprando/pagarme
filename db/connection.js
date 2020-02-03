@@ -20,7 +20,7 @@ module.exports = async () => {
     schema: PG_SCHEMA,
     benchmark: true,
     // native: true, /// yarn install pg-native
-    logging: (msg, time, _db) => console.log(`[ DB ] ${_db.type} ${time}ms ${msg}`)
+    logging: (msg, time, _db) => console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
   })
 
   await models.register({ db, Sequelize })

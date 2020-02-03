@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 // const cors = require('cors')
 const services = require('./../services')
+const validate = require('validate.js')
 
 module.exports = {
   config: app => {
@@ -37,6 +38,7 @@ module.exports = {
 
     /// Setup Services
     app.use((req, _, next) => {
+      req.validate = validate
       Object.keys(services).forEach(key => {
         services[key] = {
           ...services[key], db: app.db

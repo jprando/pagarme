@@ -9,10 +9,11 @@
     "status": "pm2 status pagarme-backend",
     "logs": "pm2 logs pagarme-backend",
     "dev": "env NODE_ENV=development nodemon index.js",
-    "db:sync":"env PG_SYNC=true NODE_ENV=development node index.js",
-    "db:clean:sync":"env PG_SYNC=force NODE_ENV=development node index.js"
+    "db:sync": "env PG_SYNC=true NODE_ENV=development node index.js",
+    "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node index.js"
   },
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",

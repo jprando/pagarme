@@ -4,17 +4,34 @@ const loadModule = (src) => require(path.resolve(this._base, src))
 loadModule.base = basePath => src => loadModule(path.resolve(basePath, src))
 
 const checkStatusCode = result =>
-  (result && result.error && 400) ||
-  (result && (result.length || Object.keys(result).length) && 200) || 404
+  (result && result.error && (result.code || 400)) ||
+  (result && !result.error && (result.length || Object.keys(result).length) && 200) || 404
   /// vai dar ruim no verb DELETE
 
 const dataResponse = load => async (req, res) => {
-  const result = await load(req, res)
-  const statusCode = checkStatusCode(result)
-  if (statusCode === 200) {
-    res.status(statusCode).json(result).end()
-  } else {
-    res.status(statusCode).end()
+  try {
+    const result = await load(req, res)
+    const statusCode = checkStatusCode(result)
+    if (statusCode === 200) {
+      res.status(statusCode).json(result).end()
+    } else {
+      if (process.env.NODE_ENV === 'production' && result.error) {
+        res.status(statusCode).end()
+      } else {
+        const reponse = {
+          error: true,
+          message: result.message,
+          errors: result.errors
+        }
+        res.status(statusCode).json(reponse).end()
+      }
+    }
+  } catch (err) {
+    if (process.env.NODE_ENV === 'production') {
+      res.status(500).end()
+    } else {
+      res.status(500).json(err.message || err).end()
+    }
   }
 }
 

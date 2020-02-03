@@ -1,0 +1,16 @@
+{
+  "email": {
+    "email": true,
+    "presence": {
+      "allowEmpty": false
+    }
+  },
+  "password": {
+    "length": {
+      "minimum": 6
+    },
+    "presence": {
+      "allowEmpty": false
+    }
+  }
+}
