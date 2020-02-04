@@ -7,4 +7,4 @@ module.exports = [
   'login',
   'create',
   'findAll'
-].map(factory.load).reduce(factory.configure)
+].map(factory.load).reduce(factory.configure, {})
