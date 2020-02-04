@@ -39,6 +39,7 @@ module.exports = {
 
     /// Setup Services
     app.use((req, _, next) => {
+      console.log('......')
       req.validate = validate
       Object.keys(services).forEach(key => {
         services[key] = {
