@@ -2,8 +2,8 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 // const cors = require('cors')
-const services = require('./../services')
 const validate = require('validate.js')
+const services = require('./../services')
 
 module.exports = {
   config: app => {

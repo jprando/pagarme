@@ -8,5 +8,6 @@ module.exports = [
   'create',
   'all',
   'byId',
-  'update'
+  'update',
+  'removeCredential'
 ].map(factory.load).reduce(factory.configure, {})

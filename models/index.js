@@ -1,4 +1,4 @@
-const { loadModule } = require('./../utils')
+const { loadModule } = require('../utils')
 
 module.exports = {
   register: ({ db, Sequelize }) => {
