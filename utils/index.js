@@ -6,7 +6,8 @@ const _utils = [
   'checkStatusCode',
   'loadModule',
   'dataResponse',
-  'asyncForEach'
+  'asyncForEach',
+  'sequelizeToPlain'
 ].map(factory.load).reduce(factory.configure, {})
 
 module.exports = {

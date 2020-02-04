@@ -1,8 +1,10 @@
 const {
-  getAllUsers,
   getUserById,
+  getAllUsers,
   newUser,
   updateUser,
+  deleteUser,
+
   newCustomer
 } = require('./../controllers/admin')
 
@@ -12,6 +14,8 @@ module.exports = {
     router.get('/admin/users', getAllUsers)
     router.post('/admin/user/:id', updateUser)
     router.post('/admin/user', newUser)
+    router.delete('/admin/user/:id', deleteUser)
+
     router.post('/admin/customer', newCustomer)
   }
 }

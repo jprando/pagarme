@@ -5,4 +5,5 @@ module.exports = dataResponse(async ({
   params: { id }
 }) => {
   return user.byId(id)
+    .then(user => user || { code: 404, message: 'User not found' })
 })

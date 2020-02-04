@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 // const cors = require('cors')
 const validate = require('validate.js')
 const services = require('./../services')
+const { sequelizeToPlain } = require('./../utils')
 
 module.exports = {
   config: app => {
@@ -41,7 +42,13 @@ module.exports = {
       req.validate = validate
       Object.keys(services).forEach(key => {
         services[key] = {
-          ...services[key], db: app.db.models, services, validate
+          validate,
+          services,
+          db: {
+            toPlain: sequelizeToPlain,
+            ...app.db.models
+          },
+          ...services[key]
         }
       })
       req.services = services
