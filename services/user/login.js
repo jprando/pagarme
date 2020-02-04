@@ -4,9 +4,13 @@ module.exports = async function (email, password) {
     services: { jwt }
   } = this
 
-  const _user_ = await user.findOne({ where: { active: true, email } })
+  const _user_ = await user.findOne({ where: { email } })
 
-  if (_user_ && _user_.credential && await this.password.compare(password, _user_.credential)) {
+  if (_user_ &&
+      _user_.active &&
+      _user_.credential &&
+      await this.password.compare(password, _user_.credential)
+  ) {
     return _user_.update({ lastLoginAt: new Date() })
       .then(updateResult => {
         const tokenData = {

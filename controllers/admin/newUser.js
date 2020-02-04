@@ -1,5 +1,5 @@
 const { dataResponse } = require('../../utils')
-const newUserConstraints = require('./newUser.validation.json')
+const newUserConstraints = require('./newUser.validation')
 
 module.exports = dataResponse(async ({
   validate,

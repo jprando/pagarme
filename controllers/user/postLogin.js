@@ -5,7 +5,7 @@ module.exports = dataResponse(async ({
   services: { user },
   body: { email, password }
 }) => {
-  const constraints = require('./postLogin.validation.json')
+  const constraints = require('./postLogin.validation')
   const errors = validate({ email, password }, constraints)
   if (errors) {
     return { error: true, code: 400, errors }

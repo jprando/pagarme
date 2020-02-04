@@ -8,6 +8,18 @@ const options = {
       user.ukey = uuidV4()
       user.credential = await passwordGenerate(user.credential)
     }
+  },
+  defaultScope: {
+    where: { active: true },
+    attributes: { exclude: ['credential'] }
+  },
+  scopes: {
+    withPassword: {
+      where: { active: true }
+    },
+    allUsers: {
+      attributes: { exclude: ['credential'] }
+    }
   }
 }
 

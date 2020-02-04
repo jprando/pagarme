@@ -4,9 +4,11 @@ const dataResponse = load => async (req, res) => {
   try {
     const result = await load(req, res)
     const statusCode = checkStatusCode(result)
-    if (statusCode === 200) {
+    if ([200, 201].includes(statusCode)) {
       delete result.code
-      res.status(statusCode).json(result).end()
+      delete result.error
+      const jsonValue = result.result || result
+      res.status(statusCode).json(jsonValue).end()
     } else {
       if (process.env.NODE_ENV === 'production' && result.error) {
         res.status(statusCode).end()
