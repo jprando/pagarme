@@ -10,5 +10,6 @@ module.exports = [
   'delete',
   'login',
   'password',
-  'removeCredential'
+  'removeCredential',
+  'generateCredentialText'
 ].map(factory.load).reduce(factory.configure, {})
