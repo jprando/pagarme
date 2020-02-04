@@ -13,9 +13,11 @@ module.exports = async function (newUser) {
 
   let newUserResult = await user.create(newUser)
   newUserResult = newUserResult.get({ plain: true })
+
   delete newUserResult.credential
   delete newUserResult.updatedAt
   delete newUserResult.lastLoginAt
   delete newUserResult.lastPasswordChangeAt
+
   return { error: false, code: 201, result: newUserResult }
 }

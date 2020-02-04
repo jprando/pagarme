@@ -6,5 +6,7 @@ module.exports = [
   'password',
   'login',
   'create',
-  'findAll'
+  'all',
+  'byId',
+  'update'
 ].map(factory.load).reduce(factory.configure, {})

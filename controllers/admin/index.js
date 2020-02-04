@@ -4,6 +4,8 @@ const action = mapForReduce(__dirname)
 
 module.exports = [
   'getAllUsers',
+  'getUserById',
   'newUser',
-  'newCustomer'
+  'newCustomer',
+  'updateUser'
 ].map(action.load).reduce(action.configure, {})

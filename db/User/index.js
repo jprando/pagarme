@@ -14,11 +14,23 @@ const options = {
     attributes: { exclude: ['credential'] }
   },
   scopes: {
-    withPassword: {
+    basic: {
+      attributes: ['id', 'name', 'email']
+    },
+    allFields: {
+      attributes: { }
+    },
+    withoutCredential: {
+      attributes: { exclude: ['credential'] }
+    },
+    activeUsers: {
       where: { active: true }
     },
+    inactiveUsers: {
+      where: { active: false }
+    },
     allUsers: {
-      attributes: { exclude: ['credential'] }
+      where: { }
     }
   }
 }

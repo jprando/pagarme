@@ -41,7 +41,7 @@ module.exports = {
       req.validate = validate
       Object.keys(services).forEach(key => {
         services[key] = {
-          ...services[key], db: app.db.models, services
+          ...services[key], db: app.db.models, services, validate
         }
       })
       req.services = services

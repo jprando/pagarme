@@ -4,7 +4,7 @@ module.exports = async function (email, password) {
     services: { jwt }
   } = this
 
-  const _user_ = await user.findOne({ where: { email } })
+  const _user_ = await user.scope('activeUsers').findOne({ where: { email } })
 
   if (_user_ &&
       _user_.active &&
@@ -18,13 +18,10 @@ module.exports = async function (email, password) {
           email: _user_.email
         }
         return {
-          // error: false,
-          code: 200,
           token: jwt.sign(tokenData)
         }
       })
   }
-
   return {
     error: true,
     code: 401,
