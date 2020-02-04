@@ -1,0 +1,21 @@
+{
+  "name":{
+    "presence": {
+      "allowEmpty": false
+    }
+  },
+  "email": {
+    "email": true,
+    "presence": {
+      "allowEmpty": false
+    }
+  },
+  "credential": {
+    "length": {
+      "minimum": 6
+    },
+    "presence": {
+      "allowEmpty": false
+    }
+  }
+}

@@ -1,3 +1,4 @@
+const uuidV4 = require('uuid/v4')
 const { generate: passwordGenerate } = require('./../../services/user/password')
 
 module.exports = {
@@ -42,6 +43,7 @@ module.exports = {
       ukey: {
         type: Sequelize.UUID,
         allowNull: false,
+        unique: true,
         defaultValue: Sequelize.UUIDV4,
         validate: {
           notNull: true,
@@ -77,6 +79,7 @@ module.exports = {
     }, {
       hooks: {
         beforeCreate: async (user) => {
+          user.ukey = uuidV4()
           user.credential = await passwordGenerate(user.credential)
         }
       }

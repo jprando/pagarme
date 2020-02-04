@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 
 module.exports = {
+  // compare: bcrypt.compare,
   compare: async (value, hash) => bcrypt.compare(value, hash),
-  gnerate: async (value) => bcrypt.hash(value, 11)
+  generate: async (value) => bcrypt.hash(value, 11)
 }

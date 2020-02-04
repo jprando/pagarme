@@ -6,6 +6,7 @@ module.exports = {
     // const load = src => require(src)
     const execConfig = route => route.config(router);
     [
+      './admin',
       './user',
       './transaction',
       './payable'
