@@ -1,5 +1,10 @@
-const transactions = require('./transactions')
+const { mapForReduce } = require('./../utils')
 
-module.exports = {
-  transactions
-}
+const factory = mapForReduce(__dirname)
+
+module.exports = [
+  'admin',
+  'user',
+  'transaction',
+  'payable'
+].map(factory.load).reduce(factory.configure, {})

@@ -8,6 +8,6 @@ module.exports = {
     /// for access the data in database
     await db.register(app)
 
-    await console.log('[ OK ] Database')
+    console.log('[ OK ] Database')
   }
 }

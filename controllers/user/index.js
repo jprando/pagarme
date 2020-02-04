@@ -1,7 +1,7 @@
-const { actionForReduce } = require('../../utils')
+const { mapForReduce } = require('../../utils')
 
-const action = actionForReduce(__dirname)
+const factory = mapForReduce(__dirname)
 
 module.exports = [
   'postLogin'
-].map(action.load).reduce(action.configure, {})
+].map(factory.load).reduce(factory.configure, {})

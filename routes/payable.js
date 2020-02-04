@@ -2,7 +2,7 @@ const {
   getCustomerPayables,
   postPayable,
   deletePayable
-} = require('../controllers/payables')
+} = require('../controllers/payable')
 
 module.exports = {
   config (router) {

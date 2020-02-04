@@ -5,7 +5,7 @@ module.exports = {
   register: async (app) => {
     try {
       console.log('...... Database')
-      app.db = await connection()
+      app.db = connection()
       await app.db.authenticate()
       const { db } = app
 

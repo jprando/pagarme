@@ -1,11 +1,10 @@
-const jwt = require('./jwt')
-const user = require('./user')
-const cashin = require('./cashin')
-const cashout = require('./cashout')
+const { mapForReduce } = require('./../utils')
 
-module.exports = {
-  jwt,
-  user,
-  cashin,
-  cashout
-}
+const factory = mapForReduce(__dirname)
+
+module.exports = [
+  'jwt',
+  'user',
+  'cashin',
+  'cashout'
+].map(factory.load).reduce(factory.configure, {})

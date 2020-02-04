@@ -2,7 +2,7 @@ const {
   getCustomerTransactions,
   postTransaction,
   deleteTransaction
-} = require('./../controllers/transactions')
+} = require('./../controllers/transaction')
 
 module.exports = {
   config (router) {

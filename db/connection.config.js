@@ -10,7 +10,7 @@ const {
   PG_DATABASE = 'pagarme'
 } = process.env
 
-const constraints = require('./validations/connection.json')
+const constraints = require('./connection.validation.json')
 
 const config = {
   PG_HOST,

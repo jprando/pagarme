@@ -1,9 +1,10 @@
-const password = require('./password')
-const login = require('./login')
-const create = require('./create')
+const { mapForReduce } = require('./../../utils')
 
-module.exports = {
-  password,
-  login,
-  create
-}
+const factory = mapForReduce(__dirname)
+
+module.exports = [
+  'password',
+  'login',
+  'create',
+  'findAll'
+].map(factory.load).reduce(factory.configure)

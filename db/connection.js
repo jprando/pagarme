@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const models = require('./models')
 const config = require('./connection.config')
 
-module.exports = async () => {
+module.exports = () => {
   const {
     PG_HOST,
     PG_PORT,
@@ -22,7 +22,7 @@ module.exports = async () => {
     logging: (msg, time, _db) => console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
   })
 
-  await models.register({ db, Sequelize })
+  models.register({ db, Sequelize })
 
   return db
 }

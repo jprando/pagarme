@@ -1,10 +1,11 @@
+const { loadModule } = require('./../utils')
+
 module.exports = {
-  register: async ({ db, Sequelize }) => {
+  register: ({ db, Sequelize }) => {
     const registerModel = model => model.register({ db, Sequelize });
     [
       './User',
       './Customer'
-    ].map(src => require(src))
-      .forEach(registerModel)
+    ].map(loadModule.base(__dirname)).forEach(registerModel)
   }
 }

@@ -1,6 +1,6 @@
-const { actionForReduce } = require('../../utils')
+const { mapForReduce } = require('../../utils')
 
-const action = actionForReduce(__dirname)
+const action = mapForReduce(__dirname)
 
 module.exports = [
   'getCustomerTransactions',

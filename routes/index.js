@@ -1,17 +1,16 @@
 const express = require('express')
+const { loadModule } = require('./../utils')
 
 module.exports = {
   config (app) {
     const router = new express.Router()
-    // const load = src => require(src)
-    const execConfig = route => route.config(router);
+    const routeConfig = route => route.config(router);
     [
-      './admin',
-      './user',
-      './transaction',
-      './payable'
-    // ].map(loadModule.base(__dirname)).forEach(execConfig)
-    ].map(src => require(src)).forEach(execConfig)
+      'admin',
+      'user',
+      'transaction',
+      'payable'
+    ].map(loadModule.base(__dirname)).forEach(routeConfig)
 
     router.get('/', (req, res) => {
       res.status(200).send('Oi! Tudo Bem?').end()

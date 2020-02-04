@@ -1,12 +1,4 @@
-const path = require('path')
-
-const loadModule = (src) => require(path.resolve(this._base, src))
-loadModule.base = basePath => src => loadModule(path.resolve(basePath, src))
-
-const checkStatusCode = result =>
-  (result && result.error && (result.code || 400)) ||
-  (result && !result.error && (result.length || Object.keys(result).length) && 200) || 404
-  /// vai dar ruim no verb DELETE
+const checkStatusCode = require('./checkStatusCode')
 
 const dataResponse = load => async (req, res) => {
   try {
@@ -36,16 +28,4 @@ const dataResponse = load => async (req, res) => {
   }
 }
 
-const actionForReduce = basePath => ({
-  load: src => {
-    return value => ({ ...value, [src]: loadModule(path.resolve(basePath, src)) })
-  },
-  configure: (accumulator, configureAction) => configureAction(accumulator)
-})
-
-module.exports = {
-  checkStatusCode,
-  dataResponse,
-  loadModule,
-  actionForReduce
-}
+module.exports = dataResponse
