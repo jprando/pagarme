@@ -4,7 +4,11 @@ const bodyParser = require('body-parser')
 // const cors = require('cors')
 const validate = require('validate.js')
 const services = require('./../services')
-const { sequelizeToPlain } = require('./../utils')
+const {
+  sequelizeToPlain,
+  validarCNPJ: cnpj,
+  validarCPF: cpf
+} = require('./../utils')
 
 module.exports = {
   config: app => {
@@ -36,6 +40,8 @@ module.exports = {
     }
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
     */
+
+    validate.validators = { ...validate.validators, cnpj, cpf }
 
     /// Setup Services
     app.use((req, _, next) => {

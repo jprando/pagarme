@@ -28,7 +28,8 @@ module.exports = Sequelize => ({
   cnpj: {
     type: Sequelize.STRING(20),
     validate: {
-      notEmpty: true
+      notEmpty: true,
+      is: /^[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2}$/
     }
   },
   companyName: {
@@ -40,7 +41,8 @@ module.exports = Sequelize => ({
   cpf: {
     type: Sequelize.STRING(20),
     validate: {
-      notEmpty: true
+      notEmpty: true,
+      is: /^[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}$/
     }
   },
   name: {

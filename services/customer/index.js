@@ -5,7 +5,7 @@ const factory = mapForReduce(__dirname)
 module.exports = [
   'getById',
   'getAll',
-  // 'create',
+  'create',
   // 'update',
   // 'delete'
 ].map(factory.load).reduce(factory.configure, {})
