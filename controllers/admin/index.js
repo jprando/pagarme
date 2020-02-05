@@ -9,5 +9,9 @@ module.exports = [
   'updateUser',
   'deleteUser',
 
-  'newCustomer'
+  'getCustomerById',
+  'getAllCustomers',
+  'newCustomer',
+  'updateCustomer',
+  'deleteCustomer'
 ].map(action.load).reduce(action.configure, {})

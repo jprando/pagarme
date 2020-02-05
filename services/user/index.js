@@ -3,8 +3,8 @@ const { mapForReduce } = require('./../../utils')
 const factory = mapForReduce(__dirname)
 
 module.exports = [
-  'byId',
-  'all',
+  'getById',
+  'getAll',
   'create',
   'update',
   'delete',

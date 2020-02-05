@@ -20,6 +20,11 @@ module.exports = Sequelize => ({
       key: 'ukey'
     }
   },
+  active: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true,
+    allowNull: false
+  },
   cnpj: {
     type: Sequelize.STRING(20),
     validate: {

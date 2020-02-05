@@ -4,6 +4,7 @@ const dataResponse = load => async (req, res) => {
   try {
     const result = await load(req, res)
     const statusCode = checkStatusCode(result)
+
     if ([200, 201].includes(statusCode)) {
       delete result.code
       delete result.error
@@ -13,12 +14,13 @@ const dataResponse = load => async (req, res) => {
       if (process.env.NODE_ENV === 'production' && result.error) {
         res.status(statusCode).end()
       } else {
-        const reponse = {
-          error: true,
+        const response = {
+          error: (result && result.error) || true,
           message: result && result.message,
           errors: result && result.errors
         }
-        res.status(statusCode).json(reponse).end()
+        statusCode === 404 && delete response.error
+        res.status(statusCode).json(response).end()
       }
     }
   } catch (err) {

@@ -1,6 +1,11 @@
+const scopes = require('./scopes')
 const getModel = require('./getModel')
 
 const options = {
+  scopes,
+  defaultScope: {
+    where: { active: true }
+  },
   validate: {
     cpfOrCNPJ () {
       if (!((this.cnpj === null) !== (this.cpf === null))) {
