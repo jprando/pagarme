@@ -20,12 +20,16 @@ module.exports = () => {
     host: PG_HOST,
     port: PG_PORT,
     schema: PG_SCHEMA,
+    timezone: 'America/Sao_Paulo',
     benchmark: true,
     // native: true, /// yarn install pg-native
     logging,
-    operatorsAliases: {
-      $and: Sequelize.Op.and,
-      $or: Sequelize.Op.or
+    // operatorsAliases: {
+    //   $and: Sequelize.Op.and,
+    //   $or: Sequelize.Op.or
+    // },
+    define: {
+      underscored: false
     }
   })
 

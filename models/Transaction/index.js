@@ -3,11 +3,11 @@ const scopes = require('./scopes')
 const getModel = require('./getModel')
 
 const options = {
+  paranoid: true,
   hooks,
   scopes,
   defaultScope: {
-    where: { active: true },
-    attributes: { exclude: ['credential'] }
+    where: { deletedAt: null }
   }
 }
 

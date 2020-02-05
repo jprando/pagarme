@@ -5,7 +5,9 @@ module.exports = {
     const registerModel = model => model.register({ db, Sequelize });
     [
       './User',
-      './Customer'
+      './Customer',
+      './Transaction',
+      './Payable'
     ].map(loadModule.base(__dirname)).forEach(registerModel)
   }
 }

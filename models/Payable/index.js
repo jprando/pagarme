@@ -1,13 +1,13 @@
-const hooks = require('./hooks')
+// const hooks = require('./hooks')
 const scopes = require('./scopes')
 const getModel = require('./getModel')
 
 const options = {
-  hooks,
+  paranoid: true,
+  // hooks,
   scopes,
   defaultScope: {
-    where: { active: true },
-    attributes: { exclude: ['credential'] }
+    where: { deleted: false }
   }
 }
 
