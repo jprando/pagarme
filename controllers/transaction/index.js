@@ -4,6 +4,5 @@ const action = mapForReduce(__dirname)
 
 module.exports = [
   'getCustomerTransactions',
-  'postTransaction',
-  'deleteTransaction'
+  'postTransaction'
 ].map(action.load).reduce(action.configure, {})
