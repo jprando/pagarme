@@ -6,6 +6,6 @@ module.exports = [
   'getById',
   'getAll',
   'create',
-  // 'update',
-  // 'delete'
+  'update',
+  'delete'
 ].map(factory.load).reduce(factory.configure, {})

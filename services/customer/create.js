@@ -26,8 +26,5 @@ module.exports = async function (newCustomer) {
   let newCustomerResult = await customer.create(newCustomer)
   newCustomerResult = newCustomerResult.get({ plain: true })
 
-  delete newCustomerResult.updatedAt
-  delete newCustomerResult.createdAt
-
   return { error: false, code: 201, result: newCustomerResult }
 }

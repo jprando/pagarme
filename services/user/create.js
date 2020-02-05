@@ -15,7 +15,6 @@ module.exports = async function (newUser) {
   newUserResult = newUserResult.get({ plain: true })
 
   delete newUserResult.credential
-  delete newUserResult.updatedAt
   delete newUserResult.lastLoginAt
   delete newUserResult.lastPasswordChangeAt
 

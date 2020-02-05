@@ -1,11 +1,16 @@
 const { dataResponse } = require('../../utils')
-// const newUserConstraints = require('./newUser.validation')
+const updateCustomerConstraint = require('./updateCustomer.validation')
 
-// module.exports = dataResponse(async ({
-//   validate,
-//   services: { user },
-//   body
-// }) => {
-module.exports = dataResponse(async () => {
-  return { inConstruction: true }
+module.exports = dataResponse(async ({
+  validate,
+  services: { customer },
+  params: { id },
+  body
+}) => {
+  const updateCustomer = validate.cleanAttributes(body, updateCustomerConstraint)
+  const errors = validate(updateCustomer, updateCustomerConstraint)
+  if (errors) {
+    return { error: true, code: 400, errors }
+  }
+  return customer.update(id, body)
 })
