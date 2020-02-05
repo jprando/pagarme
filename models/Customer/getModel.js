@@ -13,6 +13,7 @@ module.exports = Sequelize => ({
     defaultValue: Sequelize.UUIDV4,
     validate: {
       notNull: true,
+      notEmpty: true,
       isUUID: 4
     },
     references: {
@@ -26,10 +27,11 @@ module.exports = Sequelize => ({
     allowNull: false
   },
   cnpj: {
-    type: Sequelize.STRING(20),
+    type: Sequelize.STRING(15),
     validate: {
+      len: [10, 14],
       notEmpty: true,
-      is: /^[0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2}$/
+      is: /^[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{4}[0-9]{2}$/
     }
   },
   companyName: {
@@ -39,10 +41,11 @@ module.exports = Sequelize => ({
     }
   },
   cpf: {
-    type: Sequelize.STRING(20),
+    type: Sequelize.STRING(15),
     validate: {
+      len: [9, 11],
       notEmpty: true,
-      is: /^[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}$/
+      is: /^[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}$/
     }
   },
   name: {

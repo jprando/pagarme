@@ -1,4 +1,5 @@
 const checkStatusCode = require('./checkStatusCode')
+const Sequelize = require('sequelize')
 
 const dataResponse = load => async (req, res) => {
   try {
@@ -24,7 +25,16 @@ const dataResponse = load => async (req, res) => {
       }
     }
   } catch (err) {
-    if (process.env.NODE_ENV === 'production') {
+    if (err instanceof Sequelize.ValidationError) {
+      const response = {
+        error: true,
+        errors: err.errors.reduce((acc, value) => ({
+          ...acc,
+          [value.validatorKey]: [value.message]
+        }), {})
+      }
+      res.status(400).json(response).end()
+    } else if (process.env.NODE_ENV === 'production') {
       res.status(500).end()
     } else {
       res.status(500).json(err.message || err).end()

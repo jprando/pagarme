@@ -19,7 +19,11 @@ module.exports = () => {
     schema: PG_SCHEMA,
     benchmark: true,
     // native: true, /// yarn install pg-native
-    logging: (msg, time, _db) => console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
+    logging: (msg, time, _db) => console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`),
+    operatorsAliases: {
+      $and: Sequelize.Op.and,
+      $or: Sequelize.Op.or
+    }
   })
 
   models.register({ db, Sequelize })

@@ -1,43 +1,61 @@
 {
   "cnpj": {
     "format": {
-      "pattern": "[0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2}",
-      "message": "^CNPJ is not in a valid format"
+      "pattern": "[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{4}[0-9]{2}",
+      "message": "^CNPJ is not in a valid format, only numbers"
     },
     "length": {
-      "minimum": 14,
-      "maximum": 18
+      "minimum": 10,
+      "maximum": 14,
+      "tooShort": "^CNPJ is too short (minimum is 10 characters)",
+      "tooLong": "^CNPJ is too long (maximum is 14 characters)"
     },
-    "cnpj": "^CNPJ is not a valid value"
+    "cnpj": {
+      "message": "^CNPJ is not a valid value"
+    }
   },
   "cpf": {
     "format": {
-      "pattern": "[0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2}",
-      "message": "^CPF is not in a valid format"
+      "pattern": "[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}",
+      "message": "^CPF is not in a valid format, only numbers"
     },
     "length": {
       "minimum": 9,
-      "maximum": 14
+      "maximum": 11,
+      "tooShort": "^CPF is too short (minimum is 9 characters)",
+      "tooLong": "^CPF is too long (maximum is 11 characters)"
     },
-    "cpf": "^CPF is not valid value"
+    "cpf": {
+      "message": "^CPF is not valid value"
+    }
   },
   "name": {
     "presence": {
+      "message": "^NAME must be informed",
       "allowEmpty": false
     }
   },
   "email": {
     "email": true,
     "presence": {
+      "message": "^EMAIL must be informed",
       "allowEmpty": false
     }
   },
-  "credential": {
-    "length": {
-      "minimum": 6
-    },
+  "ukey": {
     "presence": {
+      "message": "^UKEY must be informed",
       "allowEmpty": false
+    },
+    "length": {
+      "is": 36,
+      "tooLong": "^UKEY  is too long (maximum is 11 characters)",
+      "notValid": "^UKEY notValid ...",
+      "wrongLength": "^UKEY must be Alphanumeric value of 36 characters"
+    },
+    "format": {
+      "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+      "message": "^UKEY is not in a valid format UUID"
     }
   }
 }
