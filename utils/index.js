@@ -7,7 +7,9 @@ const _utils = [
   'loadModule',
   'dataResponse',
   'asyncForEach',
-  'sequelizeToPlain'
+  'sequelizeToPlain',
+  'informBoth',
+  'dontInformBoth'
 ].map(factory.load).reduce(factory.configure, {})
 
 module.exports = {

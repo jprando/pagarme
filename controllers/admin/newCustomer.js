@@ -11,10 +11,5 @@ module.exports = dataResponse(async ({
   if (errors) {
     return { error: true, code: 400, errors }
   }
-
-  if ((newCustomer.cpf === undefined) && (newCustomer.cnpj === undefined)) {
-    return { error: true, code: 400, message: 'CPF or CNPJ must be informed' }
-  }
-
   return customer.create(newCustomer)
 })

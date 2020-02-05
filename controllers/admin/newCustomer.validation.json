@@ -1,4 +1,5 @@
 {
+  "id": {},
   "cnpj": {
     "format": {
       "pattern": "[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{4}[0-9]{2}",
@@ -10,7 +11,7 @@
       "tooShort": "^CNPJ is too short (minimum is 10 characters)",
       "tooLong": "^CNPJ is too long (maximum is 14 characters)"
     },
-    "cnpj": {
+    "isCnpj": {
       "message": "^CNPJ is not a valid value"
     }
   },
@@ -25,15 +26,13 @@
       "tooShort": "^CPF is too short (minimum is 9 characters)",
       "tooLong": "^CPF is too long (maximum is 11 characters)"
     },
-    "cpf": {
+    "isCpf": {
       "message": "^CPF is not valid value"
     }
   },
   "name": {
-    "presence": {
-      "message": "^NAME must be informed",
-      "allowEmpty": false
-    }
+    "type":"string",
+    "notAllowEmpty": {}
   },
   "email": {
     "email": true,
@@ -57,5 +56,39 @@
       "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
       "message": "^UKEY is not in a valid format UUID"
     }
+  },
+  "companyName": {
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "active": {},
+  "address":{
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "city": {
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "state":{
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "zipCode": {},
+  "complement":{
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "referencePoint":{
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "telephone":{
+    "type":"string",
+    "notAllowEmpty": {}
+  },
+  "cellphone":{
+    "type":"string",
+    "notAllowEmpty": {}
   }
 }

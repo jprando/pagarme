@@ -11,12 +11,16 @@ module.exports = async function (newCustomer) {
     { name: 'cpf', check: { cpf } },
     { name: 'cnpj', check: { cnpj } }
   ]
+  const errors = []
   for (let index = 0; index < checks.length; index++) {
     const { name, check } = checks[index]
     const customerExists = check[name] && await allCustomers.count({ where: check })
     if (customerExists) {
-      return { error: true, message: `There is already a cusomer with this ${name.toUpperCase()}` }
+      errors.push(`There is already a customer with this ${name.toUpperCase()}`)
     }
+  }
+  if (errors.length) {
+    return { error: true, errors: { customerAlreadyExists: errors } }
   }
 
   let newCustomerResult = await customer.create(newCustomer)

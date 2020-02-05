@@ -2,8 +2,10 @@ module.exports = Sequelize => ({
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
+    allowNull: false,
     primaryKey: true,
     validate: {
+      notNull: true,
       isInt: true
     }
   },
@@ -11,6 +13,7 @@ module.exports = Sequelize => ({
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
+      notNull: true,
       notEmpty: true
     }
   },
@@ -19,6 +22,7 @@ module.exports = Sequelize => ({
     allowNull: false,
     unique: true,
     validate: {
+      notNull: true,
       notEmpty: true,
       isEmail: true
     }
@@ -27,13 +31,14 @@ module.exports = Sequelize => ({
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
+      notNull: true,
       notEmpty: true
     }
   },
   active: {
     type: Sequelize.BOOLEAN,
-    defaultValue: true,
-    allowNull: false
+    allowNull: false,
+    defaultValue: true
   },
   ukey: {
     type: Sequelize.UUID,

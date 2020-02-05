@@ -1,16 +1,15 @@
 const os = require('os')
 const validate = require('validate.js')
+const constraints = require('./connection.config.validation')
 
 const {
   PG_HOST = '127.0.0.1',
   PG_PORT = 5432,
   PG_USER = 'postgres',
-  PG_PASS = '',
+  PG_PASS = 'pagarmesecrets',
   PG_SCHEMA = 'public',
-  PG_DATABASE = 'pagarme'
+  PG_DATABASE = 'pagarme-db'
 } = process.env
-
-const constraints = require('./connection.config.validation')
 
 const config = {
   PG_HOST,

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const validate = require('validate.js')
 const services = require('./../services')
 const { sequelizeToPlain } = require('./../utils')
-const { cpf, cnpj } = require('cpf-cnpj-validator');
+const { cpf, cnpj } = require('cpf-cnpj-validator')
 
 module.exports = {
   config: app => {
@@ -15,7 +15,7 @@ module.exports = {
     /// access log
     app.use(morgan('[HTTP] :date[iso] :method :url HTTP/:http-version :status :res[content-length] :remote-addr - :response-time ms'))
 
-    /// Parse incoming request bodies
+    /// Parse incoming request body
     app.use(bodyParser.json())
 
     /* /// help protect against unauthorized access
@@ -40,8 +40,20 @@ module.exports = {
 
     validate.validators = {
       ...validate.validators,
-      cpf: value => value && !cpf.isValid(value) ? '^CPF is not a valid value' : undefined,
-      cnpj: value => value && !cnpj.isValid(value) ? '^CNPJ is not a valid value' : undefined
+
+      isCpf: value => value && !cpf.isValid(value)
+        ? '^CPF is not a valid value'
+        : undefined,
+
+      isCnpj: value => value && !cnpj.isValid(value)
+        ? '^CNPJ is not a valid value'
+        : undefined,
+
+      notAllowEmpty: (value, options, fieldName, row) =>
+        Object.keys(row).includes(fieldName) &&
+        ([null, undefined, ''].includes(value) || value.trim() === '')
+          ? options.message || "don't must be empty when informed"
+          : undefined
     }
 
     /// Setup Services

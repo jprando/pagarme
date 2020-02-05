@@ -12,6 +12,9 @@ module.exports = () => {
     PG_DATABASE
   } = config
 
+  const logging = (msg, time, _db) =>
+    console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
+
   const db = new Sequelize(PG_DATABASE, PG_USER, PG_PASS, {
     dialect: 'postgres',
     host: PG_HOST,
@@ -19,7 +22,7 @@ module.exports = () => {
     schema: PG_SCHEMA,
     benchmark: true,
     // native: true, /// yarn install pg-native
-    logging: (msg, time, _db) => console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`),
+    logging,
     operatorsAliases: {
       $and: Sequelize.Op.and,
       $or: Sequelize.Op.or
