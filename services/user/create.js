@@ -18,5 +18,5 @@ module.exports = async function (newUser) {
   delete newUserResult.lastLoginAt
   delete newUserResult.lastPasswordChangeAt
 
-  return { error: false, code: 201, result: newUserResult }
+  return newUserResult
 }

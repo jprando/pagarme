@@ -1,9 +1,9 @@
 const { dataResponse } = require('../../utils')
 
-module.exports = dataResponse(({
+module.exports = dataResponse(async ({
   services: { cashin },
-  params,
   body
 }) => {
-  cashin.save(params)
+  const result = await cashin.create(body)
+  return { error: false, code: 201, result }
 })

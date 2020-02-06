@@ -11,5 +11,6 @@ module.exports = dataResponse(async ({
   if (errors) {
     return { error: true, code: 400, errors }
   }
-  return customer.create(newCustomer)
+  const result = await customer.create(newCustomer)
+  return { error: false, code: 201, result }
 })
