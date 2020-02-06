@@ -2,10 +2,9 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 // const cors = require('cors')
-const validate = require('validate.js')
+const validate = require('./middleware.validate')
 const services = require('./../services')
 const { sequelizeToPlain } = require('./../utils')
-const { cpf, cnpj } = require('cpf-cnpj-validator')
 
 module.exports = {
   config: app => {
@@ -38,28 +37,9 @@ module.exports = {
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
     */
 
-    validate.validators = {
-      ...validate.validators,
-
-      isCpf: value => value && !cpf.isValid(value)
-        ? '^CPF is not a valid value'
-        : undefined,
-
-      isCnpj: value => value && !cnpj.isValid(value)
-        ? '^CNPJ is not a valid value'
-        : undefined,
-
-      notAllowEmpty: (value, options, fieldName, row) =>
-        Object.keys(row).includes(fieldName) &&
-        ([null, undefined, ''].includes(value) || value.trim() === '')
-          ? options.message || "don't must be empty when informed"
-          : undefined
-    }
-
     /// Setup Services
     app.use((req, _, next) => {
       console.log('......')
-      req.validate = validate
       Object.keys(services).forEach(key => {
         services[key] = {
           validate,
@@ -72,6 +52,7 @@ module.exports = {
         }
       })
       req.services = services
+      req.validate = validate
       next()
     })
 

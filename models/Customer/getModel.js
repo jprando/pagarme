@@ -7,7 +7,7 @@ module.exports = Sequelize => ({
     allowNull: false,
     primaryKey: true,
     validate: {
-      notNull: true,
+      notNull: { msg: 'Id is required' },
       isInt: true
     }
   },
@@ -16,8 +16,8 @@ module.exports = Sequelize => ({
     allowNull: false,
     defaultValue: Sequelize.UUIDV4,
     validate: {
-      notNull: true,
       notEmpty: true,
+      notNull: { msg: 'uKey is required' },
       isUUID: 4
     },
     references: {
@@ -28,7 +28,10 @@ module.exports = Sequelize => ({
   active: {
     type: Sequelize.BOOLEAN,
     defaultValue: true,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notNull: { msg: 'Active is required' }
+    }
   },
   cnpj: {
     type: Sequelize.STRING(15),
@@ -74,14 +77,18 @@ module.exports = Sequelize => ({
   },
   city: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
-      notEmpty: true
+      notEmpty: true,
+      notNull: { msg: 'City is required' }
     }
   },
   state: {
     type: Sequelize.STRING,
+    allowNull: false,
     validate: {
-      notEmpty: true
+      notEmpty: true,
+      notNull: { msg: 'State is required' }
     }
   },
   zipCode: {
@@ -92,12 +99,6 @@ module.exports = Sequelize => ({
     }
   },
   complement: {
-    type: Sequelize.STRING,
-    validate: {
-      notEmpty: true
-    }
-  },
-  referencePoint: {
     type: Sequelize.STRING,
     validate: {
       notEmpty: true
@@ -120,7 +121,8 @@ module.exports = Sequelize => ({
     allowNull: false,
     validate: {
       notEmpty: true,
-      isEmail: true
+      isEmail: true,
+      notNull: { msg: 'Email is required' }
     }
   }
 })

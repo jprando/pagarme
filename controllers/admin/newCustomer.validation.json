@@ -73,12 +73,21 @@
   },
   "city": {
     "type":"string",
+    "presence": {
+      "message": "^CITY must be informed",
+      "allowEmpty": false
+    },
     "notAllowEmpty": {}
   },
   "state":{
     "type":"string",
-    "notAllowEmpty": {},
-    "length": { "is": 2 }
+    "length": { "is": 2 },
+    "presence": {
+      "message": "^STATE must be informed",
+      "allowEmpty": false
+    },
+    "notAllowEmpty": {}
+
   },
   "zipCode": {
     "format": {
@@ -87,10 +96,6 @@
     }
   },
   "complement":{
-    "type":"string",
-    "notAllowEmpty": {}
-  },
-  "referencePoint":{
     "type":"string",
     "notAllowEmpty": {}
   },

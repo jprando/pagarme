@@ -1,6 +1,6 @@
 const { dataResponse } = require('../../utils')
 
 module.exports = dataResponse(({
-  services: { cashout: service },
+  services: { payable },
   params: { id }
-}) => service.getCustomerPayables({ customer: id, page: 0 }))
+}) => payable.getCustomerPayables({ customer: id, page: 0 }))

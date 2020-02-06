@@ -1,5 +1,7 @@
 const { EOL } = require('os')
 const connection = require('../../db/connection')
+const inDevelopmentMode = process.env.NODE_ENV === 'development'
+const pgSyncValue = process.env.PG_SYNC && process.env.PG_SYNC.toUpperCase()
 
 module.exports = {
   register: async (app) => {
@@ -8,17 +10,16 @@ module.exports = {
       app.db = connection()
       await app.db.authenticate()
       const { db } = app
-
-      if (process.env.PG_SYNC || process.env.NODE_ENV === 'development') {
+      if (pgSyncValue !== 'NO' || (pgSyncValue !== 'NO' && inDevelopmentMode)) {
         console.log(`[ DB ] Schema ${db.options.schema}`)
         console.log(`[ DB ] Database ${db.config.database}`)
         console.log(`[ DB ] Sync started${EOL}`)
-        if (process.env.PG_SYNC === 'force') {
+        if (pgSyncValue === 'FORCE') {
           console.log(`[ DB ] Clean and Create${EOL}`)
         }
-        await db.sync({ force: process.env.PG_SYNC === 'force' })
+        await db.sync({ force: pgSyncValue === 'FORCE' })
         console.log(`${EOL}[ DB ] Sync finished`)
-        if (process.env.PG_SYNC) {
+        if (pgSyncValue) {
           await db.close()
           console.log('[ DB ] Closed')
           process.exit(0)

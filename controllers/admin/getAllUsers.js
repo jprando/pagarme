@@ -1,6 +1,6 @@
 const { dataResponse } = require('../../utils')
-const getAll = require('./../getAll')
+const getData = require('../getData')
 
 module.exports = dataResponse(async ({
   services: { user }
-}) => getAll(user, 'Users'))
+}) => getData(user, 'Users'))

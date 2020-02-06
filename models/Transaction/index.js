@@ -1,3 +1,4 @@
+const { Op } = require('sequelize')
 const hooks = require('./hooks')
 const scopes = require('./scopes')
 const getModel = require('./getModel')
@@ -7,7 +8,7 @@ const options = {
   hooks,
   scopes,
   defaultScope: {
-    where: { deletedAt: null }
+    where: { deletedAt: { [Op.is]: null } }
   }
 }
 

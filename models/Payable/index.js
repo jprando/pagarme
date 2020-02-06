@@ -7,7 +7,7 @@ const options = {
   // hooks,
   scopes,
   defaultScope: {
-    where: { deleted: false }
+    where: { deletedAt: null }
   }
 }
 

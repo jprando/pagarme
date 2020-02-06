@@ -9,8 +9,7 @@ module.exports = dataResponse(async ({
 }) => {
   const newUser = validate.cleanAttributes(body, updateUserConstraints)
   const errors = validate(newUser, updateUserConstraints)
-  if (errors) {
-    return { error: true, code: 400, errors }
-  }
-  return user.update(id, newUser)
+  return !errors
+    ? user.update(id, newUser)
+    : { error: true, code: 400, errors }
 })
