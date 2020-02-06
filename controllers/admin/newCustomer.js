@@ -9,6 +9,6 @@ module.exports = dataResponse(async ({
   const newCustomer = validate.cleanAttributes(body, newCustomerConstraints)
   const errors = validate(newCustomer, newCustomerConstraints)
   return !errors
-    ? { error: false, code: 201, result: customer.create(newCustomer) }
+    ? { error: false, code: 201, result: await customer.create(newCustomer) }
     : { error: true, code: 400, errors }
 })

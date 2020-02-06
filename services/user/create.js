@@ -1,5 +1,5 @@
 module.exports = async function (newUser) {
-  const { db: { user } } = this
+  const { db: { user, toPlain } } = this
 
   const userEmailExists = await user.scope('allUsers').count({
     where: {
@@ -11,8 +11,7 @@ module.exports = async function (newUser) {
     return { error: true, message: 'There is already a user with this email' }
   }
 
-  let newUserResult = await user.create(newUser)
-  newUserResult = newUserResult.get({ plain: true })
+  const newUserResult = await user.create(newUser).then(toPlain)
 
   delete newUserResult.credential
   delete newUserResult.lastLoginAt

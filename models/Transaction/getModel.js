@@ -73,7 +73,7 @@ module.exports = Sequelize => ({
     validate: {
       notNull: true,
       notEmpty: true,
-      isAlphanumeric: true
+      isCreditCard: true
     }
   },
   cardholderName: {
@@ -81,16 +81,14 @@ module.exports = Sequelize => ({
     allowNull: false,
     validate: {
       notNull: true,
-      notEmpty: true,
-      isAlphanumeric: true
+      notEmpty: true
     }
   },
   cardExpiration: {
-    type: Sequelize.DATE,
+    type: Sequelize.STRING(7),
     allowNull: false,
     validate: {
-      notNull: true,
-      isDate: true
+      notNull: true
     }
   },
   cardSecurityCode: {
@@ -99,7 +97,7 @@ module.exports = Sequelize => ({
     validate: {
       notNull: true,
       notEmpty: true,
-      isAlphanumeric: true
+      isNumeric: true
     }
   }
 })

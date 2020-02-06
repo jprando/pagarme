@@ -12,7 +12,7 @@ module.exports = async (id, service, modelName) => {
   const _404NOTFOUND = {
     error: true,
     code: 404,
-    message: `${modelName} with ID ${id} not found`
+    message: `${modelName} with id ${id} NOT found`
   }
 
   return service.delete(id)
