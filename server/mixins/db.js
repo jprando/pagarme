@@ -27,7 +27,7 @@ module.exports = {
       }
 
       if (process.env.NODE_ENV === 'development') {
-        db.models.user.findOrCreate({
+        db.models.user.scope('allUsers').findOrCreate({
           where: { email: 'jeudi@prando.dev' },
           defaults: {
             name: 'Jeudi Prando',
