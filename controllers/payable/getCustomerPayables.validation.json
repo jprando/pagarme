@@ -1,0 +1,26 @@
+{
+  "ukey": {
+    "type":"string",
+    "presence": {
+      "message": "^UKEY must be informed",
+      "allowEmpty": false
+    },
+    "length": {
+      "is": 36,
+      "tooLong": "^UKEY  is too long (maximum is 11 characters)",
+      "notValid": "^UKEY notValid ...",
+      "wrongLength": "^UKEY must be Alphanumeric value of 36 characters"
+    },
+    "format": {
+      "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+      "message": "^UKEY is not in a valid format UUID"
+    }
+  },
+  "page": {
+    "type":"integer",
+    "numericality": {
+      "onlyInteger": true,
+      "greaterThanOrEqualTo": 0
+    }
+  }
+}
