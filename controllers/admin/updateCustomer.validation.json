@@ -1,6 +1,6 @@
 {
   "cnpj": {
-    "type":"string",
+    "type": "string",
     "format": {
       "pattern": "[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{4}[0-9]{2}",
       "message": "^CNPJ is not in a valid format, only numbers"
@@ -14,10 +14,10 @@
     "isCnpj": {
       "message": "^CNPJ is not a valid value"
     },
-    "notAllowEmpty": {}    
+    "notAllowEmpty": {}
   },
   "cpf": {
-    "type":"string",
+    "type": "string",
     "format": {
       "pattern": "[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}",
       "message": "^CPF is not in a valid format, only numbers"
@@ -32,12 +32,12 @@
       "message": "^CPF is not valid value"
     }
   },
-  "name": {
-    "type":"string",
+  "personName": {
+    "type": "string",
     "notAllowEmpty": {}
   },
   "email": {
-    "type":"string",
+    "type": "string",
     "email": true,
     "presence": {
       "message": "^EMAIL must be informed",
@@ -45,7 +45,7 @@
     }
   },
   "ukey": {
-    "type":"string",
+    "type": "string",
     "presence": {
       "message": "^UKEY must be informed",
       "allowEmpty": false
@@ -62,24 +62,26 @@
     }
   },
   "companyName": {
-    "type":"string",
+    "type": "string",
     "notAllowEmpty": {}
   },
   "active": {
-    "type":"boolean"
+    "type": "boolean"
   },
-  "address":{
-    "type":"string",
+  "address": {
+    "type": "string",
     "notAllowEmpty": {}
   },
   "city": {
-    "type":"string",
+    "type": "string",
     "notAllowEmpty": {}
   },
-  "state":{
-    "type":"string",
+  "state": {
+    "type": "string",
     "notAllowEmpty": {},
-    "length": { "is": 2 }
+    "length": {
+      "is": 2
+    }
   },
   "zipCode": {
     "format": {
@@ -89,20 +91,20 @@
     },
     "notAllowEmpty": {}
   },
-  "complement":{
-    "type":"string",
+  "complement": {
+    "type": "string",
     "notAllowEmpty": {}
   },
-  "referencePoint":{
-    "type":"string",
+  "referencePoint": {
+    "type": "string",
     "notAllowEmpty": {}
   },
-  "telephone":{
-    "type":"string",
+  "telephone": {
+    "type": "string",
     "notAllowEmpty": {}
   },
-  "cellphone":{
-    "type":"string",
+  "cellphone": {
+    "type": "string",
     "notAllowEmpty": {}
   }
 }

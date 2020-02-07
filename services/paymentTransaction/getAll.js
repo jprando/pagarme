@@ -1,4 +1,4 @@
 module.exports = async function () {
-  const { db: { transaction, toPlain } } = this
-  return transaction.findAll().map(toPlain)
+  const { db: { paymentTransaction, toPlain } } = this
+  return paymentTransaction.findAll().map(toPlain)
 }

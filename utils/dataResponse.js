@@ -28,10 +28,14 @@ const dataResponse = load => async (req, res) => {
     if (err instanceof Sequelize.ValidationError) {
       const response = {
         error: true,
+        message: err.message,
         errors: err.errors.reduce((acc, value) => ({
           ...acc,
           [value.validatorKey]: [value.message]
         }), {})
+      }
+      if (!response.errors.length) {
+        delete response.errors
       }
       res.status(400).json(response).end()
     } else if (process.env.NODE_ENV === 'production') {

@@ -2,9 +2,7 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 // const cors = require('cors')
-const validate = require('./middleware.validate')
-const services = require('./../services')
-const { sequelizeToPlain } = require('./../utils')
+const services = require('./middleware.services')
 
 module.exports = {
   config: app => {
@@ -38,23 +36,7 @@ module.exports = {
     */
 
     /// Setup Services
-    app.use((req, _, next) => {
-      console.log('......')
-      Object.keys(services).forEach(key => {
-        services[key] = {
-          validate,
-          services,
-          db: {
-            toPlain: sequelizeToPlain,
-            ...app.db.models
-          },
-          ...services[key]
-        }
-      })
-      req.services = services
-      req.validate = validate
-      next()
-    })
+    app.use(services(app))
 
     console.log('[ OK ] Middleware')
   }
