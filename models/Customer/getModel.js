@@ -48,7 +48,7 @@ module.exports = Sequelize => ({
     validate: {
       notEmpty: true,
       companyNameAndCNPJ: informBoth(Sequelize, 'Company Name', 'cnpj', 'CNPJ'),
-      companyNameOrPersonName: dontInformBoth(Sequelize, 'Company Name', 'name', 'Person Name')
+      companyNameOrPersonName: dontInformBoth(Sequelize, 'Company Name', 'personName', 'Person Name')
     }
   },
   cpf: {
@@ -57,11 +57,11 @@ module.exports = Sequelize => ({
       len: [9, 11],
       notEmpty: true,
       is: /^[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}$/,
-      cpfAndName: informBoth(Sequelize, 'CPF', 'name', 'Person Name'),
+      cpfAndName: informBoth(Sequelize, 'CPF', 'personName', 'Person Name'),
       cpfOrCnpj: dontInformBoth(Sequelize, 'CPF', 'cnpj', 'CNPJ')
     }
   },
-  name: {
+  personName: {
     type: Sequelize.STRING,
     validate: {
       notEmpty: true,

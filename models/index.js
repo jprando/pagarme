@@ -6,7 +6,7 @@ module.exports = {
     [
       './User',
       './Customer',
-      './Transaction',
+      './PaymentTransaction',
       './Payable'
     ].map(loadModule.base(__dirname)).forEach(registerModel)
   }

@@ -14,6 +14,6 @@ const options = {
 
 module.exports = {
   register: ({ db, Sequelize }) => {
-    db.define('transaction', getModel(Sequelize), options)
+    db.define('paymentTransaction', getModel(Sequelize), options)
   }
 }

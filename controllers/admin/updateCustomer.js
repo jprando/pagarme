@@ -7,6 +7,7 @@ module.exports = dataResponse(async ({
   params: { id },
   body
 }) => {
+  /// validar ukey informado
   const updateCustomer = validate.cleanAttributes(body, updateCustomerConstraint)
   const errors = validate(updateCustomer, updateCustomerConstraint)
   return !errors

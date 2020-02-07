@@ -1,6 +1,6 @@
 module.exports = {
   basic: {
-    attributes: ['id', 'name', 'email']
+    attributes: ['id', 'personName', 'companyName', 'email', 'state']
   },
   allCustomers: {
     where: {}

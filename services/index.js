@@ -6,6 +6,6 @@ module.exports = [
   'jwt',
   'user',
   'customer',
-  'transaction',
+  'paymentTransaction',
   'payable'
 ].map(factory.load).reduce(factory.configure, {})

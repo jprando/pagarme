@@ -4,5 +4,6 @@ const factory = mapForReduce(__dirname)
 
 module.exports = [
   'getAll',
-  'search'
+  'search',
+  'createByPaymentTransaction'
 ].map(factory.load).reduce(factory.configure, {})
