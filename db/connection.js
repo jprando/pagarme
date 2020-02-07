@@ -32,7 +32,7 @@ module.exports = () => {
     //   $or: Sequelize.Op.or
     // },
     define: {
-      underscored: false
+      underscored: true
     }
   })
 
