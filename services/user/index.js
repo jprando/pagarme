@@ -8,6 +8,7 @@ module.exports = [
   'create',
   'update',
   'delete',
+  'deleteAll',
   'login',
   'password',
   'removeCredential',

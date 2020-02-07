@@ -9,10 +9,14 @@ const { user } = require('./../../../../services')
 
 const expect = chai.expect
 chai.use(chaiHttp)
+user.db = server.db.models
 
 describe('USER', () => {
   describe('Empty table', () => {
     describe('DELETE /admin/user/1', () => {
+      before(done => {
+        user.deleteAll().then(done)
+      })
       it('it should not have Errors', (done) => {
         chai.request(server)
           .delete('/admin/user/1')
