@@ -1,6 +1,6 @@
 const { dataResponse } = require('../../utils')
 const getAll = require('../getData')
-const constraints = require('./getCustomerPaymentTransaction.validation')
+const constraints = require('./getCustomerPaymentTransactions.validation')
 
 module.exports = dataResponse(({
   validate,

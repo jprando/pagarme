@@ -1,6 +1,6 @@
-// const { auth } = require('./../controllers')
+const auth = require('./../server/middleware/auth')
 const {
-  getCustomerPaymentTransaction,
+  getCustomerPaymentTransactions,
   postPaymentTransaction
 } = require('./../controllers/paymentTransaction')
 
@@ -8,7 +8,7 @@ module.exports = {
   config (router) {
     // router.get('/transactions/customer/:ukey', auth, getCustomerPaymentTransaction)
     // router.post('/transaction', auth, postPaymentTransaction)
-    router.get('/transactions/customer/:ukey', getCustomerPaymentTransaction)
-    router.post('/transaction', postPaymentTransaction)
+    router.get('/transactions/customer/:ukey', auth, getCustomerPaymentTransactions)
+    router.post('/transaction', auth, postPaymentTransaction)
   }
 }

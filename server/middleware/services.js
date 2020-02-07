@@ -1,6 +1,6 @@
-const validate = require('./middleware.validate')
-const services = require('./../services')
-const { sequelizeToPlain } = require('./../utils')
+const validate = require('./validate')
+const services = require('../../services')
+const { sequelizeToPlain } = require('../../utils')
 
 module.exports = function (app) {
   // const transaction = (...params) => app.db.transaction.bind(app.db, params)

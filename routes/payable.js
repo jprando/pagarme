@@ -1,8 +1,8 @@
-/// const { auth } = require('./../controllers')
+const auth = require('./../server/middleware/auth')
 const { getCustomerPayables } = require('../controllers/payable')
 
 module.exports = {
   config (router) {
-    router.get('/payables/customer/:id', auth, getCustomerPayables)
+    router.get('/payables/customer/:ukey', auth, getCustomerPayables)
   }
 }
