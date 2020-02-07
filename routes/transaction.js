@@ -1,3 +1,4 @@
+// const { auth } = require('./../controllers')
 const {
   getCustomerPaymentTransaction,
   postPaymentTransaction
@@ -5,6 +6,8 @@ const {
 
 module.exports = {
   config (router) {
+    // router.get('/transactions/customer/:ukey', auth, getCustomerPaymentTransaction)
+    // router.post('/transaction', auth, postPaymentTransaction)
     router.get('/transactions/customer/:ukey', getCustomerPaymentTransaction)
     router.post('/transaction', postPaymentTransaction)
   }
