@@ -7,7 +7,8 @@ module.exports = {
     /// app.validate = validate
     /// for access the data in database
     await db.register(app)
-
-    console.log('[ OK ] Database')
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('[ OK ] Database')
+    }
   }
 }

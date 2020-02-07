@@ -17,7 +17,8 @@ module.exports = {
     })
 
     app.use('/api/v1', router)
-
-    console.log('[ OK ] Routes')
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('[ OK ] Routes')
+    }
   }
 }

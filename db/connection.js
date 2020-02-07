@@ -12,8 +12,11 @@ module.exports = () => {
     PG_DATABASE
   } = config
 
-  const logging = (msg, time, _db) =>
-    console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
+  const logging = (msg, time, _db) => {
+    if (process.env.NODE_ENV !== 'test') {
+      console.log(`[ DB ] ${new Date().toISOString()} ${_db.type} ${time}ms ${msg}`)
+    }
+  }
 
   const db = new Sequelize(PG_DATABASE, PG_USER, PG_PASS, {
     dialect: 'postgres',

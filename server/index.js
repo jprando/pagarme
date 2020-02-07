@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 const preflight = require('./preflight')
 const express = require('express')
 const setup = require('./setup')
@@ -13,6 +12,6 @@ module.exports = {
 
     const app = express()
     await setup.config(app)
-    app.run()
+    return app.run()
   }
 }

@@ -5,11 +5,10 @@ module.exports = {
     app.run = () => {
       const port = process.env.PORT || 3000
       const welcomeMsg = `\r[ OK ] Server running http://localhost:${port}/api/v1/`
-      const sayHello = () => console.log(welcomeMsg)
+      const sayHello = () => process.env.NODE_ENV !== 'test' && console.log(welcomeMsg)
       const server = app.listen(port, sayHello)
       app.running = { server }
       turnOff.config(app)
-      return app.running.server
     }
   }
 }

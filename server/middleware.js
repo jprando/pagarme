@@ -8,16 +8,43 @@ const { sequelizeToPlain } = require('./../utils')
 
 module.exports = {
   config: app => {
-    /// production best practices: Security
-    app.use(helmet())
-
-    /// access log
-    app.use(morgan('[HTTP] :date[iso] :method :url HTTP/:http-version :status :res[content-length] :remote-addr - :response-time ms'))
+    if (process.env.NODE_ENV !== 'test') {
+      /// production best practices: Security
+      app.use(helmet())
+      /// access log
+      app.use(morgan('[HTTP] :date[iso] :method :url HTTP/:http-version :status :res[content-length] :remote-addr - :response-time ms'))
+    }
 
     /// Parse incoming request body
     app.use(bodyParser.json())
 
-    /* /// help protect against unauthorized access
+    /// Setup Services
+    app.use((req, _, next) => {
+      if (process.env.NODE_ENV !== 'test') {
+        console.log('......')
+      }
+      Object.keys(services).forEach(key => {
+        services[key] = {
+          validate,
+          services,
+          db: {
+            toPlain: sequelizeToPlain,
+            ...app.db.models
+          },
+          ...services[key]
+        }
+      })
+      req.services = services
+      req.validate = validate
+      next()
+    })
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('[ OK ] Middleware')
+    }
+  }
+}
+
+/* /// help protect against unauthorized access
     const corsDefaultConfigReference = {
       'origin': '*',
       'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -35,27 +62,4 @@ module.exports = {
       optionsSuccessStatus: 200 /// default 204
     }
     app.use(cors(corsOptions)) /// allow only if origin for http://example.com
-    */
-
-    /// Setup Services
-    app.use((req, _, next) => {
-      console.log('......')
-      Object.keys(services).forEach(key => {
-        services[key] = {
-          validate,
-          services,
-          db: {
-            toPlain: sequelizeToPlain,
-            ...app.db.models
-          },
-          ...services[key]
-        }
-      })
-      req.services = services
-      req.validate = validate
-      next()
-    })
-
-    console.log('[ OK ] Middleware')
-  }
-}
+*/

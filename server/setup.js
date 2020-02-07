@@ -24,6 +24,10 @@ module.exports = {
     })
     */
 
-    console.log('[ OK ] Configuration')
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('[ OK ] Configuration')
+    }
+
+    return app
   }
 }

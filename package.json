@@ -10,7 +10,9 @@
     "logs": "pm2 logs pagarme-backend",
     "dev": "env NODE_ENV=development nodemon index.js",
     "db:sync": "env PG_SYNC=true NODE_ENV=development node index.js",
-    "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node index.js"
+    "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node index.js",
+    "mocha":"env NODE_ENV=test mocha --exit --recursive",
+    "test": "env NODE_ENV=test PG_SCHEMA=tests yarn db:clean:sync && yarn mocha"
   },
   "dependencies": {
     "bcrypt": "^3.0.7",
@@ -32,6 +34,9 @@
     "validate.js": "^0.13.1"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.0.1",
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
   }
