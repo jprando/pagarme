@@ -16,14 +16,17 @@ module.exports = async function (newPaymentTransaction) {
   if (!customerResult) {
     throw new ValidationError('Customer not found')
   }
+  const customerName = customerResult.personName || customerResult.companyName
 
   let trans
   try {
     trans = await transaction()
 
+    newPaymentTransaction.transactionId = trans.id
+    newPaymentTransaction.customerName = customerName
     const newPaymentTransactionResult = await paymentTransaction
       .create(newPaymentTransaction, { transaction: trans }).then(toPlain)
-    // .create(newPaymentTransaction)
+
     const newPayableResult = await payable
       .createByPaymentTransaction(trans, customerResult, newPaymentTransactionResult)
 
@@ -33,6 +36,8 @@ module.exports = async function (newPaymentTransaction) {
     delete newPayableResult.id
     delete newPayableResult.ukey
     delete newPayableResult.paymentTransactionId
+    delete newPayableResult.transactionId
+    delete newPayableResult.customerName
     delete newPayableResult.paymentDate
     delete newPayableResult.paymentMethod
     delete newPayableResult.payableYear

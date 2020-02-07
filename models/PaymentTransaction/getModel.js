@@ -18,6 +18,23 @@ module.exports = Sequelize => ({
       isUUID: 4
     }
   },
+  transactionId: {
+    type: Sequelize.UUID,
+    allowNull: false,
+    defaultValue: Sequelize.UUIDV4,
+    validate: {
+      notNull: true,
+      isUUID: 4
+    }
+  },
+  customerName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notNull: true,
+      notEmpty: true
+    }
+  },
   year: {
     type: Sequelize.INTEGER,
     allowNull: false,

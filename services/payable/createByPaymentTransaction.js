@@ -3,6 +3,8 @@ module.exports = async function (databaseTransaction,
   {
     ukey,
     id: paymentTransactionId,
+    transactionId,
+    customerName,
     paymentMethod,
     paymentDate,
     amount: _amount,
@@ -18,11 +20,10 @@ module.exports = async function (databaseTransaction,
   const isDebitCardPayment = paymentMethod === 'debit_card'
   const status = isDebitCardPayment ? 'paid' : 'waiting_funds'
   const summaryCard = `${cardNumber} ${cardExpiration} ${cardholderName}`
-  const customerName = personName || companyName
 
-  let payableDate = new Date()
+  let payableDate = new Date(paymentDate)
   if (!isDebitCardPayment) {
-    payableDate.setDate(paymentDate.getDate() + 1)
+    payableDate.setDate(paymentDate.getUTCDate() + 30)
   }
 
   const payableYear = payableDate.getUTCFullYear()
@@ -33,6 +34,7 @@ module.exports = async function (databaseTransaction,
   const newPayable = {
     ukey,
     paymentTransactionId,
+    transactionId,
     customerName,
     status,
     summaryCard,
