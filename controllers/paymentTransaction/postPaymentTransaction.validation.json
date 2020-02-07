@@ -1,6 +1,6 @@
 {
   "ukey": {
-    "type":"string",
+    "type": "string",
     "presence": {
       "message": "^UKEY must be informed",
       "allowEmpty": false
@@ -16,58 +16,57 @@
       "message": "^UKEY is not in a valid format UUID"
     }
   },
-  "paymentDate":{
-    "type": "string",
-    "presence":{
+  "paymentDate": {
+    "presence": {
       "allowEmpty": false
     },
     "datetime": {
       "earliest": "1901-01-01",
       "latest": "9998-01-01"
     }
-    },
+  },
   "amount": {
-    "type":"number",
-    "presence":{
+    "type": "number",
+    "presence": {
       "allowEmpty": false
     },
-    "numericality":{
+    "numericality": {
       "greaterThanOrEqualTo": 0.001
     }
   },
   "description": {
-    "type":"string",
-    "presence":{
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
-    "length":{
+    "length": {
       "minimum": 6
     }
   },
   "paymentMethod": {
-    "type":"string",
-    "presence":{
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
-    "inclusion": ["credit_card", "debit_card"],
-    "length":{
+    "inclusion": [
+      "credit_card",
+      "debit_card"
+    ],
+    "length": {
       "minimum": 10,
       "maximum": 11
     }
   },
-  "cardNumber":{
-    "type":"string",
-    "presence":{
+  "cardNumber": {
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
-    "format": {
-      "pattern": "^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})$",
-      "message":"^CARD NUMBER format is invalid"
-    }
+    "isCreditsCard": true
   },
   "cardholderName": {
-    "type":"string",
-    "presence":{
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
     "length": {
@@ -75,8 +74,8 @@
     }
   },
   "cardExpiration": {
-    "type":"string",
-    "presence":{
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
     "length": {
@@ -88,8 +87,8 @@
     }
   },
   "cardSecurityCode": {
-    "type":"string",
-    "presence":{
+    "type": "string",
+    "presence": {
       "allowEmpty": false
     },
     "length": {

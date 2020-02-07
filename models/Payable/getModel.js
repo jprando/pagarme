@@ -26,7 +26,7 @@ module.exports = Sequelize => ({
       notEmpty: true
     }
   },
-  transactionId: {
+  paymentTransactionId: {
     type: Sequelize.INTEGER,
     allowNull: false,
     validate: {

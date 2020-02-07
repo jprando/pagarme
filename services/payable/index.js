@@ -1,15 +1,7 @@
-const validate = require('./validate')
-module.exports = {
-  validate,
+const { mapForReduce } = require('./../../utils')
 
-  insert (payable) {
-  },
-  update (id, payable) {
-  },
-  get (id) {
-  },
-  delete (id) {
-  },
-  search (page = 0) {
-  }
-}
+const factory = mapForReduce(__dirname)
+
+module.exports = [
+  'createByPaymentTransaction'
+].map(factory.load).reduce(factory.configure, {})
