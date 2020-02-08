@@ -31,9 +31,9 @@ Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/abou
 
 ### Preparar o Banco de Dados
 
-Você pode instalar o banco de dados postgres ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
+Você pode instalar o banco de dados postgres localmente em sua máquina ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
-# Configuração da Conexão
+## Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
