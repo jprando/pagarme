@@ -31,7 +31,7 @@ Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/abou
 
 ### Preparar o Banco de Dados
 
-Você instalar o banco de dados postgres ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
+Você pode instalar o banco de dados postgres ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
 # Configuração da Conexão
 
