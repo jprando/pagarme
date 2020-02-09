@@ -8,7 +8,13 @@ module.exports = dataResponse(({
   params: { ukey, page = 0 }
 }) => {
   const errors = validate({ ukey, page }, constraints)
-  return !errors
-    ? getAll(paymentTransaction, 'Transactions', 'search', { ukey, page })
-    : { error: true, code: 400, errors }
+  if (errors) {
+    return { error: true, code: 422, errors }
+  }
+
+  try {
+    return getAll(paymentTransaction, 'Transactions', 'search', { ukey, page })
+  } catch (err) {
+    return { error: true, code: 422, message: err.message }
+  }
 })

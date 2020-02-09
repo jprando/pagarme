@@ -8,7 +8,15 @@ module.exports = dataResponse(async ({
 }) => {
   const newUser = validate.cleanAttributes(body, newUserConstraints)
   const errors = validate(newUser, newUserConstraints)
-  return !errors
-    ? { error: false, code: 201, result: await user.create(newUser) }
-    : { error: true, code: 400, errors }
+  if (errors) {
+    return { error: true, code: 422, errors }
+  }
+  const newUserResult = await user.create(newUser)
+  const { error, message } = newUserResult
+  return {
+    error: Boolean(error),
+    code: !error ? 201 : 422,
+    message,
+    result: newUserResult
+  }
 })

@@ -1,6 +1,10 @@
 module.exports = async (id, service, modelName) => {
   if (id <= 0) {
-    return { error: true, code: 400, message: `${modelName} Id must be positive number` }
+    return {
+      error: true,
+      code: 422,
+      message: `${modelName} Id must be positive number`
+    }
   }
 
   const _200OK = {

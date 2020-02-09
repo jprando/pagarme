@@ -16,7 +16,7 @@ const dataResponse = load => async (req, res) => {
         res.status(statusCode).end()
       } else {
         const response = {
-          error: (result && result.error) || true,
+          error: (result && Boolean(result.error)) || true,
           message: result && result.message,
           errors: result && result.errors
         }
@@ -37,7 +37,7 @@ const dataResponse = load => async (req, res) => {
       if (!response.errors.length) {
         delete response.errors
       }
-      res.status(400).json(response).end()
+      res.status(422).json(response).end()
     } else if (process.env.NODE_ENV === 'production') {
       res.status(500).end()
     } else {

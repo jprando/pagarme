@@ -9,6 +9,11 @@ module.exports = Sequelize => ({
       isInt: true
     }
   },
+  admin: {
+    type: Sequelize.BOOLEAN,
+    allowNull: false,
+    defaultValue: false
+  },
   name: {
     type: Sequelize.STRING,
     allowNull: false,

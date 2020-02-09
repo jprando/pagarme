@@ -12,7 +12,7 @@ module.exports = dataResponse(async ({
 
   const errors = validate({ email, password }, constraints)
   if (errors) {
-    return { code: 400, errors }
+    return { code: 422, errors }
   }
 
   return user.login(email, password).then(genToken)
