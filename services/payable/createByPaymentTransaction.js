@@ -2,7 +2,6 @@ module.exports = async function (databaseTransaction,
   { personName, companyName },
   {
     ukey,
-    id: paymentTransactionId,
     transactionId,
     customerName,
     paymentMethod,
@@ -33,7 +32,6 @@ module.exports = async function (databaseTransaction,
 
   const newPayable = {
     ukey,
-    paymentTransactionId,
     transactionId,
     customerName,
     status,

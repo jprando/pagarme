@@ -13,6 +13,10 @@ module.exports = dataResponse(async ({
   }
   const result = await getAll(payable, 'Transactions', 'search', { ukey, page })
 
+  if (result.error) {
+    return result
+  }
+
   return result.map(payableItem => {
     delete payableItem.id
     delete payableItem.paymentTransactionId

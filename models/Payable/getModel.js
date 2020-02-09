@@ -18,6 +18,14 @@ module.exports = Sequelize => ({
       isUUID: 4
     }
   },
+  transactionId: {
+    type: Sequelize.UUID,
+    allowNull: false,
+    validate: {
+      notNull: true,
+      isUUID: 4
+    }
+  },
   customerName: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -25,18 +33,6 @@ module.exports = Sequelize => ({
       notNull: true,
       notEmpty: true
     }
-  },
-  paymentTransactionId: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    validate: {
-      notNull: true,
-      isInt: true
-    }
-    // references: {
-    //   model: 'transactions',
-    //   key: 'id'
-    // }
   },
   status: {
     type: Sequelize.ENUM('paid', 'waiting_funds'),
