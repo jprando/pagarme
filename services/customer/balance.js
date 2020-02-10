@@ -1,9 +1,6 @@
-module.exports = async function (ukey) {
+module.exports = async function (ukey, year, month) {
   // const { db: { paymentTransaction, payable, toPlain } } = this
   const { db: { paymentTransaction, payable } } = this
-  const now = new Date()
-  const year = now.getUTCFullYear()
-  const month = now.getUTCMonth() + 1
 
   const transactionCount = await paymentTransaction
     .count({ where: { ukey, year, month } })
