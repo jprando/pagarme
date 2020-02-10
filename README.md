@@ -24,12 +24,24 @@
 
 ## 📰 Informações
 
+Olá me chamo **Jeudi Prando** e desenvolvi essa solução para o desafio da pagarme, trabalho com analise e desenvolvimento de software desde o meu primeiro emprego/estágio e desde então nos últimos 14 anos é só o que eu tenho feito e me especializado, nos últimos 3 anos tenho me dedicado totalmente ao javascript, em compreender e a dominar os conceitos do mesmo e a resolver problemas com javascript.
+
+Minha intenção com esta solução é demonstrar que tenho domínio sobre a linguagem javascript, por isso utilizei frameworks e libs mais simples para que me permitisse ter oportunidade de fazer na mão o que a maioria dos frameworks entregam pronto e mastigado, eu não queria mostrar que sei utilizar o framework X ou Y e sim o que eu sei sobre javascript.
+
+Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porem eu me limitei ao propósito, tempo e ao assunto principal do desafio, eu poderia ficar polindo o projeto por muito dias, mas a realidade no dia a dia é que em algum momento temos que entregar o que temos pronto.
+
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
 ### 📂 Pastas
 
+**CONTROLLERS**
+Faz o controle entre a requisição no endpoint da API e coordena as chamadas aos serviços para atender a requisição feita, responsável por controlar e a dar a resposta correta de acordo com o estado da aplicação ao executar os serviços.
+
 **DB**  
 Preparar, gerenciar e utilizar dados de um banco de dados.
+
+**MODELS**
+Configura os aspectos referente a modelagem de dados do sistema como: tabelas, campos, tipos de dados, validações, informação para a criação dos objetos do banco de dados.
 
 **ROUTERS**  
 Configurar os endpoints da API.
@@ -43,6 +55,9 @@ Implementação das regras de negocio do sistema.
 **TEST**  
 Implementação dos testes unitários.
 
+**UTILS**
+Funções uteis a várias partes do sistema
+
 [voltar para o índice](#lista-de-conteúdo)
 
 ## 🎲 Banco de Dados
@@ -53,6 +68,23 @@ Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/abou
 
 Você pode instalar o banco de dados postgres localmente em sua máquina ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
+#### Via Docker
+
+Esta é a opção mais rápida e posso dizer também simples para ter um serviço de banco de dados postgres rodando em sua máquina para servir a API da solução implementada.
+
+Tendo o [docker instalado](https://get.docker.com/), configurado e executando normal e corretamente em sua máquina, o comando abaixo ira preparar e disponibilizar prontamente um serviço do postgres:
+
+```sh
+docker run --name pgsql-db-srv \
+    -e POSTGRES_PASSWORD=pagarmesecrets \
+    -p 5432:5432 \
+postgres
+```
+
+Com o comando acima você terá o postgres pronto para utilização na porta `5432`, usuário `postgres` e senha `pagarmesecrets`.
+
+Referente a porta, mude caso precise ou se preferir outra, para utilizar outra porta por exemplo a porta `5454` utilize `-p 5454:5432`
+
 [voltar para o índice](#lista-de-conteúdo)
 
 ## 🛠 Configuração da Conexão
@@ -61,12 +93,31 @@ Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados pre
 
 Observando as opções contidas no arquivo `.env`, você tem a opção de utilizar variáveis de ambiente com o mesmo nome e com o valor necessário para iniciar a conexão com o banco de dados postgres.
 
+Dentro do arquivo `.env` você encontrará as seguintes opções:
+
+- **PG_HOST** define o nome ou o ip da máquina na qual um serviço do postgres esta rodando e esta pronto para a utilização.
+
+- **PG_PORT** define a porta que o serviço do postgres esta aguardando conexões.
+
+- **PG_USER** define o nome do usuário que o sistema utilizará para estabelecer conexão com o serviço de dados.
+
+- **PG_PASS** define a senha para estabelecer a conexão com o serviço do postgres.
+
+- **PG_DATABASE** define o nome do banco de dados que o sistema utilizará para persistir as informações.
+
+- **PG_SCHEMA** define qual `schema` do banco de dados postgres que o sistema se conectará, deverá ser utilizado por padrão.
+
+- **SALT** define um texto aleatório a ser colocado junto com a senha do usuário quando for gerar a senha, criptografada com o `bcrypt`, a ser guardada no banco de dados.
+
+- **JWT_SECRET** define um texto aleatório a ser utilizado como chave de criptografia dos [tokens jwt](https://jwt.io/introduction/) de sessão da API.
+
 [voltar para o índice](#lista-de-conteúdo)
 
 ## 📦 Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
 
+- [git](https://git-scm.com/)
 - [node](https://nodejs.org/en/download/)
 - [yarn](https://yarnpkg.com/getting-started/install)
 - [docker](https://docs.docker.com/install/)
@@ -88,6 +139,36 @@ Para baixar os arquivos do projeto para a sua máquina local utilize os comandos
 ~/pagarme/> yarn # ou npm install
 ```
 
+### Outros comandos
+
+Você tem a sua disposição comandos pré-estabelecidos para utilizar em alguns casos que venha precisar
+
+Para gerar a estrutura no banco de dados informado no arquivo `.env` utilize o comando
+
+```sh
+yarn db:clean:sync
+```
+
+Este comando ira apagar qualquer objeto criado anteriormente, limpando o banco de dados da conexão informada no arquivo `.env`.
+
+```sh
+yarn db:sync
+```
+
+Este comando cria, sem tentar apagar antes, os objetos que ainda não existem no banco de dados e são necessário para o funcionamento do sistema, se você acabou de executar o comando anterior `yarn db:clean:sync` não é necessário executar este comando.
+
+```sh
+yarn test
+```
+
+Este comando, limpa o banco de dado, cria a estrutura necessária para o funcionamento do sistema no banco de dados e inicializa os testes unitários informados e armazenados na pasta `test`.
+
+```sh
+yarn mocha
+```
+
+Este comando executa os testes implementados e armazenados na pasta `test`, sem recriar e limpar o banco de dados.
+ 
 [voltar para o índice](#lista-de-conteúdo)
 
 ## 🚀 Executando o projeto
