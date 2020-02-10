@@ -1,20 +1,20 @@
-# Desafio Técnico Pagarme
+# 🏆 Desafio Técnico Pagarme 👨‍💻
 
 [![Build Status](https://drone.jeudi.dev/api/badges/jeudi/pagarme/status.svg)](https://drone.jeudi.dev/jeudi/pagarme)
 
 [informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
-## Lista de conteúdo
+## 📑 Lista de conteúdo
 - [Informações](#informacoes)
     - [Pastas](#pastas)
 - [Banco de Dados](#banco-de-dados)
     - [Preparar o banco de dados](#preparar-o-banco-de-dados)
-- [Configuração](#configuracao)
-- [Baixar e preparar o projeto](#baixar-e-preparar-oprojeto)
-- [Executar o projeto](#executar-o-projeto)
+- [Configuração da Conexão](#configuração-da-conexão)
+- [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
+- [Executar o projeto](#executando-o-projeto)
     - [Preflight](#preflight)
     - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
-    - [Ambiente de Homologação ou Produção](#ambiente-de-homologacao-ou-producao)
+    - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
         - [Start](#start)
         - [Status](#status)
         - [Stop](#stop)
@@ -22,11 +22,11 @@
 
 ---
 
-## Informações
+## 📰 Informações
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
-### Pastas
+### 📂 Pastas
 
 **DB**  
 Preparar, gerenciar e utilizar dados de um banco de dados.
@@ -43,7 +43,9 @@ Implementação das regras de negocio do sistema.
 **TEST**  
 Implementação dos testes unitários.
 
-## Banco de Dados
+[voltar para o índice](#lista-de-conteúdo)
+
+## 🎲 Banco de Dados
 
 Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/about/) para persistir as informações do sistema
 
@@ -51,13 +53,17 @@ Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/abou
 
 Você pode instalar o banco de dados postgres localmente em sua máquina ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
-## Configuração da Conexão
+[voltar para o índice](#lista-de-conteúdo)
+
+## 🛠 Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
 Observando as opções contidas no arquivo `.env`, você tem a opção de utilizar variáveis de ambiente com o mesmo nome e com o valor necessário para iniciar a conexão com o banco de dados postgres.
 
-## Baixar e preparar o projeto
+[voltar para o índice](#lista-de-conteúdo)
+
+## ✨ Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
 
@@ -82,9 +88,11 @@ Para baixar os arquivos do projeto para a sua máquina local utilize os comandos
 ~/pagarme/> yarn # ou npm install
 ```
 
-## Executando o projeto
+[voltar para o índice](#lista-de-conteúdo)
 
-### Preflight
+## 🚀 Executando o projeto
+
+### 💺 Preflight
 
 O sistema identifica o ambiente de execução através da variável `NODE_ENV` e realiza uma validação dos módulos necessários para o funcionamento do sistema, as mensagens de erro são claras e poderão lhe ajudar a resolver alguma situação que possa ocorrer, fique atento as mensagens de erro como essa por exemplo:
 
@@ -105,7 +113,9 @@ use `yarn add pm2` to fix it
 and try again
 ```
 
-### Ambiente de Desenvolvimento
+[voltar para o índice](#lista-de-conteúdo)
+
+### 🚧 Ambiente de Desenvolvimento
 
 Para servir a API no ambiente de desenvolvimento utilizaremos o [`nodemon`](https://nodemon.io/) e aproveitar a sua particularidade de observar mudanças nos arquivos do projeto e reiniciar o processo que serve a API já aplicando as novas mudanças no código fonte.
 
@@ -140,9 +150,11 @@ $ nodemon index.js
 ~/pagarme/> _
 ```
 
-### Ambiente de Homologação ou Produção
+[voltar para o índice](#lista-de-conteúdo)
 
-#### Start
+### 🚏 Ambiente de Homologação ou Produção
+
+#### 🏃‍ Start
 
 Para um cenário onde o ambiente é de Homologação ou Produção o projeto utilizará o serviço de gerenciamento de processos [`PM2`](https://pm2.keymetrics.io/), iniciando o serviço da API em modo [cluster](https://pm2.keymetrics.io/docs/usage/cluster-mode/), para cada core físico ou virtual do processador será iniciado um processo do serviço da API e irão compartilhar a mesma porta `3000` para responder as requisições.
 
@@ -168,7 +180,9 @@ Done in 4.87s.
 ~/pagarme/> _
 ```
 
-#### Status
+[voltar para o índice](#lista-de-conteúdo)
+
+#### 🔎 Status
 
 No ambiente de homologação e produção, para visualizar os logs de acesso a API utilize o comando
 
@@ -198,7 +212,9 @@ $ pm2 logs pagarme-backend
 ~/pagarme/> _
 ```
 
-#### Stop
+[voltar para o índice](#lista-de-conteúdo)
+
+#### ✋ Stop
 
 Para finalizar os processos que estão servindo a API em modo cluster, utilize o comando
 
@@ -241,7 +257,9 @@ Done in 4.22s.
 ~/pagarme/> _
 ```
 
-# Libs e Frameworks
+[voltar para o índice](#lista-de-conteúdo)
+
+# 🧰 Libs e Frameworks
 
 Principais Libs e Frameworks utilizados no projeto.
 
@@ -255,3 +273,5 @@ Principais Libs e Frameworks utilizados no projeto.
 - [PM2](https://pm2.keymetrics.io/)
 - [Sequelize](https://sequelize.org/v5/index.html)
 - [Validate.js](https://validatejs.org/#validate-js)
+
+⬆️ [voltar para o índice](#lista-de-conteúdo)
