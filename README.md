@@ -6,8 +6,6 @@
 
 ## 📑 Lista de conteúdo
 
-%%TOC%%
-
 - [Informações](#informações)
     - [Pastas](#pastas)
 - [Banco de Dados](#banco-de-dados)
@@ -29,7 +27,7 @@
 
 ---
 
-## 📰 Informações
+## Informações
 
 Olá me chamo **Jeudi Prando** e desenvolvi essa solução para o desafio da pagarme, trabalho com analise e desenvolvimento de software desde o meu primeiro emprego/estágio e desde então nos últimos 14 anos é só o que eu tenho feito e me especializado, nos últimos 3 anos tenho me dedicado totalmente ao javascript, em compreender e a dominar os conceitos do mesmo e a resolver problemas com javascript.
 
