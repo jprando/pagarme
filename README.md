@@ -387,6 +387,7 @@ Se eu tivesse mais tempo eu investiria em:
 
 - Implementar mais testes
 - Faria uma imagem no docker
+- Utilizar o Swagger
 - Refatorar o projeto mais uma vez
 
 Acredito não ter deixado nada pra traz e estou ansioso para a próxima etapa, ate+.
