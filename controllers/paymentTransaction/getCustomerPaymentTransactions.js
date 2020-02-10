@@ -4,8 +4,9 @@ const constraints = require('./getCustomerPaymentTransactions.validation')
 
 module.exports = dataResponse(({
   validate,
+  auth: { ukey },
   services: { paymentTransaction },
-  params: { ukey, page = 0 }
+  body: { page = 0 }
 }) => {
   const errors = validate({ ukey, page }, constraints)
   if (errors) {

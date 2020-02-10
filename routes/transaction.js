@@ -1,14 +1,14 @@
 const auth = require('../server/middleware/auth')
 const {
+  postPaymentTransaction,
   getCustomerPaymentTransactions,
-  postPaymentTransaction
+  getCustomerPaymentTransactionsBalance
 } = require('../controllers/paymentTransaction')
 
 module.exports = {
   config (router) {
-    // router.get('/transactions/customer/:ukey', auth, getCustomerPaymentTransaction)
-    // router.post('/transaction', auth, postPaymentTransaction)
-    router.get('/transactions/customer/:ukey', auth, getCustomerPaymentTransactions)
     router.post('/transaction', auth, postPaymentTransaction)
+    router.get('/transactions/customer', auth, getCustomerPaymentTransactions)
+    router.get('/transactions/customer/balance', auth, getCustomerPaymentTransactionsBalance)
   }
 }
