@@ -9,8 +9,10 @@
     - [Pastas](#pastas)
 - [Banco de Dados](#banco-de-dados)
     - [Preparar o banco de dados](#preparar-o-banco-de-dados)
+      - [Via Docker](#via-docker)
 - [Configuração da Conexão](#configuração-da-conexão)
 - [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
+  - [Outros comandos](#outros-comandos)
 - [Executar o projeto](#executando-o-projeto)
     - [Preflight](#preflight)
     - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
@@ -18,8 +20,9 @@
         - [Start](#start)
         - [Status](#status)
         - [Stop](#stop)
+- [Insomnia App](#insomnia-app)
 - [Libs e Frameworks](#libs-e-frameworks)
-- [Considerações Finais](#-considerações-finais)
+- [Considerações Finais](#considerações-finais)
 
 ---
 
@@ -32,6 +35,13 @@ Minha intenção com esta solução é demonstrar que tenho domínio sobre a lin
 Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porem eu me limitei ao propósito, tempo e ao assunto principal do desafio, eu poderia ficar polindo o projeto por muito dias, mas a realidade no dia a dia é que em algum momento temos que entregar o que temos pronto.
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
+
+Este projeto esta replicado em dois repositórios:
+
+- [Github](https://github.com/jprando/pagarme)
+- [Gitea](git.jeudi.dev/jeudi/pagarme)
+
+Observei que o formato da lista de conteúdo não funciona no Github mas funciona no Gitea, dei prioridade ao meu gitea pois nele esta integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
 
 ### 📂 Pastas
 
@@ -341,11 +351,11 @@ Done in 4.22s.
 
 [voltar para o índice](#lista-de-conteúdo)
 
-# Insomnia App
+## Insomnia App
 
 Na raiz do projeto há um arquivo chamado `insomnia_config.json` que tem algumas configurações de chamadas a API implementada que você importar no [app Insomnia](https://insomnia.rest/), ele é muito parecido com o postman, estes apps servem para testar manualmente os endpoints da API.
 
-# 🧰 Libs e Frameworks
+## 🧰 Libs e Frameworks
 
 Principais Libs e Frameworks utilizados no projeto.
 
@@ -362,10 +372,18 @@ Principais Libs e Frameworks utilizados no projeto.
 
 [voltar para o índice](#lista-de-conteúdo)
 
-# Considerações Finais
+## Considerações Finais
 
 Foi uma experiência bem interessante implementar essa solução sem a ajuda dos frameworks e libs de alto nível que temos no ecossistema javascript, tive que sair da minha zona de conforto e colocar a mão na massa, estou satisfeito com o que estou entregando, consegui colocar um pouco da minha essência nessa solução.
 
 Em alguns pontos algumas coisas poderiam ser melhor como a organização e a implementação de testes, como eu já havia pedido mais tempo 2 vezes, decidi entregar assim mesmo, talvez um pouco de ansiedade, pressa, me fizeram não querer adiar novamente essa entrega.
 
+Se eu tivesse mais tempo eu investiria em:
+
+- Implementar mais testes
+- Faria uma imagem no docker
+- Refatorar o projeto mais uma vez
+
 Acredito não ter deixado nada pra traz e estou ansioso para a próxima etapa, ate+.
+
+[voltar para o índice](#lista-de-conteúdo)
