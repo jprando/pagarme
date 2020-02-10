@@ -390,6 +390,6 @@ Se eu tivesse mais tempo eu investiria em:
 - Utilizar o Swagger
 - Refatorar o projeto mais uma vez
 
-Acredito não ter deixado nada pra traz e estou ansioso para a próxima etapa, ate+.
+Acredito não ter deixado nada para trás e estou ansioso para a próxima etapa, ate+.
 
 [voltar para o índice](#lista-de-conteúdo)
