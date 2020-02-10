@@ -42,7 +42,7 @@ Este projeto esta replicado em dois repositórios:
 - [Github](https://github.com/jprando/pagarme)
 - [Gitea](git.jeudi.dev/jeudi/pagarme)
 
-No meu servidor [Gitea](https://git.jeudi.dev) esta integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
+No meu servidor [Gitea](https://git.jeudi.dev) está integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
 
 O histórico das compilações deste projeto, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
 
