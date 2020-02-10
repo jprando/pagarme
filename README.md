@@ -42,11 +42,11 @@ Este projeto esta replicado em dois repositórios:
 - [Github](https://github.com/jprando/pagarme)
 - [Gitea](git.jeudi.dev/jeudi/pagarme)
 
-Observei que o formato da lista de conteúdo não funciona no Github mas funciona no Gitea, dei prioridade ao meu gitea pois nele esta integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
+No meu servidor [Gitea](https://git.jeudi.dev) esta integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
 
-O histórico das compilações, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
+O histórico das compilações deste projeto, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
 
-### 📂 Pastas
+### Pastas
 
 **CONTROLLERS**
 Faz o controle entre a requisição no endpoint da API e coordena as chamadas aos serviços para atender a requisição feita, responsável por controlar e a dar a resposta correta de acordo com o estado da aplicação ao executar os serviços.
@@ -74,11 +74,11 @@ Funções uteis a várias partes do sistema
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## 🎲 Banco de Dados
+## Banco de Dados
 
 Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/about/) para persistir as informações do sistema
 
-### 📝 Preparar o Banco de Dados
+### Preparar o Banco de Dados
 
 Você pode instalar o banco de dados postgres localmente em sua máquina ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
@@ -101,7 +101,7 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## 🛠 Configuração da Conexão
+## Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
@@ -127,7 +127,7 @@ Dentro do arquivo `.env` você encontrará as seguintes opções:
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## 📦 Baixar e preparar o projeto
+## Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
 
@@ -185,9 +185,9 @@ Este comando executa os testes implementados e armazenados na pasta `test`, sem 
  
 [voltar para o índice](#lista-de-conteúdo)
 
-## 🚀 Executando o projeto
+## Executando o projeto
 
-### 💺 Preflight
+### Preflight
 
 O sistema identifica o ambiente de execução através da variável `NODE_ENV` e realiza uma validação dos módulos necessários para o funcionamento do sistema, as mensagens de erro são claras e poderão lhe ajudar a resolver alguma situação que possa ocorrer, fique atento as mensagens de erro como essa por exemplo:
 
@@ -210,7 +210,7 @@ and try again
 
 [voltar para o índice](#lista-de-conteúdo)
 
-### 🚧 Ambiente de Desenvolvimento
+### Ambiente de Desenvolvimento
 
 Para servir a API no ambiente de desenvolvimento utilizaremos o [`nodemon`](https://nodemon.io/) e aproveitar a sua particularidade de observar mudanças nos arquivos do projeto e reiniciar o processo que serve a API já aplicando as novas mudanças no código fonte.
 
@@ -247,9 +247,9 @@ $ nodemon index.js
 
 [voltar para o índice](#lista-de-conteúdo)
 
-### 🚏 Ambiente de Homologação ou Produção
+### Ambiente de Homologação ou Produção
 
-#### 🏃‍ Start
+#### Start
 
 Para um cenário onde o ambiente é de Homologação ou Produção o projeto utilizará o serviço de gerenciamento de processos [`PM2`](https://pm2.keymetrics.io/), iniciando o serviço da API em modo [cluster](https://pm2.keymetrics.io/docs/usage/cluster-mode/), para cada core físico ou virtual do processador será iniciado um processo do serviço da API e irão compartilhar a mesma porta `3000` para responder as requisições.
 
@@ -277,7 +277,7 @@ Done in 4.87s.
 
 [voltar para o índice](#lista-de-conteúdo)
 
-#### 🔎 Status
+#### Status
 
 No ambiente de homologação e produção, para visualizar os logs de acesso a API utilize o comando
 
@@ -309,7 +309,7 @@ $ pm2 logs pagarme-backend
 
 [voltar para o índice](#lista-de-conteúdo)
 
-#### ✋ Stop
+#### Stop
 
 Para finalizar os processos que estão servindo a API em modo cluster, utilize o comando
 
@@ -358,7 +358,7 @@ Done in 4.22s.
 
 Na raiz do projeto há um arquivo chamado `insomnia_config.json` que tem algumas configurações de chamadas a API implementada que você importar no [app Insomnia](https://insomnia.rest/), ele é muito parecido com o postman, estes apps servem para testar manualmente os endpoints da API.
 
-## 🧰 Libs e Frameworks
+## Libs e Frameworks
 
 Principais Libs e Frameworks utilizados no projeto.
 
