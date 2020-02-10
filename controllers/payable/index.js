@@ -3,6 +3,5 @@ const { mapForReduce } = require('../../utils')
 const action = mapForReduce(__dirname)
 
 module.exports = [
-  'getCustomerPayables',
-  'getCustomerPayablesBalance'
+  'getCustomerPayables'
 ].map(action.load).reduce(action.configure, {})

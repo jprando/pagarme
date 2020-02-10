@@ -3,10 +3,5 @@ const { mapForReduce } = require('../../utils')
 const factory = mapForReduce(__dirname)
 
 module.exports = [
-  'getById',
-  'getAll',
-  'create',
-  'update',
-  'delete',
-  'balance'
+  'getCustomerBalance'
 ].map(factory.load).reduce(factory.configure, {})

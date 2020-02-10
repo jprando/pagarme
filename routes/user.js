@@ -1,6 +1,4 @@
-const {
-  postLogin
-} = require('../controllers/user')
+const { postLogin } = require('../controllers/user')
 
 module.exports = {
   config (router) {

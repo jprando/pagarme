@@ -9,7 +9,8 @@ module.exports = {
       'admin',
       'user',
       'transaction',
-      'payable'
+      'payable',
+      'customer'
     ].map(loadModule.base(__dirname)).forEach(routeConfig)
 
     router.get('/', (req, res) => {
