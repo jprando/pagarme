@@ -4,7 +4,7 @@
 
 [informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
-## 📑 Lista de conteúdo
+## Lista de conteúdo
 
 - [Informações](#informações)
     - [Pastas](#pastas)
