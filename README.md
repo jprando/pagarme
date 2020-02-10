@@ -19,6 +19,7 @@
         - [Status](#status)
         - [Stop](#stop)
 - [Libs e Frameworks](#libs-e-frameworks)
+- [Considerações Finais](#-considerações-finais)
 
 ---
 
@@ -340,6 +341,10 @@ Done in 4.22s.
 
 [voltar para o índice](#lista-de-conteúdo)
 
+# Insomnia App
+
+Na raiz do projeto há um arquivo chamado `insomnia_config.json` que tem algumas configurações de chamadas a API implementada que você importar no [app Insomnia](https://insomnia.rest/), ele é muito parecido com o postman, estes apps servem para testar manualmente os endpoints da API.
+
 # 🧰 Libs e Frameworks
 
 Principais Libs e Frameworks utilizados no projeto.
@@ -356,3 +361,11 @@ Principais Libs e Frameworks utilizados no projeto.
 - [Validate.js](https://validatejs.org/#validate-js)
 
 [voltar para o índice](#lista-de-conteúdo)
+
+# Considerações Finais
+
+Foi uma experiência bem interessante implementar essa solução sem a ajuda dos frameworks e libs de alto nível que temos no ecossistema javascript, tive que sair da minha zona de conforto e colocar a mão na massa, estou satisfeito com o que estou entregando, consegui colocar um pouco da minha essência nessa solução.
+
+Em alguns pontos algumas coisas poderiam ser melhor como a organização e a implementação de testes, como eu já havia pedido mais tempo 2 vezes, decidi entregar assim mesmo, talvez um pouco de ansiedade, pressa, me fizeram não querer adiar novamente essa entrega.
+
+Acredito não ter deixado nada pra traz e estou ansioso para a próxima etapa, ate+.
