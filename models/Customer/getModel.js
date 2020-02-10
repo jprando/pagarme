@@ -1,4 +1,4 @@
-const { informBoth, dontInformBoth } = require('./../../utils')
+const { informBoth, dontInformBoth } = require('../../utils')
 
 module.exports = Sequelize => ({
   id: {

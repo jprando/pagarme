@@ -1,5 +1,5 @@
-const { dataResponse } = require('../../utils')
-const getById = require('./../getById')
+const dataResponse = require('../dataResponse')
+const getById = require('../getById')
 
 module.exports = dataResponse(async ({
   services: { customer },

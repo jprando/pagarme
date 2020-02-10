@@ -1,4 +1,4 @@
-const { dataResponse } = require('../../utils')
+const dataResponse = require('../dataResponse')
 const getAll = require('../getData')
 const constraints = require('./getCustomerPayables.validation')
 

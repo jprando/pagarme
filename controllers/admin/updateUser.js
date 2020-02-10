@@ -1,4 +1,4 @@
-const { dataResponse } = require('../../utils')
+const dataResponse = require('../dataResponse')
 const updateUserConstraints = require('./updateUser.validation')
 
 module.exports = dataResponse(async ({

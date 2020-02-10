@@ -10,7 +10,7 @@ const {
   newCustomer,
   updateCustomer,
   deleteCustomer
-} = require('./../controllers/admin')
+} = require('../controllers/admin')
 
 module.exports = {
   config (router) {

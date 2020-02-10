@@ -1,6 +1,6 @@
 const {
   postLogin
-} = require('./../controllers/user')
+} = require('../controllers/user')
 
 module.exports = {
   config (router) {

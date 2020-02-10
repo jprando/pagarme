@@ -1,5 +1,5 @@
 const { EOL } = require('os')
-const _package = require('./../../package')
+const _package = require('../../package')
 const nodeEnvUndefined = require('./nodeEnvUndefined')
 const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')
@@ -21,7 +21,7 @@ module.exports = () => {
       }
     },
     development: () => check('nodemodule'),
-    test: () => {}
+    test: () => { }
   }
 
   const nodeCheckEnvMode = constraints[process.env.NODE_ENV]

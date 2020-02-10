@@ -1,8 +1,8 @@
-const auth = require('./../server/middleware/auth')
+const auth = require('../server/middleware/auth')
 const {
   getCustomerPaymentTransactions,
   postPaymentTransaction
-} = require('./../controllers/paymentTransaction')
+} = require('../controllers/paymentTransaction')
 
 module.exports = {
   config (router) {

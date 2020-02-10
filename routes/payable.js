@@ -1,4 +1,4 @@
-const auth = require('./../server/middleware/auth')
+const auth = require('../server/middleware/auth')
 const { getCustomerPayables } = require('../controllers/payable')
 
 module.exports = {

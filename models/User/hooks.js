@@ -1,6 +1,6 @@
 const uuidV4 = require('uuid/v4')
-const { generate: passwordGenerate } = require('./../../services/user/password')
-const { generateCredentialText } = require('./../../services/user')
+const { generate: passwordGenerate } = require('../../services/user/password')
+const { generateCredentialText } = require('../../services/user')
 
 module.exports = {
   beforeCreate: async (user) => {

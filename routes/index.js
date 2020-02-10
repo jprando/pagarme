@@ -1,5 +1,5 @@
 const express = require('express')
-const { loadModule } = require('./../utils')
+const { loadModule } = require('../utils')
 
 module.exports = {
   config (app) {

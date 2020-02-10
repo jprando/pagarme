@@ -1,4 +1,4 @@
-const { dataResponse } = require('../../utils')
+const dataResponse = require('../dataResponse')
 const newPaymentTransactionConstraints = require('./postPaymentTransaction.validation')
 
 module.exports = dataResponse(async ({
