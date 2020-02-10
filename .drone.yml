@@ -11,6 +11,7 @@ steps:
 - name: gitea_release
   image: plugins/gitea-release
   settings:
+    prerelease: true
     api_key:
       from_secret: gitea_token
     base_url: https://git.jeudi.dev/jeudi/pagarme
