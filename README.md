@@ -4,6 +4,24 @@
 
 [informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
+## Lista de conteúdo
+- [Informações](#informacoes)
+    - [Pastas](#pastas)
+- [Banco de Dados](#banco-de-dados)
+    - [Preparar o banco de dados](#preparar-o-banco-de-dados)
+- [Configuração](#configuracao)
+- [Baixar e preparar o projeto](#baixar-e-preparar-oprojeto)
+- [Executar o projeto](#executar-o-projeto)
+    - [Preflight](#preflight)
+    - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
+    - [Ambiente de Homologação ou Produção](#ambiente-de-homologacao-ou-producao)
+        - [Start](#start)
+        - [Status](#status)
+        - [Stop](#stop)
+- [Libs e Frameworks](#libs-e-frameworks)
+
+---
+
 ## Informações
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
