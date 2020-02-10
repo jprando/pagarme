@@ -16,7 +16,7 @@ steps:
       from_secret: gitea_token
     base_url: https://git.jeudi.dev/jeudi/pagarme
     files:
-      - /*
+      - ./*
     checksum:
       - md5
       - sha1
