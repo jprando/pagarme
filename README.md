@@ -50,13 +50,13 @@ O histórico das compilações deste projeto, do pequeno CI/CD integrado ao repo
 
 ### Pastas
 
-**CONTROLLERS**
+**CONTROLLERS**  
 Faz o controle entre a requisição no endpoint da API e coordena as chamadas aos serviços para atender a requisição feita, responsável por controlar e a dar a resposta correta de acordo com o estado da aplicação ao executar os serviços.
 
 **DB**  
 Preparar, gerenciar e utilizar dados de um banco de dados.
 
-**MODELS**
+**MODELS**  
 Configura os aspectos referente a modelagem de dados do sistema como: tabelas, campos, tipos de dados, validações, informação para a criação dos objetos do banco de dados.
 
 **ROUTERS**  
@@ -71,7 +71,7 @@ Implementação das regras de negocio do sistema.
 **TEST**  
 Implementação dos testes unitários.
 
-**UTILS**
+**UTILS**  
 Funções uteis a várias partes do sistema
 
 [voltar para o índice](#lista-de-conteúdo)
