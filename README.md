@@ -107,6 +107,8 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` para um novo arquivo com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
+Para informar a configuração da conexão com o banco de dados para a execução dos testes, copie o arquivo de exemplo `.env.example` para um novo arquivo com o nome `.env.test` e preencha-o corretamente.
+
 Observando as opções contidas no arquivo `.env`, você tem a opção de utilizar variáveis de ambiente com o mesmo nome e com o valor necessário para iniciar a conexão com o banco de dados postgres.
 
 Dentro do arquivo `.env` você encontrará as seguintes opções:
