@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const jwtSecret = process.env.JWT_SECRET || '3c8c1cfc06af43676b4eee080026e83cd3df1c29710e17df9b69f849f3094cd3'
+const jwtSecret = process.env.JWT_SECRET || process.env.SALT || '3c8c1cfc06af43676b4eee080026e83cd3df1c29710e17df9b69f849f3094cd3'
 
 module.exports = {
   sign (data) {

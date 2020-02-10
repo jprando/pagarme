@@ -108,6 +108,15 @@ module.exports = Sequelize => ({
       min: 0.001
     }
   },
+  feeAmount: {
+    type: Sequelize.DECIMAL,
+    allowNull: false,
+    validate: {
+      notNull: true,
+      isDecimal: true,
+      min: 0.001
+    }
+  },
   netAmount: {
     type: Sequelize.DECIMAL,
     allowNull: false,

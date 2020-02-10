@@ -28,6 +28,7 @@ module.exports = async function (databaseTransaction,
   const payableYear = payableDate.getUTCFullYear()
   const payableMonth = payableDate.getUTCMonth() + 1
   const fee = isDebitCardPayment ? 0.03 : 0.05
+  const feeAmount = amount * fee
   const netAmount = amount - (amount * fee)
 
   const newPayable = {
@@ -43,6 +44,7 @@ module.exports = async function (databaseTransaction,
     payableDate,
     amount,
     fee,
+    feeAmount,
     netAmount
   }
   const options = { transaction: databaseTransaction }

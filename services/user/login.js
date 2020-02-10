@@ -18,10 +18,12 @@ module.exports = async function (email, credential) {
         where: { id: _user_.id },
         fields: ['lastLoginAt']
       }).then(updated => {
+        const { name, email, admin } = _user_
         return updated && updated.length && updated[0] &&
         {
-          name: _user_.name,
-          email: _user_.email
+          name: name,
+          email: email,
+          admin: admin
         }
       })
     }

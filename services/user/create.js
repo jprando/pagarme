@@ -8,7 +8,11 @@ module.exports = async function (newUser) {
   })
 
   if (userEmailExists) {
-    return { error: true, message: 'There is already a user with this email' }
+    return { error: true, code: 422, message: 'There is already a user with this email' }
+  }
+
+  if (newUser.credential.length > 42) {
+    return { error: true, code: 422, message: 'Max length for credential is 42 characters' }
   }
 
   const newUserResult = await user.create(newUser).then(toPlain)
