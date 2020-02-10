@@ -3,7 +3,7 @@ module.exports = {
     attributes: ['id', 'name', 'email']
   },
   allFields: {
-    attributes: { }
+    attributes: {}
   },
   withoutCredential: {
     attributes: { exclude: ['credential'] }
@@ -15,6 +15,9 @@ module.exports = {
     where: { active: false }
   },
   allUsers: {
-    where: { }
+    where: {}
+  },
+  ukeyOnly: {
+    attributes: ['ukey']
   }
 }

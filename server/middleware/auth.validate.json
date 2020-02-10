@@ -1,0 +1,26 @@
+{
+  "email": {
+    "presence": {
+      "message": "^User EMAIL is not valid",
+      "allowEmpty": false
+    },
+    "email": true
+  },
+  "ukey": {
+    "type": "string",
+    "presence": {
+      "message": "^User UKEY is not valid",
+      "allowEmpty": false
+    },
+    "length": {
+      "is": 36,
+      "tooLong": "^User UKEY is too long (maximum is 11 characters)",
+      "notValid": "^User UKEY is not valid ...",
+      "wrongLength": "^User UKEY must be Alphanumeric value of 36 characters"
+    },
+    "format": {
+      "pattern": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}",
+      "message": "^User UKEY is not in a valid format UUID"
+    }
+  }
+}

@@ -5,6 +5,7 @@ const factory = mapForReduce(__dirname)
 module.exports = [
   'getById',
   'getByUkey',
+  'getUkeyByEmail',
   'getAll',
   'create',
   'update',
