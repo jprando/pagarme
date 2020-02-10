@@ -5,5 +5,6 @@ steps:
 - name: test
   image: node
   commands:
+  - cp .env.farfarway.example .env
   - yarn
   - yarn test
