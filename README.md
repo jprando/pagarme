@@ -387,6 +387,7 @@ Em alguns pontos algumas coisas poderiam ser melhor como a organização e a imp
 
 Se eu tivesse mais tempo eu investiria em:
 
+- Configurar o Webpack
 - Implementar mais testes
 - Faria uma imagem no docker
 - Utilizar o Swagger
