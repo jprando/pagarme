@@ -88,7 +88,7 @@ Você pode instalar o banco de dados postgres localmente em sua máquina ou util
 
 Esta é a opção mais rápida e posso dizer também simples para ter um serviço de banco de dados postgres rodando em sua máquina para servir a API da solução implementada.
 
-Tendo o [docker instalado](https://get.docker.com/), configurado e executando normal e corretamente em sua máquina, o comando abaixo ira preparar e disponibilizar prontamente um serviço do postgres:
+Tendo o [docker instalado](https://get.docker.com/), configurado , executando normal e corretamente em sua máquina, o comando abaixo irá preparar e disponibilizar prontamente um serviço do banco de dados postgres:
 
 ```sh
 docker run --name pgsql-db-srv \
@@ -105,7 +105,7 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 ## Configuração da Conexão
 
-Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
+Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` para um novo arquivo com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
 Observando as opções contidas no arquivo `.env`, você tem a opção de utilizar variáveis de ambiente com o mesmo nome e com o valor necessário para iniciar a conexão com o banco de dados postgres.
 
