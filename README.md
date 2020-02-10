@@ -5,6 +5,9 @@
 [informações do desafio](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
 
 ## 📑 Lista de conteúdo
+
+%%TOC%%
+
 - [Informações](#informações)
     - [Pastas](#pastas)
 - [Banco de Dados](#banco-de-dados)
