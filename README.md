@@ -43,6 +43,8 @@ Este projeto esta replicado em dois repositórios:
 
 Observei que o formato da lista de conteúdo não funciona no Github mas funciona no Gitea, dei prioridade ao meu gitea pois nele esta integrado um CI/CD utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
 
+O histórico das compilações, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
+
 ### 📂 Pastas
 
 **CONTROLLERS**
