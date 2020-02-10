@@ -49,7 +49,7 @@ Implementação dos testes unitários.
 
 Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/about/) para persistir as informações do sistema
 
-### Preparar o Banco de Dados
+### 📝 Preparar o Banco de Dados
 
 Você pode instalar o banco de dados postgres localmente em sua máquina ou utilizar o docker para obter um serviço do postgres pronto para utilização na sua máquina local.
 
@@ -63,7 +63,7 @@ Observando as opções contidas no arquivo `.env`, você tem a opção de utiliz
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## ✨ Baixar e preparar o projeto
+## 📦 Baixar e preparar o projeto
 
 Para preparar e utilizar este projeto você deverá ter instalado, e funcionando corretamente, os seguintes programas no seu ambiente.
 
@@ -274,4 +274,4 @@ Principais Libs e Frameworks utilizados no projeto.
 - [Sequelize](https://sequelize.org/v5/index.html)
 - [Validate.js](https://validatejs.org/#validate-js)
 
-⬆️ [voltar para o índice](#lista-de-conteúdo)
+[voltar para o índice](#lista-de-conteúdo)
