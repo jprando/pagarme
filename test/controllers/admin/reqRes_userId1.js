@@ -5,7 +5,7 @@ module.exports = done => ({
     services: {
       user: {
         getById: async function (id) {
-          expect(id).to.equal(1, 'getById receive must be')
+          expect(id).to.equal(1, 'getById receive must be 1')
           return { id }
         }
       }
