@@ -27,7 +27,7 @@ describe('CONTROLLER ADMIN', () => {
       done()
     })
 
-    it('it should be a admin.getUserById function', done => {
+    it('it should be a admin.user.getUserById function', done => {
       expect(admin.getUserById).to.be
         .a('function', 'admin.getUserById should be a function')
       expect(admin.getUserById.length).to.be
