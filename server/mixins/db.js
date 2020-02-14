@@ -12,7 +12,7 @@ module.exports = {
       app.db = connection()
       await app.db.authenticate()
       const { db } = app
-      if (pgSyncValue !== 'NO' || (pgSyncValue !== 'NO' && inDevelopmentMode)) {
+      if (pgSyncValue !== 'NO' || inDevelopmentMode) {
         console.log(`[ DB ] Schema ${db.options.schema}`)
         console.log(`[ DB ] Database ${db.config.database}`)
         console.log(`[ DB ] Sync started${EOL}`)
