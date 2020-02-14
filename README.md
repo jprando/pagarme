@@ -11,6 +11,7 @@
 - [Banco de Dados](#banco-de-dados)
     - [Preparar o banco de dados](#preparar-o-banco-de-dados)
       - [Via Docker](#via-docker)
+- [Endpoints](#endpoints)
 - [Configuração da Conexão](#configuração-da-conexão)
 - [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
   - [Outros comandos](#outros-comandos)
@@ -75,6 +76,98 @@ Implementação dos testes unitários.
 Funções uteis a várias partes do sistema
 
 [voltar para o índice](#lista-de-conteúdo)
+
+## Endpoints
+
+**`POST /api/v1/login`**  
+Para realizar o login do usuario e recuperar o token de acesso  
+
+> request json
+
+```json
+{
+	"email": "jeudi@prando.dev",
+	"password": "1123qqwe"
+}
+```
+
+> response
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmV1ZGkgUHJhbmRvIiwiZW1haWwiOiJqZXVkaUBwcmFuZG8uZGV2IiwiYWRtaW4iOnRydWUsImlhdCI6MTU4MTY0NTg2OSwiZXhwIjoxNTgxNjQ5NDY5LCJpc3MiOiJwYWdhcm1lIn0.sOEysdsILEX7mTKfWdhV0xSdclmV9n9EY9NWbdEZGJ0"
+}
+```
+
+**`GET /api/v1/admin/user/:id`**  
+Obtem informações completa de um usuário específico, substitua o parâmetro `:id` pelo código do usuário.  
+*requer token de authenticação*
+
+> request header  
+
+`Authorization: Bearer eyJhbGciOiJIUzI1tokendata...`
+
+> response 200 OK
+```json
+{
+  "id": 1,
+  "admin": true,
+  "name": "Jeudi Prando",
+  "email": "jeudi@prando.dev",
+  "active": true,
+  "ukey": "99c05752-1515-4e30-95bf-61697299ec78",
+  "lastLoginAt": "2020-02-14T02:04:29.003Z",
+  "createdAt": "2020-02-14T02:01:56.641Z",
+  "updatedAt": "2020-02-14T02:04:29.004Z"
+}
+```
+*Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API*
+
+
+**`POST /api/v1/admin/user`**  
+Cria um novo usuário
+
+> request json
+```json
+{
+	"name":"teste",
+	"email":"teste@teste.com",
+	"credential": "123321"
+}
+```
+> response
+```json
+{
+  "admin": false,
+  "active": true,
+  "ukey": "99c05752-1515-4e30-95bf-61697299ec78",
+  "id": 1,
+  "name": "teste",
+  "email": "teste@teste.com",
+  "updatedAt": "2020-02-14T02:26:56.864Z",
+  "createdAt": "2020-02-14T02:26:56.864Z"
+}
+```
+*Observe o campo `ukey` você vai precisar dele para realizar algumas operações na API*
+
+
+**`GET /api/v1/admin/users`**  
+**`POST /api/v1/admin/user/1`**  
+**`DELETE /api/v1/a/dmin/user/1`**  
+
+**`POST /api/v1/admin/customer`**  
+**`GET /api/v1/admin/customers`**  
+**`GET /api/v1/admin/customer/1`**  
+**`POST /api/v1/admin/customer/1`**  
+**`DELETE /api/v1/admin/customer/1`**  
+
+**`GET /api/v1/transactions/customer`**  
+**`POST /api/v1/transactions`**  
+
+**`GET /api/v1/payables/customer`**  
+
+**`GET /api/v1/customer/balance`**  
+
 
 ## Banco de Dados
 
