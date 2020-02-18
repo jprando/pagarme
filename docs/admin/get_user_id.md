@@ -35,7 +35,7 @@ Obtém informações completa de um usuário específico, previamente cadastro n
   "updatedAt": "2020-02-14T02:04:29.004Z"
 }
 ```
-*Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API*
+*Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API.*
 
 
 ## Resposta de Não Autorizado
