@@ -25,7 +25,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmV1ZGkgUHJhbmRvIiwiZW1haWwiOiJqZXVkaUBwcmFuZG8uZGV2IiwiYWRtaW4iOnRydWUsImlhdCI6MTU4MTY0NTg2OSwiZXhwIjoxNTgxNjQ5NDY5LCJpc3MiOiJwYWdhcm1lIn0.sOEysdsILEX7mTKfWdhV0xSdclmV9n9EY9NWbdEZGJ0"
+  "token": "eyJhbGciOiJIUzI1N...tokendata...sOEysdsILEX7mTKfWd"
 }
 ```
 
