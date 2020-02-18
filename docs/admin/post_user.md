@@ -50,7 +50,7 @@ Informações obrigatórias:
   "createdAt": "2020-02-14T02:26:56.864Z"
 }
 ```
-*Observe o campo `ukey` gerado automaticamente pelo sistema, você vai precisar dele para realizar algumas operações na API.*
+> *Observe o campo `ukey` gerado automaticamente pelo sistema, você vai precisar dele para realizar algumas operações na API.*
 
 ## Resposta de Erro 422
 
