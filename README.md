@@ -86,7 +86,7 @@ Funções uteis a várias partes do sistema
 
 ### Endpoint Público
 
-Para realizar o login do usuario e recuperar o token de acesso  
+Para realizar o login do usuário e recuperar o token de acesso  
 
 - [Login](/docs/login.md) : `POST /api/v1/login`
 
