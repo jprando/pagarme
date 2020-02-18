@@ -12,6 +12,8 @@
     - [Preparar o banco de dados](#preparar-o-banco-de-dados)
       - [Via Docker](#via-docker)
 - [Endpoints](#endpoints)
+    - [Endpoint Público](#endpoint-público)
+    - [Endpoint Privado](#endpoint-privado)
 - [Configuração da Conexão](#configuração-da-conexão)
 - [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
   - [Outros comandos](#outros-comandos)
@@ -57,6 +59,9 @@ Faz o controle entre a requisição no endpoint da API e coordena as chamadas ao
 **DB**  
 Preparar, gerenciar e utilizar dados de um banco de dados.
 
+**DOCS**  
+Documentação detalhada dos Endpoints da API.
+
 **MODELS**  
 Configura os aspectos referente a modelagem de dados do sistema como: tabelas, campos, tipos de dados, validações, informação para a criação dos objetos do banco de dados.
 
@@ -79,76 +84,20 @@ Funções uteis a várias partes do sistema
 
 ## Endpoints
 
-**`POST /api/v1/login`**  
+### Endpoint Público
+
 Para realizar o login do usuario e recuperar o token de acesso  
 
-> request json
+- [Login](/docs/login.md) : `POST /api/v1/login`
 
-```json
-{
-	"email": "jeudi@prando.dev",
-	"password": "1123qqwe"
-}
-```
+[voltar para o índice](#lista-de-conteúdo)
 
-> response
+### Endpoint Privado
 
-```json
-{
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmV1ZGkgUHJhbmRvIiwiZW1haWwiOiJqZXVkaUBwcmFuZG8uZGV2IiwiYWRtaW4iOnRydWUsImlhdCI6MTU4MTY0NTg2OSwiZXhwIjoxNTgxNjQ5NDY5LCJpc3MiOiJwYWdhcm1lIn0.sOEysdsILEX7mTKfWdhV0xSdclmV9n9EY9NWbdEZGJ0"
-}
-```
+Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
-**`GET /api/v1/admin/user/:id`**  
-Obtem informações completa de um usuário específico, substitua o parâmetro `:id` pelo código do usuário.  
-*requer token de authenticação*
-
-> request header  
-
-`Authorization: Bearer eyJhbGciOiJIUzI1tokendata...`
-
-> response 200 OK
-```json
-{
-  "id": 1,
-  "admin": true,
-  "name": "Jeudi Prando",
-  "email": "jeudi@prando.dev",
-  "active": true,
-  "ukey": "99c05752-1515-4e30-95bf-61697299ec78",
-  "lastLoginAt": "2020-02-14T02:04:29.003Z",
-  "createdAt": "2020-02-14T02:01:56.641Z",
-  "updatedAt": "2020-02-14T02:04:29.004Z"
-}
-```
-*Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API*
-
-
-**`POST /api/v1/admin/user`**  
-Cria um novo usuário
-
-> request json
-```json
-{
-	"name":"teste",
-	"email":"teste@teste.com",
-	"credential": "123321"
-}
-```
-> response
-```json
-{
-  "admin": false,
-  "active": true,
-  "ukey": "99c05752-1515-4e30-95bf-61697299ec78",
-  "id": 1,
-  "name": "teste",
-  "email": "teste@teste.com",
-  "updatedAt": "2020-02-14T02:26:56.864Z",
-  "createdAt": "2020-02-14T02:26:56.864Z"
-}
-```
-*Observe o campo `ukey` você vai precisar dele para realizar algumas operações na API*
+- [Exibir Usuário](/docs/admin/get_user_id.md) : `GET /api/v1/admin/user/:id`
+- [Criar Usuário](/docs/admin/post_user) : `POST /api/v1/admin/user`
 
 
 **`GET /api/v1/admin/users`**  
@@ -168,6 +117,7 @@ Cria um novo usuário
 
 **`GET /api/v1/customer/balance`**  
 
+[voltar para o índice](#lista-de-conteúdo)
 
 ## Banco de Dados
 
