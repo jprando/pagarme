@@ -12,8 +12,8 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 ```json
 {
-	"email": "jeudi@prando.dev",
-	"password": "1123qqwe"
+  "email": "jeudi@prando.dev",
+  "password": "1123qqwe"
 }
 ```
 
