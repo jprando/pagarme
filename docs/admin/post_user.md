@@ -65,4 +65,16 @@ Informações obrigatórias:
 }
 ```
 
+## Resposta de Não Autorizado
+
+**Condição** : Se o token informado na requisição não for válido ou estiver expirado.
+
+**Code** : `401 Unauthorized`
+
+**Conteúdo de Exemplo**
+
+```
+jwt expired
+```
+
 [Voltar](/README.md)

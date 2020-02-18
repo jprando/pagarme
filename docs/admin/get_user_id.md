@@ -37,6 +37,17 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 ```
 *Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API.*
 
+## Resposta de Não Encontrado
+
+**Condição** : Quando o ID informado não for encontrado na tabela de usuário do banco de dados do sistema.
+
+**Code** : `404 Not Found`
+
+**Conteúdo de Exemplo**
+
+```json
+{ "message": "User not found" }
+```
 
 ## Resposta de Não Autorizado
 
@@ -48,18 +59,6 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 
 ```
 jwt expired
-```
-
-## Resposta de Não Encontrado
-
-**Condição** : Quando o ID informado não for encontrado na tabela de usuário do banco de dados do sistema.
-
-**Code** : `404 Not Found`
-
-**Conteúdo de Exemplo**
-
-```json
-{ "message": "User not found" }
 ```
 
 [Voltar](/README.md)
