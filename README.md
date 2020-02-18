@@ -97,7 +97,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
 - [Exibir Usuário](/docs/admin/get_user_id.md) : `GET /api/v1/admin/user/:id`
-- [Criar Usuário](/docs/admin/post_user) : `POST /api/v1/admin/user`
+- [Criar Usuário](/docs/admin/post_user.md) : `POST /api/v1/admin/user`
 
 
 **`GET /api/v1/admin/users`**  

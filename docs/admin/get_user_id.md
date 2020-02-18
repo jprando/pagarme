@@ -1,6 +1,6 @@
 # Exibir Usuário
 
-Obtém informações completa de um usuário específico, previamente cadastro no sistema, substitua o parâmetro `:id` pelo código do usuário.  
+Obtém informações completa de um usuário específico, previamente cadastro no sistema.
 
 **URL** : `/api/v1/admin/user/:id`
 
