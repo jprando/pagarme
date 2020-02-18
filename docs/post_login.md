@@ -66,4 +66,4 @@ Para realizar o login do usuário e recuperar o token de acesso
 }
 ```
 
-[Voltar](/README.md)
+[Voltar](/README.md#endpoints)

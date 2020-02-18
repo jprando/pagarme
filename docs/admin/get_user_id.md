@@ -61,4 +61,4 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 jwt expired
 ```
 
-[Voltar](/README.md)
+[Voltar](/README.md#endpoints)
