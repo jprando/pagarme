@@ -23,10 +23,10 @@ Informações obrigatórias:
 
 ```json
 {
-	"name":"teste",
-	"email":"teste@teste.com",
-    "credential": "123321",
-    "admin": false
+  "name":"teste",
+  "email":"teste@teste.com",
+  "credential": "123321",
+  "admin": false
 }
 ```
 
