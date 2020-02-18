@@ -125,7 +125,7 @@ Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/abou
 
 ### Preparar o Banco de Dados
 
-Quando a API é iniciada no modo de desenvolvimento, em sua inicialização é verificado a existência do usuário com as credenciais `jeudi@prando.dev`:`1123qqwe`, se o usuário não for encontrado o sistema cria este usuário como administrador.
+> Quando a API é iniciada no modo de desenvolvimento, em sua inicialização é verificado a existência do usuário com as credenciais `jeudi@prando.dev`:`1123qqwe`, se o usuário não for encontrado o sistema cria este usuário como administrador.
 
 Você pode [instalar o banco de dados postgres localmente em sua máquina](https://www.postgresql.org/docs/12/tutorial-install.html) ou [utilizar o docker para obter um serviço do postgres](https://hub.docker.com/_/postgres) pronto para utilização na sua máquina local.
 
