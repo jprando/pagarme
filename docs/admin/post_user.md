@@ -77,4 +77,4 @@ Informações obrigatórias:
 jwt expired
 ```
 
-[Voltar](/README.md)
+[Voltar](/README.md#endpoints)
