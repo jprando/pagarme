@@ -102,7 +102,9 @@ Funções uteis a várias partes do sistema
 
 Esse é o único enpoint público, ou seja, não exige que um Token válido seja informado no cabeçalho da solicitação.
 
-- [Login](/docs/post_login.md) : `POST /api/v1/login`
+| Descrição                     | Tipo    | Endpoint        |
+|-------------------------------|---------|-----------------|
+| [Login](/docs/post_login.md)  | `POST`  | `/api/v1/login` |
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -133,7 +135,7 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 ### Endpoint Privado - Administração
 
-Estes endpoints privados, além de requerer que um token valido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a usuário do tipo administrador.
+Estes endpoints privados, além de requerer que um token valido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
 
 #### Usuário
 
