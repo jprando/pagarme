@@ -46,6 +46,8 @@ Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porém 
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
+Os [commits são assinados digitalmente](https://help.github.com/pt/github/authenticating-to-github/signing-commits) com a minha chave GPG: 1482A61AFF211B2C.
+
 Este projeto esta replicado em dois repositórios:
 
 - [Github](https://github.com/jprando/pagarme)
