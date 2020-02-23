@@ -126,10 +126,10 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 #### Transações
 
-| Descrição                                       | Tipo  | Endpoint                      |
-|-------------------------------------------------|-------|-------------------------------|
+| Descrição                                       | Tipo  | Endpoint                          |
+|-------------------------------------------------|-------|-----------------------------------|
 | [Criar](/docs/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
-| [Listar](/docs/transaction/customer.md)         | `GET`   | `/api/v1/transactions/customer` |
+| [Listar](/docs/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
 
 #### Pagáveis
 
@@ -139,7 +139,7 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 #### Balanço
 
-| Descrição                                           | Tipo  | Endpoint                    |
+| Descrição                                           | Tipo  | Endpoint                                |
 |-----------------------------------------------------|-------|-----------------------------------------|
 | [Exibir](/docs/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
 | [Exibir por Ano](/docs/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
