@@ -269,6 +269,8 @@ and try again
 
 Para servir a API no ambiente de desenvolvimento utilizaremos o [`nodemon`](https://nodemon.io/) e aproveitar a sua particularidade de observar mudanças nos arquivos do projeto e reiniciar o processo que serve a API já aplicando as novas mudanças no código fonte.
 
+Utilize o comando `yarn dev` ou `npm run dev` para iniciar a API em modo de desenvolvimento, o endereço `http://localhost:3000/api/v1/` será a base dos enpoint no seu ambiente de desenvolvimento local.
+
 ```sh
 ~/pagarme/> yarn dev
 yarn run v1.19.1
@@ -278,24 +280,30 @@ $ nodemon index.js
 [nodemon] watching dir(s): *.*
 [nodemon] watching extensions: js,mjs,json
 [nodemon] starting `node index.js`
-  ...... Middleware
-  ...... Routes
-  ...... Configuration
-  [ OK ] Server running http://localhost:3000
-  [ 2020-01-30T20:39:52.672Z ] GET / HTTP/1.1 200 13 ::1 - 1.923 ms
-  [ 2020-01-30T20:39:52.696Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.912 ms
-  [ 2020-01-30T20:39:55.283Z ] GET / HTTP/1.1 200 13 ::1 - 0.145 ms
-  [ 2020-01-30T20:39:55.455Z ] GET / HTTP/1.1 304 - ::1 - 0.320 ms
-  [ 2020-01-30T20:39:57.394Z ] GET / HTTP/1.1 304 - ::1 - 0.160 ms
-  [ 2020-01-30T20:39:58.483Z ] GET / HTTP/1.1 200 13 ::1 - 0.122 ms
-  [ 2020-01-30T20:39:58.508Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.194 ms
-  [ 2020-01-30T20:40:00.074Z ] GET / HTTP/1.1 200 13 ::1 - 0.137 ms
-  [ 2020-01-30T20:40:00.102Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.172 ms
+
+[INFO] Mode DEVELOPMENT
+[ OK ] Preflight
+...... Database
+[ DB ] 2020-02-23T14:36:18.901Z SELECT 146ms Executed (default): SELECT 1+1 AS result
+[ DB ] Schema public
+[ DB ] Database pagarme-db
+[ DB ] Sync started
+[ DB ] ...
+[ DB ] Sync finished
+[ OK ] Database
+[ OK ] Middleware
+[ OK ] Routes
+[ OK ] Configuration
+[ OK ] Server running http://localhost:3000/api/v1/
+......
+[HTTP] 2020-02-23T14:41:30.923Z GET /api/v1/ HTTP/1.1 304 - 127.0.0.1 - 3.899 ms
+[HTTP] 2020-02-23T14:42:39.089Z POST /api/v1/login HTTP/1.1 401 45 127.0.0.1 - 275.264 ms
 
 # utilize CTRL + C para interromper o processo
 
-  ...... Shutting down server
-  [ OK ] Server off
+...... Shutting down server
+[ OK ] Database close
+[ OK ] Server off
 
 ~/pagarme/> _
 ```
