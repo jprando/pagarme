@@ -6,8 +6,8 @@
 
 ## Apoiadores
 
-![foto do github de Bruno Flegler Dal'Col](https://avatars0.githubusercontent.com/u/18169587?s=60&v=4) [Bruno Flegler Dal'Col](https://github.com/brunoflegler)  
-![foto do github de João Maia](https://avatars1.githubusercontent.com/u/296619?s=60&v=4) [João Maia](https://github.com/jvrmaia)
+[![foto do github de Bruno Flegler Dal'Col](https://avatars0.githubusercontent.com/u/18169587?s=60&v=4) Bruno Flegler Dal'Col](https://github.com/brunoflegler)  
+[![foto do github de João Maia](https://avatars1.githubusercontent.com/u/296619?s=60&v=4) João Maia](https://github.com/jvrmaia)
 
 ## Lista de conteúdo
 
