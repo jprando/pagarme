@@ -327,7 +327,7 @@ Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.co
 }
 ```
 
-Em seguida vá na aba `Run and Debug` escolha a opção `Development Mode` e click no botao que tem um icone de play verde (Start Debugging) ou pressione **F5**, a API será carregada na aba  `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` para depurar a execução da API no seu ambiente de desenvolmento.
+Em seguida vá na aba `Run and Debug` escolha a opção `Development Mode` e click no botao `Start Debugging` ( que tem um icone de play verde ) ou pressione **F5**, a API será carregada na aba  `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` para depurar a execução da API no seu ambiente de desenvolmento.
 
 Algumas teclas de atalhos, do `vscode`, úteis para a depuração:
 
