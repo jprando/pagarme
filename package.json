@@ -12,7 +12,8 @@
     "db:sync": "env PG_SYNC=true NODE_ENV=development node index.js",
     "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node index.js",
     "mocha": "env NODE_ENV=test mocha --exit --recursive --timeout 5000",
-    "test": "env NODE_ENV=test PG_SCHEMA=tests yarn db:clean:sync && yarn mocha"
+    "test": "env NODE_ENV=test PG_SCHEMA=tests yarn db:clean:sync && yarn mocha",
+    "test:markdown": "markdownlint -c ./makrdownlint.json README.md"
   },
   "dependencies": {
     "bcrypt": "^3.0.7",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "markdownlint-cli": "^0.22.0",
     "mocha": "^7.0.1",
     "nodemon": "^2.0.2",
     "sequelize-cli": "^5.5.1"
