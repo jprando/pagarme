@@ -94,7 +94,7 @@ Funções uteis a várias partes do sistema
 
 ### Endpoint Público
 
-Para realizar o login do usuário e recuperar o token de acesso  
+Esse é o único enpoint público, ou seja, não exige que um Token válido seja informado no cabeçalho da solicitação.
 
 - [Login](/docs/post_login.md) : `POST /api/v1/login`
 
