@@ -1,5 +1,6 @@
 const authConstraints = require('./auth.validate')
-module.exports = async (req, res, next) => {
+
+async function auth (req, res, next, role = undefined) {
   try {
     const { validate, services: { jwt, user } } = req
     if (req && req.headers && req.headers.authorization) {
@@ -11,7 +12,9 @@ module.exports = async (req, res, next) => {
         if (errors) {
           res.status(401).send(errors).end()
           return
-        } else if (req.auth && req.auth.email && req.auth.ukey) {
+        }
+        const roleOK = (role === undefined || (req.auth && req.auth[role] && req.auth[role] === true))
+        if (roleOK && req.auth && req.auth.email && req.auth.ukey) {
           next()
           return
         }
@@ -24,3 +27,7 @@ module.exports = async (req, res, next) => {
   }
   res.status(401).end()
 }
+
+auth.is = role => (req, res, next) => auth(req, res, next, role)
+
+module.exports = auth

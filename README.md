@@ -16,11 +16,12 @@
 - [Endpoints](#endpoints)
   - [Endpoint Público](#endpoint-público)
   - [Endpoint Privado](#endpoint-privado)
-    - [Usuário](#usuário)
-    - [Cliente](#cliente)
     - [Transações](#transações)
     - [Pagáveis](#pagáveis)
     - [Balanço](#balanço)
+  - [Endpoint Privado - Administração](#endpoint-privado---administração)
+    - [Usuário](#usuário)
+    - [Cliente](#cliente)
 - [Banco de Dados](#banco-de-dados)
   - [Preparar o banco de dados](#preparar-o-banco-de-dados)
     - [Via Docker](#via-docker)
@@ -109,26 +110,6 @@ Esse é o único enpoint público, ou seja, não exige que um Token válido seja
 
 Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
-#### Usuário
-
-| Descrição                                 | Tipo      | Endpoint                  |
-|-------------------------------------------|-----------|---------------------------|
-| [Criar](/docs/admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
-| [Exibir](/docs/admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
-| [Alterar](/docs/admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
-| [Deletar](/docs/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/a/dmin/user/:id` |
-| [Listar](/docs/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
-
-#### Cliente
-
-| Descrição                                     | Tipo      | Endpoint                      |
-|-----------------------------------------------|-----------|-------------------------------|
-| [Criar](/docs/admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
-| [Exibir](/docs/admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
-| [Alterar](/docs/admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
-| [Deletar](/docs/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/a/dmin/customer/:id` |
-| [Listar](/docs/admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
-
 #### Transações
 
 | Descrição                                       | Tipo  | Endpoint                          |
@@ -149,6 +130,30 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 | [Exibir](/docs/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
 | [Exibir por Ano](/docs/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
 | [Exibir por Ano/Mês](/docs/customer/get_balance.md) | `GET` | `/api/v1/customer/balance/:year/:month` |
+
+### Endpoint Privado - Administração
+
+Estes endpoints privados, além de requerer que um token valido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a usuário do tipo administrador.
+
+#### Usuário
+
+| Descrição                                 | Tipo      | Endpoint                  |
+|-------------------------------------------|-----------|---------------------------|
+| [Criar](/docs/admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
+| [Exibir](/docs/admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
+| [Alterar](/docs/admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
+| [Deletar](/docs/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/a/dmin/user/:id` |
+| [Listar](/docs/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
+
+#### Cliente
+
+| Descrição                                     | Tipo      | Endpoint                      |
+|-----------------------------------------------|-----------|-------------------------------|
+| [Criar](/docs/admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
+| [Exibir](/docs/admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
+| [Alterar](/docs/admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
+| [Deletar](/docs/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/a/dmin/customer/:id` |
+| [Listar](/docs/admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
 
 [voltar para o índice](#lista-de-conteúdo)
 
