@@ -1,10 +1,9 @@
 const { ValidationError } = require('sequelize')
+const { extractLastFour } = require('./../../utils')
 
 module.exports = async function (newPaymentTransaction) {
   const {
-    // app: { db: { transaction } },
     db: { transaction, customer, paymentTransaction, toPlain },
-    // db: { customer, paymentTransaction, toPlain },
     services: { payable }
   } = this
 
@@ -16,6 +15,17 @@ module.exports = async function (newPaymentTransaction) {
   if (!customerResult) {
     throw new ValidationError('Customer not found')
   }
+
+  const { paymentDate, amount, cardholderName, cardExpiration, cardSecurityCode } = newPaymentTransaction
+  const cardNumber = extractLastFour(newPaymentTransaction.cardNumber)
+  const alreadyExists = await paymentTransaction.findOne({
+    where: { ukey, paymentDate, amount, cardNumber, cardholderName, cardExpiration, cardSecurityCode }
+  }).then(toPlain)
+
+  if(alreadyExists) {
+    throw new ValidationError('Payment transaction already exists')
+  }
+
   const customerName = customerResult.personName || customerResult.companyName
 
   let trans

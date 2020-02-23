@@ -1,4 +1,4 @@
-const extractLastFour = value => '*' + value.split('').splice(-4).join('')
+const { extractLastFour } = require('./../../utils')
 
 module.exports = {
   beforeValidate: async (newPaymentTransaction) => {

@@ -16,7 +16,7 @@
 - [Endpoints](#endpoints)
   - [Endpoint Público](#endpoint-público)
   - [Endpoint Privado](#endpoint-privado)
-    - [Transações](#transações)
+    - [Transações de Pagamento](#transações-de-pagamento)
     - [Pagáveis](#pagáveis)
     - [Balanço](#balanço)
   - [Endpoint Privado - Administração](#endpoint-privado---administração)
@@ -112,7 +112,7 @@ Esse é o único enpoint público, ou seja, não exige que um Token válido seja
 
 Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
-#### Transações
+#### Transações de Pagamento
 
 | Descrição                                       | Tipo  | Endpoint                          |
 |-------------------------------------------------|-------|-----------------------------------|
@@ -135,7 +135,7 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 ### Endpoint Privado - Administração
 
-Estes endpoints privados, além de requerer que um token valido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
+Estes endpoints privados, além de requerer que um token válido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
 
 #### Usuário
 

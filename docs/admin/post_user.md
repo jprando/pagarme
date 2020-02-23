@@ -20,7 +20,6 @@ Informações obrigatórias:
 - email válido do usuário
 - credencial do usuário com mais de 6 caracteres
 
-
 ```json
 {
   "name":"teste",
@@ -32,11 +31,11 @@ Informações obrigatórias:
 
 ## Resposta de Sucesso
 
-**Condição** : Se os dados do usuário forem validos e não forem duplicados.
+**Condição** : Se os dados do usuário forem válidos e não forem duplicados.
 
 **Code** : `201 Created`
 
-**Conteúdo de Exemplo**
+Conteúdo de exemplo da resposta
 
 ```json
 {
@@ -50,6 +49,7 @@ Informações obrigatórias:
   "createdAt": "2020-02-14T02:26:56.864Z"
 }
 ```
+
 > *Observe o campo `ukey` gerado automaticamente pelo sistema, você vai precisar dele para realizar algumas operações na API.*
 
 ## Resposta de Erro 422
@@ -71,9 +71,9 @@ Informações obrigatórias:
 
 **Code** : `401 Unauthorized`
 
-**Conteúdo de Exemplo**
+Conteúdo de Exemplo
 
-```
+```text
 jwt expired
 ```
 

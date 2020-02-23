@@ -20,7 +20,7 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 
 **Code** : 200 OK
 
-**Conteúdo de Exemplo**
+Conteúdo de Exemplo
 
 ```json
 {
@@ -35,6 +35,7 @@ Obtém informações completa de um usuário específico, previamente cadastro n
   "updatedAt": "2020-02-14T02:04:29.004Z"
 }
 ```
+
 > *Observe o valor de `ukey` você vai precisar dele para realizar algumas operações na API.*
 
 ## Resposta de Não Encontrado
@@ -43,7 +44,7 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 
 **Code** : `404 Not Found`
 
-**Conteúdo de Exemplo**
+Conteúdo de Exemplo
 
 ```json
 { "message": "User not found" }
@@ -55,9 +56,9 @@ Obtém informações completa de um usuário específico, previamente cadastro n
 
 **Code** : `401 Unauthorized`
 
-**Conteúdo de Exemplo**
+Conteúdo de Exemplo
 
-```
+```text
 jwt expired
 ```
 

@@ -13,7 +13,7 @@
     "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node index.js",
     "mocha": "env NODE_ENV=test mocha --exit --recursive --timeout 5000",
     "test": "env NODE_ENV=test PG_SCHEMA=tests yarn db:clean:sync && yarn mocha",
-    "test:markdown": "markdownlint -c ./makrdownlint.json README.md"
+    "test:markdown": "markdownlint -c ./makrdownlint.json README.md ./docs/"
   },
   "dependencies": {
     "bcrypt": "^3.0.7",
