@@ -472,6 +472,7 @@ Principais Libs e Frameworks utilizados no projeto.
 - [dotenv](dotenv)
 - [ExpressJs](http://expressjs.com/)
 - [helmet](https://helmetjs.github.io/)
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 - [morgan](https://github.com/expressjs/morgan#readme)
 - [nodemon](https://nodemon.io/)
 - [PM2](https://pm2.keymetrics.io/)
