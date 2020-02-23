@@ -25,6 +25,7 @@
 - [Executar o projeto](#executando-o-projeto)
     - [Preflight](#preflight)
     - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
+      - [Depurando no VSCode](#depurando-no-vsCode)
     - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
         - [Start](#start)
         - [Status](#status)
@@ -298,6 +299,43 @@ $ nodemon index.js
 
 ~/pagarme/> _
 ```
+
+[voltar para o índice](#lista-de-conteúdo)
+
+#### Depurando no VSCode
+
+Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.com/) como IDE, crie uma pasta chamada `.vscode` e dentro dessa pasta crie um arquivo com o nome `launch.json` com o seguinte conteudo:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Development Mode",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/index.js",
+      "skipFiles": [
+          "<node_internals>/**"
+      ],
+      "env": {
+          "NODE_ENV": "development"
+      }
+    }
+  ]
+}
+```
+
+Em seguida vá na aba `Run and Debug` escolha a opção `Development Mode` e click no botao que tem um icone de play verde (Start Debugging) ou pressione **F5**, a API será carregada na aba  `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` para depurar a execução da API no seu ambiente de desenvolmento.
+
+Algumas teclas de atalhos, do `vscode`, úteis para a depuração:
+
+| Atalho            | Descrição             |
+|-------------------|-----------------------|
+| **F5**            | inicia a depuração.   |
+| **SHIFT+F5**      | para a depuração.     |
+| **CTRL+SHIFT+F5** | reinicia a depuração. |
 
 [voltar para o índice](#lista-de-conteúdo)
 
