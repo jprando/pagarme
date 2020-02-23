@@ -5,10 +5,12 @@ module.exports = async function (email, credential) {
   } = this
 
   const _user_ = await user.scope('activeUsers')
-    .findOne({ where: { email } })
+    .findOne({
+      where: { email }, 
+      attributes: ['id', 'active', 'ukey', 'admin', 'name', 'email', 'credential'] })
     .then(toPlain)
 
-  if (_user_ && _user_.active) {
+  if (_user_ && _user_.active === true) {
     credential = userService.generateCredentialText({ ..._user_, credential })
     const credentialMatch = await this.password.compare(credential, _user_.credential)
     if (credentialMatch) {
