@@ -12,24 +12,24 @@
 ## Lista de conteúdo
 
 - [Informações](#informações)
-    - [Pastas](#pastas)
-- [Banco de Dados](#banco-de-dados)
-    - [Preparar o banco de dados](#preparar-o-banco-de-dados)
-      - [Via Docker](#via-docker)
+- [Pastas](#pastas)
 - [Endpoints](#endpoints)
-    - [Endpoint Público](#endpoint-público)
-    - [Endpoint Privado](#endpoint-privado)
-- [Configuração da Conexão](#configuração-da-conexão)
+  - [Endpoint Público](#endpoint-público)
+  - [Endpoint Privado](#endpoint-privado)
+- [Banco de Dados](#banco-de-dados)
+  - [Preparar o banco de dados](#preparar-o-banco-de-dados)
+    - [Via Docker](#via-docker)
+  - [Configuração da Conexão](#configuração-da-conexão)
 - [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
   - [Outros comandos](#outros-comandos)
 - [Executar o projeto](#executando-o-projeto)
-    - [Preflight](#preflight)
-    - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
-      - [Depurando no VSCode](#depurando-no-vsCode)
-    - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
-        - [Start](#start)
-        - [Status](#status)
-        - [Stop](#stop)
+  - [Preflight](#preflight)
+  - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
+    - [Depurando no VSCode](#depurando-no-vsCode)
+  - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
+    - [Start](#start)
+    - [Status](#status)
+    - [Stop](#stop)
 - [Insomnia App](#insomnia-app)
 - [Libs e Frameworks](#libs-e-frameworks)
 - [Considerações Finais](#considerações-finais)
@@ -46,7 +46,7 @@ Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porém 
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
-Os [commits são assinados digitalmente](https://help.github.com/pt/github/authenticating-to-github/signing-commits) com a minha chave GPG: 1482A61AFF211B2C.
+Os [commits são assinados digitalmente](https://help.github.com/pt/github/authenticating-to-github/signing-commits) com a minha chave GPG: `1482A61AFF211B2C`.
 
 Este projeto esta replicado em dois repositórios:
 
@@ -107,7 +107,6 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 - [Exibir Usuário](/docs/admin/get_user_id.md) : `GET /api/v1/admin/user/:id`
 - [Criar Usuário](/docs/admin/post_user.md) : `POST /api/v1/admin/user`
 
-
 **`GET /api/v1/admin/users`**  
 **`POST /api/v1/admin/user/1`**  
 **`DELETE /api/v1/a/dmin/user/1`**  
@@ -156,7 +155,7 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## Configuração da Conexão
+### Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` para um novo arquivo com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
@@ -239,7 +238,7 @@ yarn mocha
 ```
 
 Este comando executa os testes implementados e armazenados na pasta `test`, sem recriar e limpar o banco de dados.
- 
+
 [voltar para o índice](#lista-de-conteúdo)
 
 ## Executando o projeto
@@ -314,7 +313,7 @@ $ nodemon index.js
 
 #### Depurando no VSCode
 
-Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.com/) como IDE, crie uma pasta chamada `.vscode` e dentro dessa pasta crie um arquivo com o nome `launch.json` com o seguinte conteudo:
+Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.com/) como IDE, crie uma pasta chamada `.vscode` e dentro dessa pasta crie um arquivo com o nome `launch.json` com o seguinte conteúdo:
 
 ```json
 {
@@ -337,7 +336,7 @@ Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.co
 }
 ```
 
-Em seguida vá na aba `Run and Debug` escolha a opção `Development Mode` e click no botao `Start Debugging` ( que tem um icone de play verde ) ou pressione **F5**, a API será carregada na aba  `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` para depurar a execução da API no seu ambiente de desenvolmento.
+Em seguida vá na aba `Run and Debug` escolha a opção `Development Mode` e click no botão `Start Debugging` ( que tem um ícone de play verde ) ou pressione **F5**, a API será carregada na aba  `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` para depurar a execução da API no seu ambiente de desenvolvimento.
 
 Algumas teclas de atalhos, do `vscode`, úteis para a depuração:
 
