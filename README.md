@@ -12,12 +12,13 @@
 ## Lista de conteúdo
 
 - [Informações](#informações)
+- [UKey](#UKey)
 - [Pastas](#pastas)
 - [Endpoints](#endpoints)
   - [Endpoint Público](#endpoint-público)
   - [Endpoint Privado](#endpoint-privado)
     - [Transações de Pagamento](#transações-de-pagamento)
-    - [Pagáveis](#pagáveis)
+    - [Recebíveis](#recebíveis)
     - [Balanço](#balanço)
   - [Endpoint Privado - Administração](#endpoint-privado---administração)
     - [Usuário](#usuário)
@@ -64,6 +65,18 @@ No meu servidor [Gitea](https://git.jeudi.dev) está integrado um simples CI/CD,
 O histórico das compilações deste projeto, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
 
 [voltar para o índice](#lista-de-conteúdo)
+
+### UKey
+
+UKey é uma chave geral única que liga Usuário + Cliente + Transação + Recebíveis.
+
+Quando um usuário é criado, o sistema ira criar a `ukey` do usuário, que deverá ser utilizado ao criar um cliente e transações de pagamento.
+
+Quando for criar um Cliente, a `ukey` de um usuário ativo deverá ser informada.
+
+Quando for criar uma transação de pagamento a `ukey` do Usuário/Cliente ativo deverá ser informada.
+
+A relação Usuário e Cliente é 1 para 1, ou seja, somente um cliente por usuário será permitido.
 
 ### Pastas
 
@@ -119,7 +132,7 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 | [Criar](/docs/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
 | [Listar](/docs/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
 
-#### Pagáveis
+#### Recebíveis
 
 | Descrição                               | Tipo  | Endpoint                    |
 |-----------------------------------------|-------|-----------------------------|
