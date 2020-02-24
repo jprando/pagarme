@@ -9,22 +9,15 @@ module.exports = async function (newPaymentTransaction) {
 
   const { ukey } = newPaymentTransaction
   const customerResult = await customer
-    .findOne({ where: { ukey } })
+    .findOne({ where: { ukey }, attributes: ['ukey'] })
     .then(toPlain)
 
   if (!customerResult) {
     throw new ValidationError('Customer not found')
   }
 
-  const { paymentDate, amount, cardholderName, cardExpiration, cardSecurityCode } = newPaymentTransaction
-  const cardNumber = extractLastFour(newPaymentTransaction.cardNumber)
-  const alreadyExists = await paymentTransaction.findOne({
-    where: { ukey, paymentDate, amount, cardNumber, cardholderName, cardExpiration, cardSecurityCode }
-  }).then(toPlain)
-
-  if(alreadyExists) {
-    throw new ValidationError('Payment transaction already exists')
-  }
+  /// security validation here ...
+  /// host card comunication and validations here ...
 
   const customerName = customerResult.personName || customerResult.companyName
 
