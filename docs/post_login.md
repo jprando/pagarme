@@ -8,7 +8,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 **Requer Autenticação** : Não
 
-**Dados de exemplo da requisição**
+Dados de exemplo da requisição
 
 ```json
 {
@@ -21,7 +21,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 **Code** : `200 OK`
 
-**Conteúdo de Exemplo**
+Conteúdo de exemplo da resposta
 
 ```json
 {
@@ -35,7 +35,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 **Code** : `401 Unauthorized`
 
-**Conteúdo** : 
+Conteúdo da resposta
 
 ```json
 {
@@ -50,7 +50,7 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 **Code** : `422 Unprocessable Entity`
 
-**Conteúdo** : 
+Conteúdo da resposta
 
 ```json
 {

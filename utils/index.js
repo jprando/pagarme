@@ -7,7 +7,8 @@ const _utils = [
   'asyncForEach',
   'sequelizeToPlain',
   'informBoth',
-  'dontInformBoth'
+  'dontInformBoth',
+  'extractLastFour'
 ].map(factory.load).reduce(factory.configure, {})
 
 module.exports = {

@@ -6,29 +6,37 @@
 
 ## Apoiadores
 
-![foto do github de Bruno Flegler Dal'Col](https://avatars0.githubusercontent.com/u/18169587?s=60&v=4) [Bruno Flegler Dal'Col](https://github.com/brunoflegler)  
-![foto do github de João Maia](https://avatars1.githubusercontent.com/u/296619?s=60&v=4) [João Maia](https://github.com/jvrmaia)
+[![foto do github de Bruno Flegler Dal'Col](https://avatars0.githubusercontent.com/u/18169587?s=60&v=4) Bruno Flegler Dal'Col](https://github.com/brunoflegler)  
+[![foto do github de João Maia](https://avatars1.githubusercontent.com/u/296619?s=60&v=4) João Maia](https://github.com/jvrmaia)
 
 ## Lista de conteúdo
 
 - [Informações](#informações)
-    - [Pastas](#pastas)
-- [Banco de Dados](#banco-de-dados)
-    - [Preparar o banco de dados](#preparar-o-banco-de-dados)
-      - [Via Docker](#via-docker)
+- [UKey](#UKey)
+- [Pastas](#pastas)
 - [Endpoints](#endpoints)
-    - [Endpoint Público](#endpoint-público)
-    - [Endpoint Privado](#endpoint-privado)
-- [Configuração da Conexão](#configuração-da-conexão)
+  - [Endpoint Público](#endpoint-público)
+  - [Endpoint Privado](#endpoint-privado)
+    - [Transações de Pagamento](#transações-de-pagamento)
+    - [Recebíveis](#recebíveis)
+    - [Balanço](#balanço)
+  - [Endpoint Privado - Administração](#endpoint-privado---administração)
+    - [Usuário](#usuário)
+    - [Cliente](#cliente)
+- [Banco de Dados](#banco-de-dados)
+  - [Preparar o banco de dados](#preparar-o-banco-de-dados)
+    - [Via Docker](#via-docker)
+  - [Configuração da Conexão](#configuração-da-conexão)
 - [Baixar e preparar o projeto](#baixar-e-preparar-o-projeto)
   - [Outros comandos](#outros-comandos)
 - [Executar o projeto](#executando-o-projeto)
-    - [Preflight](#preflight)
-    - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
-    - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
-        - [Start](#start)
-        - [Status](#status)
-        - [Stop](#stop)
+  - [Preflight](#preflight)
+  - [Ambiente de desenvolvimento](#ambiente-de-desenvolvimento)
+    - [Depurando no VSCode](#depurando-no-vsCode)
+  - [Ambiente de Homologação ou Produção](#ambiente-de-homologação-ou-produção)
+    - [Start](#start)
+    - [Status](#status)
+    - [Stop](#stop)
 - [Insomnia App](#insomnia-app)
 - [Libs e Frameworks](#libs-e-frameworks)
 - [Considerações Finais](#considerações-finais)
@@ -45,6 +53,8 @@ Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porém 
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
+Os [commits são assinados digitalmente](https://help.github.com/pt/github/authenticating-to-github/signing-commits) com a minha chave GPG: `1482A61AFF211B2C`.
+
 Este projeto esta replicado em dois repositórios:
 
 - [Github](https://github.com/jprando/pagarme)
@@ -53,6 +63,22 @@ Este projeto esta replicado em dois repositórios:
 No meu servidor [Gitea](https://git.jeudi.dev) está integrado um simples CI/CD, utilizando o [Drone.io](https://drone.io/) para baixar os fontes a cada commit e realizar os testes.
 
 O histórico das compilações deste projeto, do pequeno CI/CD integrado ao repositório, você pode ver acessando [drone.jeudi.dev](https://drone.jeudi.dev/jeudi/pagarme)
+
+[voltar para o índice](#lista-de-conteúdo)
+
+### UKey
+
+UKey é uma chave geral única que liga Usuário + Cliente + Transação + Recebíveis.
+
+Quando um usuário é criado, o sistema irá criar a `ukey` do usuário, que deverá ser utilizado ao criar um cliente e transações de pagamento.
+
+Quando for criar um Cliente, a `ukey` de um usuário ativo deverá ser informada.
+
+Quando for criar uma transação de pagamento a `ukey` do Usuário/Cliente ativo deverá ser informada.
+
+A relação Usuário e Cliente é 1 para 1, ou seja, somente um cliente por usuário será permitido.
+
+A intenção da existência da `ukey` seria poder trabalhar com computação distribuída no processamento e armazenamento dos dados, que eu acredito não ser pequeno e a existências de muitas requisições por segundo simultâneas deve exigir uma organização, distribuição e utilização dos dados bastante diferenciado do que estamos acostumados em sistemas transacionais mais simples existentes por ai, onde os relacionamentos são feito através de campos Ids do tipo numérico e auto-incremental.
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -91,9 +117,11 @@ Funções uteis a várias partes do sistema
 
 ### Endpoint Público
 
-Para realizar o login do usuário e recuperar o token de acesso  
+Esse é o único enpoint público, ou seja, não exige que um Token válido seja informado no cabeçalho da solicitação.
 
-- [Login](/docs/post_login.md) : `POST /api/v1/login`
+| Descrição                     | Tipo    | Endpoint        |
+|-------------------------------|---------|-----------------|
+| [Login](/docs/post_login.md)  | `POST`  | `/api/v1/login` |
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -101,26 +129,50 @@ Para realizar o login do usuário e recuperar o token de acesso
 
 Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
-- [Exibir Usuário](/docs/admin/get_user_id.md) : `GET /api/v1/admin/user/:id`
-- [Criar Usuário](/docs/admin/post_user.md) : `POST /api/v1/admin/user`
+#### Transações de Pagamento
 
+| Descrição                                       | Tipo  | Endpoint                          |
+|-------------------------------------------------|-------|-----------------------------------|
+| [Criar](/docs/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
+| [Listar](/docs/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
 
-**`GET /api/v1/admin/users`**  
-**`POST /api/v1/admin/user/1`**  
-**`DELETE /api/v1/a/dmin/user/1`**  
+#### Recebíveis
 
-**`POST /api/v1/admin/customer`**  
-**`GET /api/v1/admin/customers`**  
-**`GET /api/v1/admin/customer/1`**  
-**`POST /api/v1/admin/customer/1`**  
-**`DELETE /api/v1/admin/customer/1`**  
+| Descrição                               | Tipo  | Endpoint                    |
+|-----------------------------------------|-------|-----------------------------|
+| [Listar](/docs/payable/get_customer.md) | `GET` | `/api/v1/payables/customer` |
 
-**`GET /api/v1/transactions/customer`**  
-**`POST /api/v1/transactions`**  
+#### Balanço
 
-**`GET /api/v1/payables/customer`**  
+| Descrição                                           | Tipo  | Endpoint                                |
+|-----------------------------------------------------|-------|-----------------------------------------|
+| [Exibir](/docs/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
+| [Exibir por Ano](/docs/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
+| [Exibir por Ano/Mês](/docs/customer/get_balance.md) | `GET` | `/api/v1/customer/balance/:year/:month` |
 
-**`GET /api/v1/customer/balance`**  
+### Endpoint Privado - Administração
+
+Estes endpoints privados, além de requerer que um token válido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
+
+#### Usuário
+
+| Descrição                                 | Tipo      | Endpoint                  |
+|-------------------------------------------|-----------|---------------------------|
+| [Criar](/docs/admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
+| [Exibir](/docs/admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
+| [Alterar](/docs/admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
+| [Deletar](/docs/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/a/dmin/user/:id` |
+| [Listar](/docs/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
+
+#### Cliente
+
+| Descrição                                     | Tipo      | Endpoint                      |
+|-----------------------------------------------|-----------|-------------------------------|
+| [Criar](/docs/admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
+| [Exibir](/docs/admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
+| [Alterar](/docs/admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
+| [Deletar](/docs/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/a/dmin/customer/:id` |
+| [Listar](/docs/admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -153,7 +205,7 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 [voltar para o índice](#lista-de-conteúdo)
 
-## Configuração da Conexão
+### Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` para um novo arquivo com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 
@@ -236,7 +288,7 @@ yarn mocha
 ```
 
 Este comando executa os testes implementados e armazenados na pasta `test`, sem recriar e limpar o banco de dados.
- 
+
 [voltar para o índice](#lista-de-conteúdo)
 
 ## Executando o projeto
@@ -268,6 +320,8 @@ and try again
 
 Para servir a API no ambiente de desenvolvimento utilizaremos o [`nodemon`](https://nodemon.io/) e aproveitar a sua particularidade de observar mudanças nos arquivos do projeto e reiniciar o processo que serve a API já aplicando as novas mudanças no código fonte.
 
+Utilize o comando `yarn dev` ou `npm run dev` para iniciar a API em modo de desenvolvimento, o endereço `http://localhost:3000/api/v1/` será a base dos enpoint no seu ambiente de desenvolvimento local.
+
 ```sh
 ~/pagarme/> yarn dev
 yarn run v1.19.1
@@ -277,27 +331,72 @@ $ nodemon index.js
 [nodemon] watching dir(s): *.*
 [nodemon] watching extensions: js,mjs,json
 [nodemon] starting `node index.js`
-  ...... Middleware
-  ...... Routes
-  ...... Configuration
-  [ OK ] Server running http://localhost:3000
-  [ 2020-01-30T20:39:52.672Z ] GET / HTTP/1.1 200 13 ::1 - 1.923 ms
-  [ 2020-01-30T20:39:52.696Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.912 ms
-  [ 2020-01-30T20:39:55.283Z ] GET / HTTP/1.1 200 13 ::1 - 0.145 ms
-  [ 2020-01-30T20:39:55.455Z ] GET / HTTP/1.1 304 - ::1 - 0.320 ms
-  [ 2020-01-30T20:39:57.394Z ] GET / HTTP/1.1 304 - ::1 - 0.160 ms
-  [ 2020-01-30T20:39:58.483Z ] GET / HTTP/1.1 200 13 ::1 - 0.122 ms
-  [ 2020-01-30T20:39:58.508Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.194 ms
-  [ 2020-01-30T20:40:00.074Z ] GET / HTTP/1.1 200 13 ::1 - 0.137 ms
-  [ 2020-01-30T20:40:00.102Z ] GET /favicon.ico HTTP/1.1 404 150 ::1 - 0.172 ms
+
+[INFO] Mode DEVELOPMENT
+[ OK ] Preflight
+...... Database
+[ DB ] 2020-02-23T14:36:18.901Z SELECT 146ms Executed (default): SELECT 1+1 AS result
+[ DB ] Schema public
+[ DB ] Database pagarme-db
+[ DB ] Sync started
+[ DB ] ...
+[ DB ] Sync finished
+[ OK ] Database
+[ OK ] Middleware
+[ OK ] Routes
+[ OK ] Configuration
+[ OK ] Server running http://localhost:3000/api/v1/
+......
+[HTTP] 2020-02-23T14:41:30.923Z GET /api/v1/ HTTP/1.1 304 - 127.0.0.1 - 3.899 ms
+[HTTP] 2020-02-23T14:42:39.089Z POST /api/v1/login HTTP/1.1 401 45 127.0.0.1 - 275.264 ms
 
 # utilize CTRL + C para interromper o processo
 
-  ...... Shutting down server
-  [ OK ] Server off
+...... Shutting down server
+[ OK ] Database close
+[ OK ] Server off
 
 ~/pagarme/> _
 ```
+
+[voltar para o índice](#lista-de-conteúdo)
+
+#### Depurando no VSCode
+
+Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.com/) como IDE, crie uma pasta chamada `.vscode` e dentro dessa pasta crie um arquivo com o nome `launch.json` com o seguinte conteúdo:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Development Mode",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/index.js",
+      "skipFiles": [
+          "<node_internals>/**"
+      ],
+      "env": {
+          "NODE_ENV": "development"
+      }
+    }
+  ]
+}
+```
+
+Em seguida vá na aba `Run and Debug` do app vscode, escolha a opção `Development Mode` e click no botão `Start Debugging` ( que tem um ícone de play verde ) ou pressione **F5**.
+
+A API será carregada e na aba `DEBUG CONSOLE` você verá a saída do sistema e poderá utilizar `breakpoints` nos arquivos `.js` do projeto para depurar a execução da API em um determinado ponto e entender melhor o que esta acontecendo no seu ambiente de desenvolvimento local.
+
+Algumas teclas de atalhos, do `vscode`, úteis para a depuração:
+
+| Atalho            | Descrição             |
+|-------------------|-----------------------|
+| **F5**            | inicia a depuração.   |
+| **SHIFT+F5**      | para a depuração.     |
+| **CTRL+SHIFT+F5** | reinicia a depuração. |
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -423,6 +522,7 @@ Principais Libs e Frameworks utilizados no projeto.
 - [dotenv](dotenv)
 - [ExpressJs](http://expressjs.com/)
 - [helmet](https://helmetjs.github.io/)
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli)
 - [morgan](https://github.com/expressjs/morgan#readme)
 - [nodemon](https://nodemon.io/)
 - [PM2](https://pm2.keymetrics.io/)

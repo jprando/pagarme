@@ -1,21 +1,24 @@
 const { ValidationError } = require('sequelize')
+const { extractLastFour } = require('./../../utils')
 
 module.exports = async function (newPaymentTransaction) {
   const {
-    // app: { db: { transaction } },
     db: { transaction, customer, paymentTransaction, toPlain },
-    // db: { customer, paymentTransaction, toPlain },
     services: { payable }
   } = this
 
   const { ukey } = newPaymentTransaction
   const customerResult = await customer
-    .findOne({ where: { ukey } })
+    .findOne({ where: { ukey }, attributes: ['ukey'] })
     .then(toPlain)
 
   if (!customerResult) {
     throw new ValidationError('Customer not found')
   }
+
+  /// security validation here ...
+  /// host card comunication and validations here ...
+
   const customerName = customerResult.personName || customerResult.companyName
 
   let trans
