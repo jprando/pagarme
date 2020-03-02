@@ -1,8 +1,12 @@
 node_modules/
 dist/
 .vscode/
+.yarn
 
 .env
+.pnp.js
+.yarnrc.yml
 
 *.log
 *.local
+
