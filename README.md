@@ -49,7 +49,7 @@ Olá me chamo **Jeudi Prando** e desenvolvi essa solução para o desafio da pag
 
 Minha intenção com esta solução é demonstrar que tenho domínio sobre a linguagem javascript, por isso utilizei frameworks e libs mais simples para que me permitisse ter oportunidade de fazer na mão o que a maioria dos frameworks entregam pronto e mastigado, eu não queria mostrar que sei utilizar o framework X ou Y e sim o que eu sei sobre javascript.
 
-Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porém eu me limitei ao propósito, tempo e ao assunto principal do desafio, eu poderia ficar polindo o projeto por muito dias, mas a realidade no dia a dia é que em algum momento temos que entregar o que temos pronto.
+Muito do que foi feito aqui, poderia ser feito melhor ou de outro jeito, porém eu me limitei ao propósito, tempo e ao assunto principal do desafio, eu poderia ficar polindo o projeto por muitos dias, mas a realidade no dia a dia é que em algum momento temos que entregar o que temos pronto.
 
 O projeto adota o estilo [standard](https://standardjs.com/) no código fonte implementado.
 
