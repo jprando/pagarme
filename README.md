@@ -161,7 +161,7 @@ Estes endpoints privados, além de requerer que um token válido seja passado no
 | [Criar](/docs/admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
 | [Exibir](/docs/admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
 | [Alterar](/docs/admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
-| [Deletar](/docs/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/a/dmin/user/:id` |
+| [Deletar](/docs/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/dmin/user/:id` |
 | [Listar](/docs/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
 
 #### Cliente
@@ -171,7 +171,7 @@ Estes endpoints privados, além de requerer que um token válido seja passado no
 | [Criar](/docs/admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
 | [Exibir](/docs/admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
 | [Alterar](/docs/admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
-| [Deletar](/docs/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/a/dmin/customer/:id` |
+| [Deletar](/docs/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/dmin/customer/:id` |
 | [Listar](/docs/admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
 
 [voltar para o índice](#lista-de-conteúdo)
