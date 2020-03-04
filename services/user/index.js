@@ -1,18 +1,12 @@
-const { mapForReduce } = require('../../utils')
-
-const factory = mapForReduce(__dirname)
-
-module.exports = [
-  'getById',
-  'getByUkey',
-  'getUkeyByEmail',
-  'getAll',
-  'create',
-  'update',
-  'delete',
-  'deleteAll',
-  'login',
-  'password',
-  'removeCredential',
-  'generateCredentialText'
-].map(factory.load).reduce(factory.configure, {})
+module.exports.getById = require('./getById')
+module.exports.getByUkey = require('./getByUkey')
+module.exports.getUkeyByEmail = require('./getUkeyByEmail')
+module.exports.getAll = require('./getAll')
+module.exports.create = require('./create')
+module.exports.update = require('./update')
+module.exports.delete = require('./delete')
+module.exports.deleteAll = require('./deleteAll')
+module.exports.login = require('./login')
+module.exports.password = require('./password')
+module.exports.removeCredential = require('./removeCredential')
+module.exports.generateCredentialText = require('./generateCredentialText')

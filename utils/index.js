@@ -1,17 +1,5 @@
-const mapForReduce = require('./mapForReduce')
-
-const factory = mapForReduce(__dirname)
-
-const _utils = [
-  'loadModule',
-  'asyncForEach',
-  'sequelizeToPlain',
-  'informBoth',
-  'dontInformBoth',
-  'extractLastFour'
-].map(factory.load).reduce(factory.configure, {})
-
-module.exports = {
-  mapForReduce,
-  ..._utils
-}
+module.exports.asyncForEach = require('./asyncForEach')
+module.exports.sequelizeToPlain = require('./sequelizeToPlain')
+module.exports.informBoth = require('./informBoth')
+module.exports.dontInformBoth = require('./dontInformBoth')
+module.exports.extractLastFour = require('./extractLastFour')

@@ -20,7 +20,7 @@ module.exports = async function (databaseTransaction,
   const status = isDebitCardPayment ? 'paid' : 'waiting_funds'
   const summaryCard = `${cardNumber} ${cardExpiration} ${cardholderName}`
 
-  let payableDate = new Date(paymentDate)
+  const payableDate = new Date(paymentDate)
   if (!isDebitCardPayment) {
     payableDate.setDate(paymentDate.getUTCDate() + 30)
   }

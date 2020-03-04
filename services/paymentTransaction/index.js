@@ -1,9 +1,3 @@
-const { mapForReduce } = require('../../utils')
-
-const factory = mapForReduce(__dirname)
-
-module.exports = [
-  'getAll',
-  'search',
-  'create'
-].map(factory.load).reduce(factory.configure, {})
+module.exports.getAll = require('./getAll')
+module.exports.search = require('./search')
+module.exports.create = require('./create')

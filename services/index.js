@@ -1,11 +1,5 @@
-const { mapForReduce } = require('../utils')
-
-const factory = mapForReduce(__dirname)
-
-module.exports = [
-  'jwt',
-  'user',
-  'customer',
-  'paymentTransaction',
-  'payable'
-].map(factory.load).reduce(factory.configure, {})
+module.exports.jwt = require('./jwt')
+module.exports.user = require('./user')
+module.exports.customer = require('./customer')
+module.exports.paymentTransaction = require('./paymentTransaction')
+module.exports.payable = require('./payable')

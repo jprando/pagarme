@@ -6,8 +6,9 @@ module.exports = async function (email, credential) {
 
   const _user_ = await user.scope('activeUsers')
     .findOne({
-      where: { email }, 
-      attributes: ['id', 'active', 'ukey', 'admin', 'name', 'email', 'credential'] })
+      where: { email },
+      attributes: ['id', 'active', 'ukey', 'admin', 'name', 'email', 'credential']
+    })
     .then(toPlain)
 
   if (_user_ && _user_.active === true) {

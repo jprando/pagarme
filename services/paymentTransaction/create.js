@@ -1,5 +1,4 @@
 const { ValidationError } = require('sequelize')
-const { extractLastFour } = require('./../../utils')
 
 module.exports = async function (newPaymentTransaction) {
   const {
@@ -9,7 +8,7 @@ module.exports = async function (newPaymentTransaction) {
 
   const { ukey } = newPaymentTransaction
   const customerResult = await customer
-    .findOne({ where: { ukey }, attributes: ['ukey'] })
+    .findOne({ where: { ukey }, attributes: ['ukey', 'personName', 'companyName'] })
     .then(toPlain)
 
   if (!customerResult) {
@@ -27,6 +26,7 @@ module.exports = async function (newPaymentTransaction) {
 
     newPaymentTransaction.transactionId = trans.id
     newPaymentTransaction.customerName = customerName
+
     const newPaymentTransactionResult = await paymentTransaction
       .create(newPaymentTransaction, { transaction: trans }).then(toPlain)
 

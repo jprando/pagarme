@@ -1,8 +1,2 @@
-const { mapForReduce } = require('../../utils')
-
-const action = mapForReduce(__dirname)
-
-module.exports = [
-  'postPaymentTransaction',
-  'getCustomerPaymentTransactions'
-].map(action.load).reduce(action.configure, {})
+module.exports.postPaymentTransaction = require('./postPaymentTransaction')
+module.exports.getCustomerPaymentTransactions = require('./getCustomerPaymentTransactions')

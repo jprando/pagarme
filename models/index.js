@@ -1,13 +1,16 @@
-const { loadModule } = require('../utils')
+module.exports.User = require('./User')
+module.exports.Customer = require('./Customer')
+module.exports.PaymentTransaction = require('./PaymentTransaction')
+module.exports.Payable = require('./Payable')
 
 module.exports = {
   register: ({ db, Sequelize }) => {
     const registerModel = model => model.register({ db, Sequelize });
     [
-      './User',
-      './Customer',
-      './PaymentTransaction',
-      './Payable'
-    ].map(loadModule.base(__dirname)).forEach(registerModel)
+      this.User,
+      this.Customer,
+      this.PaymentTransaction,
+      this.Payable
+    ].forEach(registerModel)
   }
 }

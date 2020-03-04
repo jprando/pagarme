@@ -1,17 +1,11 @@
-const { mapForReduce } = require('../../utils')
+module.exports.getUserById = require('./getUserById')
+module.exports.getAllUsers = require('./getAllUsers')
+module.exports.newUser = require('./newUser')
+module.exports.updateUser = require('./updateUser')
+module.exports.deleteUser = require('./deleteUser')
 
-const action = mapForReduce(__dirname)
-
-module.exports = [
-  'getUserById',
-  'getAllUsers',
-  'newUser',
-  'updateUser',
-  'deleteUser',
-
-  'getCustomerById',
-  'getAllCustomers',
-  'newCustomer',
-  'updateCustomer',
-  'deleteCustomer'
-].map(action.load).reduce(action.configure, {})
+module.exports.getCustomerById = require('./getCustomerById')
+module.exports.getAllCustomers = require('./getAllCustomers')
+module.exports.newCustomer = require('./newCustomer')
+module.exports.updateCustomer = require('./updateCustomer')
+module.exports.deleteCustomer = require('./deleteCustomer')

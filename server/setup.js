@@ -1,15 +1,13 @@
-const { loadModule } = require('../utils')
-
 module.exports = {
   config: async app => {
     const runConfig = async _module => _module.config(app)
 
     const _modules = [
-      './mixins',
-      './middleware',
-      '../routes',
-      './run'
-    ].map(loadModule.base(__dirname))
+      require('./mixins'),
+      require('./middleware'),
+      require('../routes'),
+      require('./run')
+    ]
 
     /// array.forEach is not async call
     for (let index = 0; index < _modules.length; index++) {
