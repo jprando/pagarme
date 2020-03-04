@@ -1,11 +1,9 @@
 const validate = require('./validate')
 const services = require('../../services')
 const { sequelizeToPlain } = require('../../utils')
-const { log } = require('./../../utils')
 
 module.exports = function (app) {
   return function (req, res, next) {
-    log('......')
     Object.keys(services).forEach(function (key) {
       services[key] = {
         validate,

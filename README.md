@@ -121,7 +121,7 @@ Esse é o único enpoint público, ou seja, não exige que um Token válido seja
 
 | Descrição                     | Tipo    | Endpoint        |
 |-------------------------------|---------|-----------------|
-| [Login](/docs/post_login.md)  | `POST`  | `/api/v1/login` |
+| [Login](/docs/public/post_login.md)  | `POST`  | `/api/v1/login` |
 
 [voltar para o índice](#lista-de-conteúdo)
 
@@ -133,22 +133,22 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 | Descrição                                       | Tipo  | Endpoint                          |
 |-------------------------------------------------|-------|-----------------------------------|
-| [Criar](/docs/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
-| [Listar](/docs/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
+| [Criar](/docs/private/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
+| [Listar](/docs/private/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
 
 #### Recebíveis
 
 | Descrição                               | Tipo  | Endpoint                    |
 |-----------------------------------------|-------|-----------------------------|
-| [Listar](/docs/payable/get_customer.md) | `GET` | `/api/v1/payables/customer` |
+| [Listar](/docs/private/payable/get_customer.md) | `GET` | `/api/v1/payables/customer` |
 
 #### Balanço
 
 | Descrição                                           | Tipo  | Endpoint                                |
 |-----------------------------------------------------|-------|-----------------------------------------|
-| [Exibir](/docs/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
-| [Exibir por Ano](/docs/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
-| [Exibir por Ano/Mês](/docs/customer/get_balance.md) | `GET` | `/api/v1/customer/balance/:year/:month` |
+| [Exibir](/docs/private/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
+| [Exibir por Ano](/docs/private/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
+| [Exibir por Ano/Mês](/docs/private/customer/get_balance.md) | `GET` | `/api/v1/customer/balance/:year/:month` |
 
 ### Endpoint Privado - Administração
 
@@ -325,22 +325,18 @@ Utilize o comando `yarn dev` ou `npm run dev` para iniciar a API em modo de dese
 ```sh
 ~/pagarme/> yarn dev
 yarn run v1.19.1
-$ nodemon index.js
+$ nodemon server.js
 [nodemon] 2.0.2
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching dir(s): *.*
 [nodemon] watching extensions: js,mjs,json
-[nodemon] starting `node index.js`
+[nodemon] starting `node server.js`
 
 [INFO] Mode DEVELOPMENT
 [ OK ] Preflight
 ...... Database
-[ DB ] 2020-02-23T14:36:18.901Z SELECT 146ms Executed (default): SELECT 1+1 AS result
-[ DB ] Schema public
-[ DB ] Database pagarme-db
-[ DB ] Sync started
-[ DB ] ...
-[ DB ] Sync finished
+[ DB ] pagarme-db public
+[ DB ] Sync
 [ OK ] Database
 [ OK ] Middleware
 [ OK ] Routes
@@ -374,7 +370,7 @@ Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.co
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/index.js",
+      "program": "${workspaceFolder}/server.js",
       "skipFiles": [
           "<node_internals>/**"
       ],
@@ -409,10 +405,10 @@ Para um cenário onde o ambiente é de Homologação ou Produção o projeto uti
 ```sh
 ~/pagarme/> yarn start
 yarn run v1.19.1
-$ pm2 start -n pagarme-backend -i max index.js
+$ pm2 start -n pagarme-backend -i max server.js
 [PM2] Spawning PM2 daemon with pm2_home=~/pagarme/.pm2
 [PM2] PM2 Successfully daemonized
-[PM2] Starting ~/pagarme/index.js in cluster_mode (0 instance)
+[PM2] Starting ~/pagarme/server.js in cluster_mode (0 instance)
 [PM2] Done.
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
 │ id │ name               │ mode     │ rs   │ status    │ cpu      │ memory   │

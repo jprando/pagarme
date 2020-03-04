@@ -21,7 +21,7 @@ module.exports = () => {
         process.exit(0)
       }
     },
-    development: () => check('nodemodule'),
+    development: () => check('nodemon'),
     test: () => { }
   }
 

@@ -5,9 +5,8 @@ module.exports = async db => {
   const inDevelopmentMode = process.env.NODE_ENV === 'development'
   const pgSyncValue = process.env.PG_SYNC && process.env.PG_SYNC.toUpperCase()
   const force = pgSyncValue === 'FORCE'
-  const noSync = pgSyncValue === 'NO'
 
-  if (!noSync || inDevelopmentMode) {
+  if (inDevelopmentMode) {
     log(`[ DB ] ${db.config.database}.${db.options.schema}`)
     log('[ DB ] Sync')
     if (force) {
@@ -16,7 +15,7 @@ module.exports = async db => {
 
     await db.sync({ force })
 
-    if (pgSyncValue) {
+    if (force) {
       await db.close()
       log('[ DB ] Closed')
       process.exit(0)

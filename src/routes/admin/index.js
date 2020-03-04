@@ -7,16 +7,16 @@ module.exports = {
   config (router) {
     router.use(authUserIsAdmin)
 
-    router.get('/admin/user/:id', controller.getUserById)
-    router.get('/admin/users', controller.getAllUsers)
-    router.post('/admin/user', controller.newUser)
-    router.post('/admin/user/:id', controller.updateUser)
-    router.delete('/admin/user/:id', controller.deleteUser)
+    router.get('/user/:id', controller.getUserById)
+    router.get('/users', controller.getAllUsers)
+    router.post('/user', controller.newUser)
+    router.post('/user/:id', controller.updateUser)
+    router.delete('/user/:id', controller.deleteUser)
 
-    router.get('/admin/customer/:id', controller.getCustomerById)
-    router.get('/admin/customers', controller.getAllCustomers)
-    router.post('/admin/customer', controller.newCustomer)
-    router.post('/admin/customer/:id', controller.updateCustomer)
-    router.delete('/admin/customer/:id', controller.deleteCustomer)
+    router.get('/customer/:id', controller.getCustomerById)
+    router.get('/customers', controller.getAllCustomers)
+    router.post('/customer', controller.newCustomer)
+    router.post('/customer/:id', controller.updateCustomer)
+    router.delete('/customer/:id', controller.deleteCustomer)
   }
 }

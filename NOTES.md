@@ -24,6 +24,10 @@ app.set('trust proxy', function (ip) {
 
 Ajudar a proteger contra acesso não autorizado via CORS.
 
+```sh
+~\projetos\pagarme> yarn add cors
+```
+
 ```js
 const cors = require('cors')
 

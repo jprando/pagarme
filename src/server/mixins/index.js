@@ -3,7 +3,6 @@ const { log } = require('../../utils')
 
 module.exports = {
   config: async (app) => {
-    log('...... Database')
     await db.register(app)
       .then(() => { log('[ OK ] Database') })
       .catch((err) => {

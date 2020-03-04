@@ -9,10 +9,11 @@ module.exports = {
 
     require('./admin').config(adminRouter)
     require('./private').config(privateRouter)
-    require('./public').config(publicRouter);
+    require('./public').config(publicRouter)
 
-    [adminRouter, privateRouter, publicRouter]
-      .forEach(route => app.use('/api/v1', route))
+    app.use('/api/v1/admin', adminRouter)
+    app.use('/api/v1/private', privateRouter)
+    app.use('/api/v1', publicRouter)
 
     log('[ OK ] Routes')
   }
