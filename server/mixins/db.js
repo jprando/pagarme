@@ -15,12 +15,11 @@ module.exports = {
       if (pgSyncValue !== 'NO' || inDevelopmentMode) {
         console.log(`[ DB ] Schema ${db.options.schema}`)
         console.log(`[ DB ] Database ${db.config.database}`)
-        console.log('[ DB ] Sync started')
+        console.log('[ DB ] Sync')
         if (pgSyncValue === 'FORCE') {
           console.log('[ DB ] Clean and Create')
         }
         await db.sync({ force: pgSyncValue === 'FORCE' })
-        console.log('[ DB ] Sync finished')
         if (pgSyncValue) {
           await db.close()
           console.log('[ DB ] Closed')

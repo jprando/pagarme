@@ -5,7 +5,10 @@ const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')
 
 module.exports = () => {
-  process.env.NODE_ENV || nodeEnvUndefined()
+  if (!process.env.NODE_ENV) {
+    nodeEnvUndefined()
+  }
+
   const mode = (process.env.NODE_ENV).toLocaleUpperCase()
   if (process.env.NODE_ENV !== 'test') {
     console.log(`${EOL}[INFO] Mode ${mode}`)
@@ -24,9 +27,9 @@ module.exports = () => {
     test: () => { }
   }
 
-  const nodeCheckEnvMode = constraints[process.env.NODE_ENV]
-  nodeCheckEnvMode || nodeEnvOutRange()
+  const nodeCheckEnvMode = constraints[process.env.NODE_ENV] || nodeEnvOutRange
   nodeCheckEnvMode()
+
   if (process.env.NODE_ENV !== 'test') {
     console.log('[ OK ] Preflight')
   }
