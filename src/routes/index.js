@@ -1,22 +1,19 @@
 const express = require('express')
+const { log } = require('../utils')
 
 module.exports = {
   config (app) {
-    const router = new express.Router()
+    const adminRouter = new express.Router()
+    const privateRouter = new express.Router()
+    const publicRouter = new express.Router()
 
-    require('./admin').config(router)
-    require('./user').config(router)
-    require('./transaction').config(router)
-    require('./payable').config(router)
-    require('./customer').config(router)
+    require('./admin').config(adminRouter)
+    require('./private').config(privateRouter)
+    require('./public').config(publicRouter);
 
-    router.get('/', (req, res) => {
-      res.status(200).send('Oi! Tudo Bem?').end()
-    })
+    [adminRouter, privateRouter, publicRouter]
+      .forEach(route => app.use('/api/v1', route))
 
-    app.use('/api/v1', router)
-    if (process.env.NODE_ENV !== 'test') {
-      console.log('[ OK ] Routes')
-    }
+    log('[ OK ] Routes')
   }
 }

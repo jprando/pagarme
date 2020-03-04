@@ -1,7 +1,7 @@
 const _package = require('../../../package')
-const nodeEnvUndefined = require('./nodeEnvUndefined')
-const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')
+const nodeEnvOutRange = require('./nodeEnvOutRange')
+const nodeEnvUndefined = require('./nodeEnvUndefined')
 const { log } = require('./../../utils')
 
 module.exports = () => {

@@ -1,5 +1,4 @@
 module.exports = async function (ukey, year, month) {
-  // const { db: { paymentTransaction, payable, toPlain } } = this
   const { db: { paymentTransaction, payable } } = this
 
   const transactionCount = await paymentTransaction

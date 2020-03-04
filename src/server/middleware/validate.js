@@ -7,13 +7,11 @@ const testNumberCreditCard = value =>
 
 validate.extend(validate.validators.datetime, {
   parse: function (value, options) {
-    // return +moment.utc(value)
     return new Date(value)
   },
   // Input is a unix timestamp
   format: function (value, options) {
     var format = options.dateOnly ? 'YYYY-MM-DD' : 'YYYY-MM-DD hh:mm:ss'
-    // return moment.utc(value).format(format)
     return new Date(value).toISOString(format)
   }
 })
