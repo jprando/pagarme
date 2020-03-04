@@ -3,7 +3,7 @@ require('dotenv').config({ path: '.env.test' })
 process.env.NODE_ENV = 'test'
 
 const chai = require('chai')
-const admin = require('../../../controllers/admin')
+const admin = require('../../../src/controllers/admin')
 
 const expect = chai.expect
 
