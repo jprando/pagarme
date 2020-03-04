@@ -133,22 +133,22 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 | Descrição                                       | Tipo  | Endpoint                          |
 |-------------------------------------------------|-------|-----------------------------------|
-| [Criar](/docs/private/transaction/post_transaction.md)  | `POST`  | `/api/v1/transaction`           |
-| [Listar](/docs/private/transaction/get_customer.md)     | `GET`   | `/api/v1/transactions/customer` |
+| [Criar](/docs/private/transaction/post_transaction.md)  | `POST`  | `/api/v1/private/transaction`           |
+| [Listar](/docs/private/transaction/get_customer.md)     | `GET`   | `/api/v1/private/transactions/customer` |
 
 #### Recebíveis
 
 | Descrição                               | Tipo  | Endpoint                    |
 |-----------------------------------------|-------|-----------------------------|
-| [Listar](/docs/private/payable/get_customer.md) | `GET` | `/api/v1/payables/customer` |
+| [Listar](/docs/private/payable/get_customer.md) | `GET` | `/api/v1/private/payables/customer` |
 
 #### Balanço
 
 | Descrição                                           | Tipo  | Endpoint                                |
 |-----------------------------------------------------|-------|-----------------------------------------|
-| [Exibir](/docs/private/customer/get_balance.md)             | `GET` | `/api/v1/customer/balance`              |
-| [Exibir por Ano](/docs/private/customer/get_balance.md)     | `GET` | `/api/v1/customer/balance/:year`        |
-| [Exibir por Ano/Mês](/docs/private/customer/get_balance.md) | `GET` | `/api/v1/customer/balance/:year/:month` |
+| [Exibir](/docs/private/customer/get_balance.md)             | `GET` | `/api/v1/private/customer/balance`              |
+| [Exibir por Ano](/docs/private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
+| [Exibir por Ano/Mês](/docs/private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
 
 ### Endpoint Privado - Administração
 
