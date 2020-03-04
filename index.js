@@ -1,1 +1,1 @@
-require('./server').run()
+require('./src/server').run()

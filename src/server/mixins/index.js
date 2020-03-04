@@ -1,5 +1,5 @@
 const db = require('./db')
-const { log } = require('./../../utils')
+const { log } = require('../../utils')
 
 module.exports = {
   config: async (app) => {

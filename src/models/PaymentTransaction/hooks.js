@@ -1,4 +1,4 @@
-const { extractLastFour } = require('./../../utils')
+const { extractLastFour } = require('../../utils')
 
 module.exports = {
   beforeValidate: async (newPaymentTransaction) => {

@@ -1,5 +1,5 @@
 const { EOL } = require('os')
-const _package = require('../../package')
+const _package = require('../../../package')
 const nodeEnvUndefined = require('./nodeEnvUndefined')
 const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')

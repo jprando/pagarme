@@ -6,8 +6,7 @@ module.exports = async db => {
   const force = pgSyncValue === 'FORCE'
 
   if (pgSyncValue !== 'NO' || inDevelopmentMode) {
-    console.log(`[ DB ] Schema ${db.options.schema}`)
-    console.log(`[ DB ] Database ${db.config.database}`)
+    console.log(`[ DB ] ${db.config.database}.${db.options.schema}`)
     console.log('[ DB ] Sync')
     if (force) {
       console.log('[ DB ] Clean and Create')
