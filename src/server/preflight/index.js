@@ -1,8 +1,8 @@
-const { EOL } = require('os')
 const _package = require('../../../package')
 const nodeEnvUndefined = require('./nodeEnvUndefined')
 const nodeEnvOutRange = require('./nodeEnvOutRange')
 const check = require('./check')
+const { log } = require('./../../utils')
 
 module.exports = () => {
   if (!process.env.NODE_ENV) {
@@ -10,9 +10,7 @@ module.exports = () => {
   }
 
   const mode = (process.env.NODE_ENV).toLocaleUpperCase()
-  if (process.env.NODE_ENV !== 'test') {
-    console.log(`${EOL}[INFO] Mode ${mode}`)
-  }
+  log(`[INFO] Mode ${mode}`)
 
   Object.keys(_package.dependencies).forEach(module => check(module))
 
@@ -30,7 +28,5 @@ module.exports = () => {
   const nodeCheckEnvMode = constraints[process.env.NODE_ENV] || nodeEnvOutRange
   nodeCheckEnvMode()
 
-  if (process.env.NODE_ENV !== 'test') {
-    console.log('[ OK ] Preflight')
-  }
+  log('[ OK ] Preflight')
 }

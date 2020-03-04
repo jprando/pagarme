@@ -1,3 +1,4 @@
+const { log } = require('./../utils')
 module.exports = {
   config: async app => {
     const runConfig = async _module => _module.config(app)
@@ -22,9 +23,7 @@ module.exports = {
     })
     */
 
-    if (process.env.NODE_ENV !== 'test') {
-      console.log('[ OK ] Configuration')
-    }
+    log('[ OK ] Configuration')
 
     return app
   }

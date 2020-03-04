@@ -6,7 +6,7 @@ const services = require('./services')
 
 module.exports = {
   config: app => {
-    if (process.env.NODE_ENV !== 'test') {
+    if (process.env.notInTestMode) {
       /// production best practices: Security
       app.use(helmet())
       /// access log

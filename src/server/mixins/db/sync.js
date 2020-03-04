@@ -1,22 +1,24 @@
 const dbSeed = require('./seed')
-const inDevelopmentMode = process.env.NODE_ENV === 'development'
-const pgSyncValue = process.env.PG_SYNC && process.env.PG_SYNC.toUpperCase()
+const { log } = require('./../../../utils')
 
 module.exports = async db => {
+  const inDevelopmentMode = process.env.NODE_ENV === 'development'
+  const pgSyncValue = process.env.PG_SYNC && process.env.PG_SYNC.toUpperCase()
   const force = pgSyncValue === 'FORCE'
+  const noSync = pgSyncValue === 'NO'
 
-  if (pgSyncValue !== 'NO' || inDevelopmentMode) {
-    console.log(`[ DB ] ${db.config.database}.${db.options.schema}`)
-    console.log('[ DB ] Sync')
+  if (!noSync || inDevelopmentMode) {
+    log(`[ DB ] ${db.config.database}.${db.options.schema}`)
+    log('[ DB ] Sync')
     if (force) {
-      console.log('[ DB ] Clean and Create')
+      log('[ DB ] Clean and Create')
     }
 
     await db.sync({ force })
 
     if (pgSyncValue) {
       await db.close()
-      console.log('[ DB ] Closed')
+      log('[ DB ] Closed')
       process.exit(0)
     }
   }

@@ -1,5 +1,5 @@
 module.exports = msg => {
-  if (process.env.NODE_ENV !== 'test') {
+  if (process.env.notInTestMode) {
     console.log(msg)
   }
 }
