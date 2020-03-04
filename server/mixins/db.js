@@ -1,3 +1,4 @@
+const { EOL } = require('os')
 const connection = require('../../db/connection')
 const inDevelopmentMode = process.env.NODE_ENV === 'development'
 const pgSyncValue = process.env.PG_SYNC && process.env.PG_SYNC.toUpperCase()
