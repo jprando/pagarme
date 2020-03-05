@@ -3,10 +3,10 @@
 Exibe informações do balanço de transações do cliente, o `token` passado no
 header da requisição identifica o cliente a ser utilizado no filtro da consulta.
 
-**Anterior: [Endpoint Privado - Balanço](../../../..//docs/endpoints/README.md#balanço)**
+**Anterior: [Endpoint Privado - Balanço](../../README.md#balanço)**
 
-[Endpoint Privado](../../../..//docs/endpoints/README.md#endpoint-privado)
+[Endpoint Privado](../../README.md#endpoint-privado)
 
-[Enpoints](../../../..//docs/endpoints/README.md)
+[Enpoints](../../README.md)
 
-[voltar para o índice](../../../../README.md#endpoints)
+[voltar para o índice](../../../../README.md)
