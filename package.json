@@ -12,8 +12,8 @@
     "db:sync": "env PG_SYNC=true NODE_ENV=development node server.js",
     "db:clean:sync": "env PG_SYNC=force NODE_ENV=development node server.js",
     "test": "env NODE_ENV=test PG_SCHEMA=tests yarn db:clean:sync && yarn mocha",
-    "test:markdown": "markdownlint -c ./makrdownlint.json README.md ./docs/",
     "mocha": "env NODE_ENV=test mocha --exit --recursive --timeout 5000",
+    "lint:markdown": "markdownlint -c ./makrdownlint.json README.md ./docs/",
     "lint": "eslint server.js ./src"
   },
   "dependencies": {

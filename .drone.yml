@@ -7,6 +7,6 @@ steps:
   commands:
   - cp .env.farfarway.example .env
   - yarn
-  - yarn test:markdown
+  - yarn lint:markdown
   - yarn lint
   - yarn test

@@ -116,4 +116,10 @@ Conteúdo de Exemplo
 jwt expired
 ```
 
-[Voltar](/README.md#endpoints)
+**Anterior: [Endpoint Privado - Transações de Pagamento](/docs/endpoints/README.md#transações-de-pagamento)**
+
+[Endpoint Privado](/docs/endpoints/README.md#endpoint-privado)
+
+[Enpoints](/docs/endpoints/README.md)
+
+[voltar para o índice](/README.md#endpoints)

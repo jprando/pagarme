@@ -65,5 +65,8 @@ Conteúdo da resposta
   }
 }
 ```
+**Anterior: [Enpoint Público](/docs/endpoints/README.md#endpoint-público)**
 
-[Voltar](/README.md#endpoints)
+[Enpoints](/docs/endpoints/README.md)
+
+[voltar para o índice](/README.md#endpoints)
