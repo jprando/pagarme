@@ -6,4 +6,4 @@ Na raiz do projeto há um arquivo chamado `insomnia_config.json` que tem algumas
 
 **Anterior: [Projeto - Executar - Stop](/docs/projeto/executar-producao-stop.md)**
 
-[voltar para o índice](/#lista-de-conteúdo)
+[voltar para o índice](/README.md#lista-de-conteúdo)

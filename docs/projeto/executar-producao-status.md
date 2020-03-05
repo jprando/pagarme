@@ -32,8 +32,8 @@ $ pm2 logs pagarme-backend
 ~/pagarme/> _
 ```
 
-**Próximo: [Projeto - Executar - Produção - Stop](/docs/projeto/executar-producao-stop.md)**
+**Próximo: [Projeto - Executar - Stop](/docs/projeto/executar-producao-stop.md)**
 
-**Anterior: [Projeto - Executar - Produção - Start](/docs/projeto/executar-producao-start.md)**
+**Anterior: [Projeto - Executar - Start](/docs/projeto/executar-producao-start.md)**
 
 [voltar para o índice](/README.md#lista-de-conteúdo)
