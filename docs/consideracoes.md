@@ -1,4 +1,4 @@
-## Considerações Finais
+# Considerações Finais
 
 Foi uma experiência bem interessante implementar essa solução sem a ajuda dos frameworks e libs de alto nível que temos no ecossistema javascript, tive que sair da minha zona de conforto e colocar a mão na massa, estou satisfeito com o que estou entregando, consegui colocar um pouco da minha essência nessa solução.
 

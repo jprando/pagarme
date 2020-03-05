@@ -1,14 +1,14 @@
-## Banco de Dados
+# Banco de Dados
 
 Este projeto utiliza o banco de dados [postgres](https://www.postgresql.org/about/) para persistir as informações do sistema
 
-### Preparar o Banco de Dados
+## Preparar o Banco de Dados
 
 > Quando a API é iniciada no modo de desenvolvimento, em sua inicialização é verificado a existência do usuário com as credenciais `jeudi@prando.dev`:`1123qqwe`, se o usuário não for encontrado o sistema cria este usuário como administrador.
 
 Você pode [instalar o banco de dados postgres localmente em sua máquina](https://www.postgresql.org/docs/12/tutorial-install.html) ou [utilizar o docker para obter um serviço do postgres](https://hub.docker.com/_/postgres) pronto para utilização na sua máquina local.
 
-#### Via Docker
+### Via Docker
 
 Esta é a opção mais rápida e posso dizer também simples para ter um serviço de banco de dados postgres rodando em sua máquina para servir a API da solução implementada.
 
@@ -27,7 +27,7 @@ Referente a porta, mude caso precise ou se preferir outra, para utilizar outra p
 
 [voltar para o índice](#lista-de-conteúdo)
 
-### Configuração da Conexão
+## Configuração da Conexão
 
 Para configurar o sistema de modo que o mesmo conecte-se a um banco de dados preparado por ti, faça uma cópia do arquivo `.env.example` para um novo arquivo com o nome `.env`, abra o arquivo e informe corretamente as informações necessárias para realizar a conexão com o seu serviço de banco de dados postgres.
 

@@ -1,6 +1,6 @@
-## Endpoints
+# Endpoints
 
-### Endpoint Público
+## Endpoint Público
 
 Esse é o único endpoint público, ou seja, não exige que um Token válido seja informado no cabeçalho da solicitação.
 
@@ -10,24 +10,24 @@ Esse é o único endpoint público, ou seja, não exige que um Token válido sej
 
 [voltar para o índice](/README.md#lista-de-conteúdo)
 
-### Endpoint Privado
+## Endpoint Privado
 
 Esses enpoints são privados, ou seja, exigem que um Token válido seja incluído no cabeçalho da solicitação. Um token pode ser adquirido no endpoint [Login](#endpoint-público) descrito acima.
 
-#### Transações de Pagamento
+### Transações de Pagamento
 
 | Descrição                                       | Tipo  | Endpoint                          |
 |-------------------------------------------------|-------|-----------------------------------|
 | [Criar](/docs/endpoints/private/transaction/post_transaction.md)  | `POST`  | `/api/v1/private/transaction`           |
 | [Listar](/docs/endpoints/private/transaction/get_customer.md)     | `GET`   | `/api/v1/private/transactions/customer` |
 
-#### Recebíveis
+### Recebíveis
 
 | Descrição                               | Tipo  | Endpoint                    |
 |-----------------------------------------|-------|-----------------------------|
 | [Listar](/docs/endpoints/private/payable/get_customer.md) | `GET` | `/api/v1/private/payables/customer` |
 
-#### Balanço
+### Balanço
 
 | Descrição                                           | Tipo  | Endpoint                                |
 |-----------------------------------------------------|-------|-----------------------------------------|
@@ -35,11 +35,11 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 | [Exibir por Ano](/docs/endpoints/private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
 | [Exibir por Ano/Mês](/docs/endpoints/private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
 
-### Endpoint Privado - Administração
+## Endpoint Privado - Administração
 
 Estes endpoints privados, além de requerer que um token válido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
 
-#### Usuário
+### Usuário
 
 | Descrição                                 | Tipo      | Endpoint                  |
 |-------------------------------------------|-----------|---------------------------|
@@ -49,7 +49,7 @@ Estes endpoints privados, além de requerer que um token válido seja passado no
 | [Deletar](/docs/endpoints/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/dmin/user/:id` |
 | [Listar](/docs/endpoints/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
 
-#### Cliente
+### Cliente
 
 | Descrição                                     | Tipo      | Endpoint                      |
 |-----------------------------------------------|-----------|-------------------------------|

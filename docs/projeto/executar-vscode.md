@@ -1,6 +1,6 @@
 # Executando o projeto
 
-### Depurando no VSCode
+## Depurando no VSCode
 
 Para depurar esta aplicação utilizando o [vscode](https://code.visualstudio.com/) como IDE, crie uma pasta chamada `.vscode` e dentro dessa pasta crie um arquivo com o nome `launch.json` com o seguinte conteúdo:
 
