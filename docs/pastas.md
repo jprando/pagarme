@@ -40,4 +40,4 @@ Funções uteis a várias partes do sistema
 
 **Anterior: [UKey](/docs/ukey.md#ukey)**
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../README.md#lista-de-conteúdo)

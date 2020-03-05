@@ -66,8 +66,8 @@ Conteúdo da resposta
 }
 ```
 
-**Anterior: [Endpoint Público](/docs/endpoints/README.md#endpoint-público)**
+**Anterior: [Endpoint Público](../../../../docs/endpoints/README.md#endpoint-público)**
 
-[Enpoints](/docs/endpoints/README.md)
+[Enpoints](../../../../docs/endpoints/README.md)
 
-[voltar para o índice](/README.md#endpoints)
+[voltar para o índice](../../../../README.md#endpoints)

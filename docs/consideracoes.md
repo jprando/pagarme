@@ -16,4 +16,4 @@ Acredito não ter deixado nada para trás e estou ansioso para a próxima etapa,
 
 **Anterior: [Libs](/docs/libs.md)**
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../README.md#lista-de-conteúdo)

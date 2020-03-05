@@ -25,7 +25,7 @@ Com o comando acima você terá o postgres pronto para utilização na porta `54
 
 Referente a porta, mude caso precise ou se preferir outra, para utilizar outra porta por exemplo a porta `5454` utilize `-p 5454:5432`
 
-[voltar para o índice](#lista-de-conteúdo)
+[voltar para o índice](../README.md#lista-de-conteúdo)
 
 ## Configuração da Conexão
 
@@ -57,4 +57,4 @@ Dentro do arquivo `.env` você encontrará as seguintes opções:
 
 **Anterior: [Endpoints](/docs/endpoints/README.md)**
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../README.md#lista-de-conteúdo)

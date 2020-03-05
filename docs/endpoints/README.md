@@ -8,7 +8,7 @@ Esse é o único endpoint público, ou seja, não exige que um Token válido sej
 |-------------------------------|---------|-----------------|
 | [Login](/docs/endpoints/public/post_login.md)  | `POST`  | `/api/v1/login` |
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../../README.md#lista-de-conteúdo)
 
 ## Endpoint Privado
 
@@ -35,7 +35,7 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 | [Exibir por Ano](/docs/endpoints/private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
 | [Exibir por Ano/Mês](/docs/endpoints/private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../../README.md#lista-de-conteúdo)
 
 ## Endpoint Privado - Administração
 
@@ -65,4 +65,4 @@ Estes endpoints privados, além de requerer que um token válido seja passado no
 
 **Anterior: [Pastas](/docs/pastas.md)**
 
-[voltar para o índice](/README.md#endpoints)
+[voltar para o índice](../../README.md#lista-de-conteúdo)
