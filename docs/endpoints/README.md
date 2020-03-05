@@ -35,6 +35,8 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 | [Exibir por Ano](/docs/endpoints/private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
 | [Exibir por Ano/Mês](/docs/endpoints/private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
 
+[voltar para o índice](/README.md#lista-de-conteúdo)
+
 ## Endpoint Privado - Administração
 
 Estes endpoints privados, além de requerer que um token válido seja passado no cabeçalho da requisição, as informações do token tem que ser referente a um usuário do tipo administrador.
