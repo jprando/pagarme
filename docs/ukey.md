@@ -14,4 +14,4 @@ A intenção da existência da `ukey` seria poder trabalhar com computação dis
 
 **Próximo: [Pastas](/docs/pastas.md)**
 
-[voltar para o índice](/README.md#lista-de-conteúdo)
+[voltar para o índice](../README.md#lista-de-conteúdo)
