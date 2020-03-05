@@ -29,7 +29,7 @@
   - [Configuração da Conexão](/docs/bancodedados.md#configuração-da-conexão)
 - [Baixar e preparar o projeto](/docs/projeto/baixar.md#baixar-e-preparar-o-projeto)
   - [Outros comandos](/docs/projeto/baixar.md#outros-comandos)
-- Executar o projeto
+- [Executar o projeto](/docs/projeto/executar-preflight.md#executando-o-projeto)
   - [Preflight](/docs/projeto/executar-preflight.md#preflight)
   - [Ambiente de desenvolvimento](/docs/projeto/executar-desenvolvimento.md#ambiente-de-desenvolvimento)
     - [Depurando no VSCode](/docs/projeto/executar-vscode.md#depurando-no-vscode)
