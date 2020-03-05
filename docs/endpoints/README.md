@@ -6,7 +6,7 @@ Esse é o único endpoint público, ou seja, não exige que um Token válido sej
 
 | Descrição                     | Tipo    | Endpoint        |
 |-------------------------------|---------|-----------------|
-| [Login](/docs/endpoints/public/post_login.md)  | `POST`  | `/api/v1/login` |
+| [Login](public/post_login.md)  | `POST`  | `/api/v1/login` |
 
 [voltar para o índice](../../README.md#lista-de-conteúdo)
 
@@ -18,22 +18,22 @@ Esses enpoints são privados, ou seja, exigem que um Token válido seja incluíd
 
 | Descrição                                       | Tipo  | Endpoint                          |
 |-------------------------------------------------|-------|-----------------------------------|
-| [Criar](/docs/endpoints/private/transaction/post_transaction.md)  | `POST`  | `/api/v1/private/transaction`           |
-| [Listar](/docs/endpoints/private/transaction/get_customer.md)     | `GET`   | `/api/v1/private/transactions/customer` |
+| [Criar](private/transaction/post_transaction.md)  | `POST`  | `/api/v1/private/transaction`           |
+| [Listar](private/transaction/get_customer.md)     | `GET`   | `/api/v1/private/transactions/customer` |
 
 ### Recebíveis
 
 | Descrição                               | Tipo  | Endpoint                    |
 |-----------------------------------------|-------|-----------------------------|
-| [Listar](/docs/endpoints/private/payable/get_customer.md) | `GET` | `/api/v1/private/payables/customer` |
+| [Listar](private/payable/get_customer.md) | `GET` | `/api/v1/private/payables/customer` |
 
 ### Balanço
 
 | Descrição                                           | Tipo  | Endpoint                                |
 |-----------------------------------------------------|-------|-----------------------------------------|
-| [Exibir](/docs/endpoints/private/customer/get_balance.md)             | `GET` | `/api/v1/private/customer/balance`              |
-| [Exibir por Ano](/docs/endpoints/private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
-| [Exibir por Ano/Mês](/docs/endpoints/private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
+| [Exibir](private/customer/get_balance.md)             | `GET` | `/api/v1/private/customer/balance`              |
+| [Exibir por Ano](private/customer/get_balance.md)     | `GET` | `/api/v1/private/customer/balance/:year`        |
+| [Exibir por Ano/Mês](private/customer/get_balance.md) | `GET` | `/api/v1/private/customer/balance/:year/:month` |
 
 [voltar para o índice](../../README.md#lista-de-conteúdo)
 
@@ -45,21 +45,21 @@ Estes endpoints privados, além de requerer que um token válido seja passado no
 
 | Descrição                                 | Tipo      | Endpoint                  |
 |-------------------------------------------|-----------|---------------------------|
-| [Criar](/docs/endpoints/admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
-| [Exibir](/docs/endpoints/admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
-| [Alterar](/docs/endpoints/admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
-| [Deletar](/docs/endpoints/admin/delete_user_id.md)  | `DELETE`  | `/api/v1/dmin/user/:id` |
-| [Listar](/docs/endpoints/admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
+| [Criar](admin/post_user.md)         | `POST`    | `/api/v1/admin/user`      |
+| [Exibir](admin/get_user_id.md)      | `GET`     | `/api/v1/admin/user/:id`  |
+| [Alterar](admin/post_user_id.md)    | `POST`    | `/api/v1/admin/user/:id`  |
+| [Deletar](admin/delete_user_id.md)  | `DELETE`  | `/api/v1/dmin/user/:id` |
+| [Listar](admin/get_users.md)        | `GET`     | `/api/v1/admin/users`     |
 
 ### Cliente
 
 | Descrição                                     | Tipo      | Endpoint                      |
 |-----------------------------------------------|-----------|-------------------------------|
-| [Criar](/docs/endpoints/admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
-| [Exibir](/docs/endpoints/admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
-| [Alterar](/docs/endpoints/admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
-| [Deletar](/docs/endpoints/admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/dmin/customer/:id` |
-| [Listar](/docs/endpoints/admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
+| [Criar](admin/post_customer.md)         | `POST`    | `/api/v1/admin/customer`      |
+| [Exibir](admin/get_customer_id.md)      | `GET`     | `/api/v1/admin/customer/:id`  |
+| [Alterar](admin/post_customer_id.md)    | `POST`    | `/api/v1/admin/customer/:id`  |
+| [Deletar](admin/delete_customer_id.md)  | `DELETE`  | `/api/v1/dmin/customer/:id` |
+| [Listar](admin/get_customers.md)        | `GET`     | `/api/v1/admin/customer`      |
 
 **Próximo: [Banco de Dados](/docs/bancodedados.md)**
 
