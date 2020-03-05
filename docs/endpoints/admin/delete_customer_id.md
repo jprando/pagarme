@@ -8,6 +8,6 @@ Deleta um cliente pelo `Id` informado.
 
 [Endpoint Privado](../README.md#endpoint-privado)
 
-[Enpoints](../README.md)
+[Enpoints](../README.md#endpoints)
 
 [voltar para o índice](../../../README.md#lista-de-conteúdo)

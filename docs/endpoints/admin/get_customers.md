@@ -8,6 +8,6 @@ Exibe uma listagem dos clientes cadastrado no sistema, com informações resumid
 
 [Endpoint Privado](../README.md#endpoint-privado)
 
-[Enpoints](../README.md)
+[Enpoints](../README.md#endpoints)
 
 [voltar para o índice](../../../README.md#lista-de-conteúdo)

@@ -8,6 +8,6 @@ Exibe uma listagem dos usuários cadastrado no sistema, com informações resumi
 
 [Endpoint Privado](../README.md#endpoint-privado)
 
-[Enpoints](../README.md)
+[Enpoints](../README.md#endpoints)
 
 [voltar para o índice](../../../README.md)

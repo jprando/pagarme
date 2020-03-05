@@ -83,6 +83,6 @@ jwt expired
 
 [Endpoint Privado](../README.md#endpoint-privado)
 
-[Enpoints](../README.md)
+[Enpoints](../README.md#endpoints)
 
 [voltar para o índice](../../../README.md)
