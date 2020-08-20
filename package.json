@@ -17,7 +17,7 @@
     "lint": "eslint server.js ./src"
   },
   "dependencies": {
-    "bcrypt": "4.0.1",
+    "bcrypt": "5.0.0",
     "body-parser": "1.19.0",
     "compression": "1.7.4",
     "cpf-cnpj-validator": "1.0.0",
